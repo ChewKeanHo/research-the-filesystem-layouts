@@ -237,6 +237,14 @@ specifications to match the outputs:
     *FreeBSD Manual Pages*; The FreeBSD Project via The FreeBSD Community and
     The FreeBSD Foundation; viewed 09 December 2025; available at:
     https://man.freebsd.org/cgi/man.cgi?query=named&sektion=8&manpath=OpenBSD+5.1
+25. APPLE; 2017; "Bundle Structures"; *Documentation Archive - Bundle
+    Programming Guide*; Apple Developer; Apple Inc.; Cupertino, California,
+    USA; Viewed on 2026-04-30; Available at:
+    https://developer.apple.com/library/archive/documentation/CoreFoundation/Conceptual/CFBundles/BundleTypes/BundleTypes.html#//apple_ref/doc/uid/10000123i-CH101-SW1
+26. APPLE; 2018; "File System Basics"; *Documentation Archive - Bundle
+    Programming Guide*; Apple Developer; Apple Inc.; Cupertino, California,
+    USA; Viewed on 2026-04-30; Available at:
+    https://developer.apple.com/library/archive/documentation/FileManagement/Conceptual/FileSystemProgrammingGuide/FileSystemOverview/FileSystemOverview.html
 
 
 
