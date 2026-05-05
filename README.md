@@ -1,4 +1,4 @@
-# Filesystems Hierarchy Layouts Research Project
+# The Filesystem Hierarchy Layouts | (Holloway) Chew, Kean Ho's Knowledge Research
 
 [![banner](/.internals/trademarks/banner_1200x100.svg)](#)
 
@@ -7,7 +7,7 @@ has standardized regulations like UNIX and Windows? Are you looking for some
 design references that are comforming and portable to as many operating as
 possible? This is the right research dataset.
 
-At (Holloway) Chew, Kean Ho's Filesystems Hierarchy Layouts Research Project,
+At (Holloway) Chew, Kean Ho's The Filesystem Hierarchy Layouts Research Project,
 tech volunteers and me are continuously updating this repository for abstracting
 common filesystems and directory layouts for various purposes. The research
 goals are simple:
@@ -43,9 +43,9 @@ broken search engines.
 
 To use this dataset, first setup the markdown rendering `git` repository
 (e.g. its GitHub mirror:
-https://github.com/ChewKeanHo/research-filesystems-hierarchy). There you can
-read the descriptions of each directory. For dataset, you need an UNIX program
-called `tree`. Then execute the command:
+https://github.com/ChewKeanHo/research-the-filesystem-hierarchy-layouts). There
+you can read the descriptions of each directory. For dataset, you need an UNIX
+program called `tree`. Then execute the command:
 
 ```
 $ tree -a -d path/to/TARGET/
@@ -73,78 +73,6 @@ prior to `/UNIX` abstractions. Among them are:
   Fedora, etc.
 * **Project Directory Structures** - the [/_Project](/_Project) commonly used
   for small modular project repository (e.g. `git` project repository).
-
-
-
-
-## Artificial Intelligence (A.I) Decrees
-
-[![banner](/.internals/trademarks/banner_1200x100.svg)](#)
-
-This project deploys the use of one or more generative artificial intelligence
-such as but not limited to large language model (LLM) for the following tasks:
-
-
-
-### Data Sourcing
-
-> [!Note]
->
-> * Performing enhanced web searches due to polluted search engine indexes.
-> * Performing completely generated media such as but not limited to images,
->   videos, and audios.
-
-* Used for data and reading material searching as the search engine across the
-  Internet had collapsed due to A.I publication slops.
-* Used for grammar and language correction detection on the human-made written
-  script.
-
-
-
-### Data Processing & Analytics
-
-> [!Note]
->
-> * Performing development via multi-steps queries (also known as
->   *vibe coding* or *agentic AI processing*).
-> * Performing data analytics via multi-steps queries (also known as
->   *vibe coding* or *AI vibing*).
-> * Performing dedicated and task specific work where conventional technologies
->   could not achieve such as but not limited to upscaling an image verbatim.
-
-No deployment.
-
-
-
-### Data Testing
-
-> [!Note]
->
-> * Performing end-user use case simulated testings.
-
-No deployment.
-
-
-
-### Data Visualization
-
-> [!Note]
->
-> * Performing completely generated data visualization via multi-step queries
->   (also known as *vibe coding*).
-
-No deployment.
-
-
-
-### Data Archiving & Deletion
-
-> [!Note]
->
-> * Performing data clean-up via multi-step queries (also known as
->   *vibe coding*).
-
-No deployment.
 
 
 
@@ -249,6 +177,74 @@ specifications to match the outputs:
 
 
 
+## Verifying Content Integrity
+
+[![banner](/.internals/trademarks/banner_1200x100.svg)](#)
+
+To secure the content from unauthorized modification by anyone down to bit-level
+(`0|1`), they are cryptographically signed using one or more cryptography tools
+such as but not limited to:
+
+* [GnuPG](https://gnupg.org); AND/OR
+* [OpenSSL](https://www.openssl.org/).
+
+The public key and the associated certificate are attached. Only the main owner
+keeps and maintains the private keys. To verify the content's integrity:
+
+
+
+### GnuPG
+
+1. Install [GnuPG](https://gnupg.org) software if not present.
+2. Download the target file and its detached signature file (the `.asc` file
+   with the same filename).
+3. Download the public key file (`.gpg`).
+4. Place them next to each other in the directory.
+5. Open a terminal and execute the following command:
+
+```
+$ gpg --no-default-keyring --keyring /path/to/public.gpg --verify /path/to/file.asc
+```
+
+
+
+### OpenSSL
+
+1. Install [OpenSSL](https://www.openssl.org) software if not present.
+2. Download the target file and its detached signature file (the `.sig`/`.sign`
+   file with the same filename).
+3. Download the public certificate file (`.pem`) containing the public key
+   within.
+4. Place them next to each other in the directory.
+5. Open a terminal and execute the following command:
+
+```
+$ openssl dgst -verify /path/to/pubkey.pem -signature /path/to/file.sig /path/to/file
+```
+
+
+
+
+## Artificial Intelligence (A.I.) Decrees
+
+[![banner](/.internals/trademarks/banner_1200x100.svg)](#)
+
+Please refer to [AI_DECREES.md](AI_DECREES.md) for the project's policy on the
+use of Artificial Intelligence.
+
+
+
+
+## Maintainers' Notes
+
+[![banner](/.internals/trademarks/banner_1200x100.svg)](#)
+
+1. Please refer to [CONTRIBUTING.md](CONTRIBUTING.md) for contributing &
+   maintenances guidelines.
+
+
+
+
 ## License
 
 [![banner](/.internals/trademarks/banner_1200x100.svg)](#)
@@ -257,7 +253,8 @@ specifications to match the outputs:
 * [Agreed GIMP Privacy Policy](.internals/privacy-policy/GimpORG-Privacy-Policy.pdf)
 * [Agreed Inkscape License](.internals/terms-of-services/Inkscape-License.pdf)
 * [Agreed Inkscape Privacy Policy](.internals/privacy-policy/Inkscape-Privacy-Policy.pdf)
-* [Agreed (Holloway) Chew, Kean Ho's Upscaler License](.internals/terms-of-services/Upscaler-LICENSE.txt)
+* [Agreed LibreOffice License](.internals/terms-of-services/LibreOffice-License.pdf)
+* [Agreed LibreOffice Privacy Policy](.internals/privacy-policy/LibreOffice-Privacy-Policy.pdf)
 
 This entire repository is licensed under
 [Creative Commons Attribution-NoDerivatives 4.0 International License](LICENSE.txt).
@@ -277,15 +274,17 @@ Unless otherwise specified in writing, you **MUST** attribute back to the
 creator(s) as follows:
 
 ```
-Title: (Holloway) Chew, Kean Ho's Filesystems Hierarchy Layouts Research Project
+Title: The Filesystem Hierarchy Layouts
 Creators: (Holloway) Chew, Kean Ho
+Packaged-By: (Holloway) Chew, Kean Ho
 Contact: hello@chewkeanho.com
-SKU: chewkeanho-research-filesystems-hierarchy
+SKU: chewkeanho-research-the-filesystem-hierarchy-layouts
 UUID: 3113F0A2-61BD-449C-BC0F-DE4C09997AC6
 DOI: 10.5281/zenodo.17864564
 License: Creative Commons Attribution-NoDerivatives 4.0 International License (https://creativecommons.org/licenses/by-nd/4.0)
-Made On: 2025-11-30
-Procure: https://github.com/ChewKeanHo/research-filesystems-hierarchy
+Repository Made On: 2025-11-30
+Repository Made From: Malaysia, South East Asia
+Procure: https://doi.org/10.5281/zenodo.17864564
 ```
 
 
