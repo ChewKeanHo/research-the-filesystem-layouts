@@ -2,8 +2,21 @@
 
 [![banner](/.internals/trademarks/banner_1200x100.svg)](#)
 
-This sub-directory contains a subset of apps intended for use in managing the
-local system.
+This base directory houses a subset of apps intended for intended for use
+managing the `local` system.
 
-This directory is part of the `local domain` only admin-privileged (`wheel`)
-users can modify or delete.
+This directory is part of the `local domain`.
+
+Only admin-privileged (`wheel`) users can access this directory.
+
+You **DEFINITELY MUST NOT** place or modify any files and folders here for
+avoiding breakage.
+
+
+
+
+## Naming Conventions
+
+[![banner](/.internals/trademarks/banner_1200x100.svg)](#)
+
+Refer to [Apple MacOS.app Bundle Filesystem](/_MacOS.app).

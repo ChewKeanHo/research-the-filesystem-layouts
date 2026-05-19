@@ -2,22 +2,28 @@
 
 [![banner](/.internals/trademarks/banner_1200x100.svg)](#)
 
-This is the directory for housing system administrators (sysadmins) only
-programs and applications faciliated mainly for maintaining UNIX BSD filesystems
-inter-compatibilties. It is unused by the MacOS system operations.
+This is the base directory for housing operating system (OS)'s system-wide, OS
+distributor supplied, non-critical, system administrators (sysadmins) only
+programs and applications to extend the OS' functionalities from
+*Critical & Minimal* stage to *Full Catalogue* stage. This means it can operate
+in both `Multi-User` mode in BSD realm or `Full Mode` in Linux realm.
 
-All programs and applications here are available to administrator (user with
-`wheel` privilege). In some cases, they are unavailable as commands and can only
-be called explictly calling their full path instead.
+The goal is to extend the OS' functionalities all the way to its OS
+distributor's supplied packages. All programs' and applications' names and
+locations are registered by OS distributor. Therefore, they are available
+consistently and uniformly across all the machines.
 
-Generally, you **SHOULD ONLY** use this directory if you are a software
-developer. Otherwise, to avoid confusion, this directory is hidden from the
-end-user. Software developer can and know how to enable it.
+All files here are available to all users.
 
-This directory is **entirely optional** as it serves as a clean design
-structure.
+Generally, you **SHOULD NOT** place anything here **UNLESS** you are the OS
+distributor. This is to avoid any conflict with the upstream's registries that
+will break the OS in any way. Use `/usr/local/sbin` or
+`${HOME}/[USERNAME]/.local/sbin` instead.
 
 This directory **MUST NOT** have any sub-directory.
+
+Apple MacOS does not use this directory. However, it is made available for
+developer power users via hidden access for BSD OS inter-compatibility purposes.
 
 
 

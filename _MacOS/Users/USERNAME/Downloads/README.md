@@ -6,4 +6,8 @@ This directory houses an user's downloaded files. It is a default functional
 directory where most network interacting software and services notably browsers
 expect its existence.
 
-The directory's access is **RESTRICTED TO OWNER** by default.
+Only admin-privileged (`wheel`) and owning users can access this directory.
+
+Depending on content, you **MAY** be able to place or modify any files and
+folders manually. Otherwise, you **DEFINITELY MUST NOT** do so and let the
+installed apps handle it.

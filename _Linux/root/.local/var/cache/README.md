@@ -1,4 +1,4 @@
-# `/home/USERNAME/.local/var/cache`
+# `/home/[USERNAME]/.local/var/cache`
 
 [![banner](/.internals/trademarks/banner_1200x100.svg)](#)
 
@@ -36,7 +36,7 @@ the naming collision for common names.
 Here are the examples with and without using `trademark` directory:
 
 ```
-/home/USERNAME/.local/var/
+/home/[USERNAME]/.local/var/
   cache/
     trademark/
       product/
@@ -44,7 +44,7 @@ Here are the examples with and without using `trademark` directory:
 
 # OR
 
-/home/USERNAME/.local/var/
+/home/[USERNAME]/.local/var/
   cache/
     product/
       ...

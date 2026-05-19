@@ -2,9 +2,50 @@
 
 [![banner](/.internals/trademarks/banner_1200x100.svg)](#)
 
-This directory houses all app data except those associated with the user's
-documents. Files like app-created data files, configuration files, templates, or
-other fixed or modifiable resources managed by an app.
+This directory houses app data except those associated with user's documents.
+Files like app-created data files, configuration files, templates, or other
+fixed or modifiable resources managed by an app.
 
-All content in this directory should be placed in a custom sub-directory whose
-name is that of your app’s bundle identifier or your company.
+App is allowed to create additional directory here. Any app **SHOULD NOT**
+assume any file or directory and always perform safe query before use.
+
+This directory is part of the `local domain`.
+
+Only admin-privileged (`wheel`) and owning users can access this directory.
+
+You **DEFINITELY MUST NOT** place or modify any files and folders manually here
+for avoiding breakage. Let the installed apps handle it.
+
+
+
+
+## Naming Conventions
+
+[![banner](/.internals/trademarks/banner_1200x100.svg)](#)
+
+It is a practice to house the files using `trademark` and `[APPNAME]`
+sub-directories pattern. This can significantly reduces the naming collision for
+common names.
+
+Here are the examples:
+
+```
+/Users/[USERNAME]/Library/Application Support/
+  trademark/
+    [APPNAME]/
+      lib1.so
+      lib1_freebsd-amd64.so
+      kernel8.ko
+      kernel8_freebsd-amd64.ko
+      ...
+
+# OR
+
+/Users/[USERNAME]/Library/Application Support/
+  [APPNAME]/
+    lib1.so
+    lib1_freebsd-amd64.so
+    kernel8.ko
+    kernel8_freebsd-amd64.ko
+    ...
+```

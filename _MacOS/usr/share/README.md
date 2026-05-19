@@ -2,19 +2,26 @@
 
 [![banner](/.internals/trademarks/banner_1200x100.svg)](#)
 
-This is the directory for housing CPU architecture independent data files
-(e.g. documents, icons, images, audios, etc) faciliated mainly for maintaining
-UNIX BSD filesystems inter-compatibilties. It is unused by the MacOS system
-operations.
+This is the base directory for housing operating system (OS)'s system-wide,
+OS distributor supplied, non-critical, architecture independent data files (e.g.
+PDF files, SVG vector files, etc) to extend the OS' functionalities from
+*Critical & Minimal* stage to *Full Catalogue* stage. This means it can operate
+in both `Multi-User` mode in BSD realm or `Full Mode` in Linux realm.
+
+The goal is to extend the OS' functionalities all the way to its OS
+distributor's supplied packages. All architecture independent data files' names
+and locations are registered by OS distributor. Therefore, they are available
+consistently and uniformly across all the machines.
 
 All files here are available to all users.
 
-Generally, you **SHOULD ONLY** use this directory if you are a software
-developer. Otherwise, to avoid confusion, this directory is hidden from the
-end-user. Software developer can and know how to enable it.
+Generally, you **SHOULD NOT** place anything here **UNLESS** you are the OS
+distributor. This is to avoid any conflict with the upstream's registries that
+will break the OS in any way. Use `/usr/local/share` or
+`${HOME}/[USERNAME]/.local/share` instead.
 
-This directory is **entirely optional** as it serves as a clean design
-structure.
+Apple MacOS does not use this directory. However, it is made available for
+developer power users via hidden access for BSD OS inter-compatibility purposes.
 
 
 
@@ -23,27 +30,39 @@ structure.
 
 [![banner](/.internals/trademarks/banner_1200x100.svg)](#)
 
-It is a practice to house the data files using `trademark` and `product`
-sub-directories organization. This can significantly reduces the naming
-collision for common names.
+It is a practice to house the files using `trademark` and `product`
+sub-directories pattern. This can significantly reduces the naming collision for
+common names.
 
-Here are the examples with and without using `trademark` directory:
+Here are the examples:
 
 ```
-/usr/
-  share/
-    trademark/
-      product/
-        file1.pdf
-        file2.txt
-        ...
-
-OR
-
-/usr/
-  share/
+/usr/share/
+  trademark/
     product/
-      file1.pdf
-      file2.txt
+      docs/
+        README.pdf
+        Terms-of-Service.pdf
+        ...
+      licenses/
+        LICENSE.pdf
+        LICENSE.txt
+        LICENSE.html
+        ...
       ...
+
+# OR
+
+/usr/share/
+  product/
+    docs/
+      README.pdf
+      Terms-of-Service.pdf
+      ...
+    licenses/
+      LICENSE.pdf
+      LICENSE.txt
+      LICENSE.html
+      ...
+    ...
 ```

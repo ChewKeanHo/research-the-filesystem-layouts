@@ -29,14 +29,14 @@ query before use.
 
 [![banner](/.internals/trademarks/banner_1200x100.svg)](#)
 
-It is a practice to house the cache files using `trademark` and `product`
-sub-directories organization. This can significantly reduces the naming
-collision for common names.
+It is a practice to house the configuration files using `trademark` and
+`product` sub-directories organization. This can significantly reduces
+the naming collision for common names.
 
 Here are the examples with and without using `trademark` directory:
 
 ```
-/Users/[USERNAME]/.local/var/
+/home/[USERNAME]/.local/var/
   cache/
     trademark/
       product/
@@ -44,7 +44,7 @@ Here are the examples with and without using `trademark` directory:
 
 # OR
 
-/Users/[USERNAME]/.local/var/
+/home/[USERNAME]/.local/var/
   cache/
     product/
       ...

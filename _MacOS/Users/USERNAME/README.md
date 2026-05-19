@@ -2,10 +2,13 @@
 
 [![banner](/.internals/trademarks/banner_1200x100.svg)](#)
 
-This directory houses all user level data directory.
+This directory houses a single user's all data directory.
 
-Programs **SHOULD NOT** assume any file or directory and always perform safe
-query before use.
+Only admin-privileged (`wheel`) and owning users can access this directory.
+
+Depending on content, you **MAY** be able to place or modify any files and
+folders manually. Otherwise, you **DEFINITELY MUST NOT** do so and let the
+installed apps handle it.
 
 
 
@@ -15,7 +18,8 @@ query before use.
 [![banner](/.internals/trademarks/banner_1200x100.svg)](#)
 
 By default creation, this directory houses the following user directory with
-slight deviation from the common UNIX [User](/User) pattern:
+slight deviation from the common UNIX [User](/User) pattern (notably `Videos` ->
+`Movies` instead):
 
 ```
 /Users/
@@ -65,5 +69,6 @@ the full structure becomes:
       var/
 ```
 
-However, Apple recommend to hide them from any end-user for human error
-prevention. A software developer knows how to enable them.
+However, Apple recommend to hide them from any non-developer end-user for
+preventing catastrophic human error. A developer should not have difficulty
+locating them.

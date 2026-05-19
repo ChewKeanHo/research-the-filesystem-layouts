@@ -2,23 +2,16 @@
 
 [![banner](/.internals/trademarks/banner_1200x100.svg)](#)
 
-This is the user-specific directory housing user supplied, non-critical,
-user-specific font data files for extending the operating system's
-functionalities from *Complete* stage to *Personalized* stage. This means that
-font files in this directory only appears specifically for this user.
+This is the base directory for housing user-specific font files.
 
-For MacOS, you **SHOULD** use `Font Book` or `Settings` to install the font
-files. You can still place your own custom data here. It will be made available
-only for you.
+App is allowed to create additional directory here. Any app **SHOULD NOT**
+assume any file or directory and always perform safe query before use.
 
-The main purpose of such separation is to make sure the operating system's
-update transaction goes smoothly without any conflicting files with yours.
-The second purpose is to facilitate a way to procure programs and applications
-without using sysadmins or root account that affects the entire operating
-system.
+This directory is part of the `local domain`.
 
-This directory is **ENTIRELY OPTIONAL** as it serves as a clean design
-structure.
+Only admin-privileged (`wheel`) and owning users can access this directory.
+
+You **CAN AND SHOULD** place or modify any files and folders manually.
 
 
 
@@ -27,5 +20,35 @@ structure.
 
 [![banner](/.internals/trademarks/banner_1200x100.svg)](#)
 
-It is a practice to house the font data files using non-conflicting font family
-name as filename.
+It is a practice to house the files using `trademark` and `product`
+sub-directories pattern. This can significantly reduces the naming collision for
+common names.
+
+Here are the examples:
+
+```
+/Users/[USERNAME]/Library/Fonts/
+  trademark/
+    product1/
+      font1.tff
+      LICENSE.txt
+      ...
+    product2/
+      font2.tff
+      LICENSE.txt
+      ...
+    ...
+
+# OR
+
+/Users/[USERNAME]/Library/Fonts/
+  product1/
+    font1.tff
+    LICENSE.txt
+    ...
+  product2/
+    font2.tff
+    LICENSE.txt
+    ...
+  ...
+```

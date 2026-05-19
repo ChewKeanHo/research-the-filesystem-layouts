@@ -1,20 +1,37 @@
-# `/usr/libARCH`
+# `/usr/lib[ARCH]`
 
 [![banner](/.internals/trademarks/banner_1200x100.svg)](#)
 
-This is the directory for housing CPU architecture specific programs' and
-applications' library files to function properly faciliated mainly for
-maintaining UNIX BSD filesystems inter-compatibilties. It is unused by the MacOS
-system operations.
+This is the base directory for housing operating system (OS)'s system-wide,
+OS distributor supplied, non-critical CPU architecture specific library files
+(e.g. C object artifact files) to extend the OS' functionalities from
+*Critical & Minimal* stage to *Full Catalogue* stage. This means it can operate
+in both `Multi-User` mode in BSD realm or `Full Mode` in Linux realm.
 
-All libraries here are available to all users.
+The goal is to extend the OS' functionalities all the way to its OS
+distributor's supplied packages. All library files' names and locations are
+registered by OS distributor. Therefore, they are available consistently and
+uniformly across all the machines.
 
-Generally, you **SHOULD ONLY** use this directory if you are a software
-developer. Otherwise, to avoid confusion, this directory is hidden from the
-end-user. Software developer can and know how to enable it.
+All files here are available to all users.
 
-This directory is **entirely optional** as it serves as a clean design
-structure.
+Generally, you **SHOULD NOT** place anything here **UNLESS** you are the OS
+distributor. This is to avoid any conflict with the upstream's registries that
+will break the OS in any way. Use `/usr/local/lib[ARCH]` instead.
+
+Also, if this directory is used, you **SHOULD ALWAYS** utilize the main
+`/usr/lib` directory at all time. Library files can be named with the
+`[COMPILER]-[OS]-[ARCH]` triplet for identifications over there.
+
+This directory pattern is considered old and obselete when `x86` CPU
+architecture was migrated completely from `i386` to `amd64` architectures.
+During the migrations, both architectures are required to exist so this pattern
+was invented. Use unless absolutely necessary and only only place your own
+system-wide custom CPU architecture specific library files here (e.g. `arm64`
+library files on an `amd64` OS where they are used for cross-compilation).
+
+Apple MacOS does not use this directory. However, it is made available for
+developer power users via hidden access for BSD OS inter-compatibility purposes.
 
 
 
@@ -23,32 +40,29 @@ structure.
 
 [![banner](/.internals/trademarks/banner_1200x100.svg)](#)
 
-It is a practice to house the libraries files using `trademark` and `product`
-sub-directories organization. This can significantly reduces the naming
-collision for common names.
+It is a practice to house the files using `trademark` and `product`
+sub-directories pattern. This can significantly reduces the naming collision for
+common names.
 
-Here are the examples with and without using `trademark` directory for 32-bits
-libraries (`lib32`):
+Here are the examples for ARCH is `32` (32-bit on 64-bit OS):
 
 ```
-/usr/
-  lib32/
-    trademark/
-      product/
-        lib1.so
-        lib1_freebsd-i386.so
-        kernel8.ko
-        kernel8_freebsd-i386.ko
-        ...
+/usr/lib32/
+  trademark/
+    product/
+      lib1.a
+      lib1_freebsd-amd64.a
+      kernel8.ko
+      kernel8_freebsd-amd64.ko
+      ...
 
 # OR
 
-/usr/
-  lib32/
-    product/
-      lib1.so
-      lib1_freebsd-i386.so
-      kernel8.ko
-      kernel8_freebsd-i386.ko
-      ...
+/usr/lib32/
+  product/
+    lib1.a
+    lib1_freebsd-amd64.a
+    kernel8.ko
+    kernel8_freebsd-amd64.ko
+    ...
 ```

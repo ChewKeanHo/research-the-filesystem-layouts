@@ -2,18 +2,26 @@
 
 [![banner](/.internals/trademarks/banner_1200x100.svg)](#)
 
-This is the directory for housing source files (e.g. source codes, principal
-image files, etc) faciliated mainly for maintaining UNIX BSD filesystems
-inter-compatibilties. It is unused by the MacOS system operations.
+This is the base directory for housing operating system (OS)'s system-wide,
+OS distributor supplied, non-critical source files (e.g. C source codes) to
+extend the OS' functionalities from *Critical & Minimal* stage to
+*Full Catalogue* stage. This means it can operate in both `Multi-User` mode in
+BSD realm or `Full Mode` in Linux realm.
+
+The goal is to extend the OS' functionalities all the way to its OS
+distributor's supplied packages. All source files' names and locations are
+registered by OS distributor. Therefore, they are available consistently and
+uniformly across all the machines.
 
 All files here are available to all users.
 
-Generally, you **SHOULD ONLY** use this directory if you are a software
-developer. Otherwise, to avoid confusion, this directory is hidden from the
-end-user. Software developer can and know how to enable it.
+Generally, you **SHOULD NOT** place anything here **UNLESS** you are the OS
+distributor. This is to avoid any conflict with the upstream's registries that
+will break the OS in any way. Use `/usr/local/src` or
+`${HOME}/[USERNAME]/.local/src` instead.
 
-This directory is **entirely optional** as it serves as a clean design
-structure.
+Apple MacOS does not use this directory. However, it is made available for
+developer power users via hidden access for BSD OS inter-compatibility purposes.
 
 
 
@@ -22,27 +30,29 @@ structure.
 
 [![banner](/.internals/trademarks/banner_1200x100.svg)](#)
 
-It is a practice to house the source files using `trademark` and `product`
-sub-directories organization. This can significantly reduces the naming
-collision for common names.
+It is a practice to house the files using `trademark` and `product`
+sub-directories pattern. This can significantly reduces the naming collision for
+common names.
 
-Here are the examples with and without using `trademark` directory:
+Here are the examples:
 
 ```
-/usr/
-  src/
-    trademark/
-      product/
-        file1.c
-        file2.c
-        ...
-
-OR
-
-/usr/
-  src/
+/usr/src/
+  trademark/
     product/
-      file1.c
-      file2.c
+      lib1.c
+      lib1_freebsd-amd64.c
+      kernel8.c
+      kernel8_freebsd-amd64.c
       ...
+
+# OR
+
+/usr/src/
+  product/
+    lib1.c
+    lib1_freebsd-amd64.c
+    kernel8.c
+    kernel8_freebsd-amd64.c
+    ...
 ```

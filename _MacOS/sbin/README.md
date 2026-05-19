@@ -2,22 +2,38 @@
 
 [![banner](/.internals/trademarks/banner_1200x100.svg)](#)
 
-This is the directory for housing system administrators (sysadmins) only
-programs and applications faciliated mainly for maintaining UNIX BSD filesystems
-inter-compatibilties. It is unused by the MacOS system operations.
+This is the base directory for housing system administrators (sysadmins) only
+critical programs and applications of an operating system (OS) to function
+properly and minimally without any mounting (e.g. `/usr` is not mounted or
+absent). This means it can operate in `Single-User` mode.
 
-All programs and applications here are available to administrator (user with
-`wheel` privilege). In some cases, they are unavailable as commands and can only
-be called explictly calling their full path instead.
+The goal is to have minimally sufficient programs enough for basic
+functionalities to perfrom critical tasks like mounting `/usr` UNIX System
+Resources directory for functionalities extension, performing self-rescue, or
+straight up operational in resources constraint environment such as but not
+limited to OpenWRT embedded router.
 
-Generally, you **SHOULD ONLY** use this directory if you are a software
-developer. Otherwise, to avoid confusion, this directory is hidden from the
-end-user. Software developer can and know how to enable it.
+All files here are **ONLY** available to sysadmins (users in `wheel` group) and
+`root` account.
 
-This directory is **entirely optional** as it serves as a clean design
-structure.
+In some UNIX-like OSes like Oracle's Solaris (first to transform back in 2012)
+and Red Hat's Fedora (second to transform back in 2023), due to `/usr` is always
+being mounted and hardware are no longer seeing performance differences between
+`/` and `/usr`, this directory is being symbolic linked to `/usr/sbin` instead;
+unifying both directories. This reduces the separation complexities while
+simplifying the package managements to target `/usr/sbin` only. **FreeBSD
+however, have not seen to perform such implementation yet presumbly for backward
+compatibility purposes.**
+
+Generally, you **SHOULD ONLY** place programs that are very critical at early
+booting stage without conflicting with existing POSIX compliant programs. In the
+case of `/sbin` being symbolic linked to `/usr/sbin`, you **MUST NOT** place
+anything here and use `/usr/sbin` exclusively instead.
 
 This directory **MUST NOT** have any sub-directory.
+
+Apple MacOS does not use this directory. However, it is made available for
+developer power users via hidden access for BSD OS inter-compatibility purposes.
 
 
 
@@ -26,5 +42,31 @@ This directory **MUST NOT** have any sub-directory.
 
 [![banner](/.internals/trademarks/banner_1200x100.svg)](#)
 
-Like any executable programs and applications, on UNIX, the filename
-**MUST BE THE SAME** as desired command.
+All programs here are registered programs that are usable across all UNIX and
+UNIX-like OSes (POSIX Compliant). Among them are:
+
+```
+shutdown - program to shutdown the operating system.
+```
+
+Optional programs (for robust functionalities) are:
+
+```
+fastboot - program to reboot the OS without checking the disk.
+fasthalt - program to stop the OS without checking the disk.
+fdisk    - program to configure partition table.
+fsck     - program to check and repair a disk and partition.
+fsck.*   - program(s) to check and repair specific disk and partition.
+getty    - program to perform terminal robust configurations.
+halt     - program to stop the OS.
+ifconfig - program to configure a network interface.
+init     - program to initialize the OS.
+mkfs     - program to make filesystem format to a partition.
+mkfs.*   - program to make specific filesystem format to a partition.
+mkswap   - program to setup a swap area.
+reboot   - program to reboot the OS.
+route    - program to configure IP routing table.
+swapon   - program to enable paging and swapping.
+swapoff  - program to disable paging and swapping.
+update   - program to flush filesystem periodically (daemon).
+```

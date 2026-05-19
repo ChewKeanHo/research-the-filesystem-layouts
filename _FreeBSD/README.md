@@ -32,7 +32,7 @@ FreeBSD OS generally go through 4 stages of functionalities extensions:
    downloaded software packages setup by the user for all users). At this point,
    the OS functionalities are marked as completed.
 4. **Personalized** - focuses on extending the OS functionalities with
-   user-specific system directories (`/home/USERNAME/.local`). This stage can
+   user-specific system directories (`/home/[USERNAME]/.local`). This stage can
    change from time-to-time across different users as it based on the
    user-only configurations.
 
