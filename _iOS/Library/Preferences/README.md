@@ -1,10 +1,13 @@
-# `Library/Preferences`
+# `/Library/Preferences`
 
 [![banner](/.internals/trademarks/banner_1200x100.svg)](#)
 
-This directory houses app-specific preference files created by the
-`NSUserDefaults` class or `CFPreferences` API.
+This is the base directory for housing all app-specific preference files created
+by the `NSUserDefaults` class or `CFPreferences` API.
 
 App **MUST NOT** create files in this directory manually.
+
+You **DEFINITELY MUST NOT** place or modify any files and folders manually here
+for avoiding breakage. Let the installed apps from Apple's AppStore handle it.
 
 The content are not backed up by iTunes and iCloud.

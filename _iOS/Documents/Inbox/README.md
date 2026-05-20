@@ -1,4 +1,4 @@
-# `Documents/Inbox`
+# `/Documents/Inbox`
 
 [![banner](/.internals/trademarks/banner_1200x100.svg)](#)
 

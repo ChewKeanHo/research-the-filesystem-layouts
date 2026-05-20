@@ -25,9 +25,6 @@ for avoiding breakage. Let the installed apps from Apple's AppStore handle it.
 
 [![banner](/.internals/trademarks/banner_1200x100.svg)](#)
 
-All libraries here are POSIX compliant registered libraries that are usable
-across all UNIX and UNIX-like OSes.
-
 It is a practice to house the files using `trademark` and `[APPNAME]`
 sub-directories pattern. This can significantly reduces the naming collision for
 common names.

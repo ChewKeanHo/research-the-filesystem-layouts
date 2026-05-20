@@ -20,4 +20,4 @@ bundle for avoiding breakage (e.g. signed signature).
 
 [![banner](/.internals/trademarks/banner_1200x100.svg)](#)
 
-Refer to [Apple Plugin Bundle Filesystem](/_MacOS.bundle).
+Refer to [Apple MacOS Plugin Bundle Filesystem](/_MacOS.bundle).

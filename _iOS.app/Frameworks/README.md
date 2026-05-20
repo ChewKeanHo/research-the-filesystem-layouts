@@ -1,10 +1,10 @@
-# `[PLUGINNAME].bundle/Contents/PlugIns`
+# `[APPNAME].app/Frameworks`
 
 [![banner](/.internals/trademarks/banner_1200x100.svg)](#)
 
-This directory houses a plugin bundle's many dependencies specifically Apple
-complied plugin bundles. A single plugin can have various resource files such as
-but not limited to statically complied library files, graphics, etc.
+This directory houses an app's many dependencies specifically Apple complied
+Frameworks. A single framework can have various resource files such as but not
+limited to statically complied library files, graphics, etc.
 
 If you are developing using XCode, then you may structure your content
 accordingly.
@@ -20,4 +20,4 @@ bundle for avoiding breakage (e.g. signed signature).
 
 [![banner](/.internals/trademarks/banner_1200x100.svg)](#)
 
-Refer to [Apple MacOS Plugin Bundle Filesystem](/_MacOS.bundle).
+Refer to [Apple iOS Framework Bundle Filesystem](/_iOS.framework).

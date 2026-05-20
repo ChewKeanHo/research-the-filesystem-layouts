@@ -13,9 +13,8 @@ the latest and current version for external to use.
 If you are developing using XCode, then you may structure your content
 accordingly.
 
-Otherwise, whether the bundle is procured from Apple AppStore or elswehere, one
-should **DEFINITELY MUST NOT** place or modify any files and folders inside the
-bundle for avoiding breakage (e.g. signed signature).
+Since `iOS` is **DISALLOWED AND PROHIBITED** to create a framework bundle in
+production, there is nothing to worry about beyond XCode development usage.
 
 
 
@@ -33,5 +32,5 @@ Other content files can be anything used by the main executable like libraries
 files, sound files, interpretable source codes, image files, icon files,
 internationalization datasets, etc.
 
-When needed, refer back [Apple MacOS Framework Bundle Filesystem](/_MacOS.framework)
+When needed, refer back [Apple iOS Framework Bundle Filesystem](/_iOS.framework)
 for its filesystem structure mapping once more.

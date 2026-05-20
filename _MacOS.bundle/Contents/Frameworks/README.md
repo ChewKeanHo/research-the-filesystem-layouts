@@ -20,4 +20,4 @@ bundle for avoiding breakage (e.g. signed signature).
 
 [![banner](/.internals/trademarks/banner_1200x100.svg)](#)
 
-Refer to [Apple MacOS.framework Bundle Filesystem](/_MacOS.framework).
+Refer to [Apple MacOS Framework Bundle Filesystem](/_MacOS.framework).

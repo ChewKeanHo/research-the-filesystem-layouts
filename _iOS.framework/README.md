@@ -2,8 +2,8 @@
 
 [![banner](/.internals/trademarks/banner_1200x100.svg)](#)
 
-This is an Apple's `MacOS` framework bundle filesystem structure. A single
-framework is a project of its own. For `MacOS`, this is a clean,
+This is an Apple's `iOS` framework bundle filesystem structure. A single
+framework is a project of its own. For `iOS`, this is a clean,
 version-controlled directories system with clever use of symbolic links.
 
 While being a framework, there is a single main entry point executable govening
@@ -15,9 +15,9 @@ throughout the development cycle.
 If you are developing using XCode, then you may structure your content
 accordingly.
 
-Otherwise, whether the bundle is procured from Apple AppStore or elswehere, one
-should **DEFINITELY MUST NOT** place or modify any files and folders inside the
-bundle for avoiding breakage (e.g. signed signature).
+Since `iOS` is **DISALLOWED AND PROHIBITED** to create a framework bundle on
+production, framework bundle is only used in XCode development as app imported
+module.
 
 
 
@@ -27,7 +27,7 @@ bundle for avoiding breakage (e.g. signed signature).
 [![banner](/.internals/trademarks/banner_1200x100.svg)](#)
 
 It is entirely upto the Apple's XCode to structure this directory. Below is
-`Mac OS X`'s structure, the `MacOS` predecessor.
+`iOS` directory structure.
 
 Each framework **MUST** have the `.framework` file extension for identification.
 
@@ -67,9 +67,6 @@ where:
             ...
          PlugIns/
             [OTHER_FRAMEWORKNAME].bundle/       # externally added plugin bundles.
-            ...
-         Helpers/                               # help app or help tools
-            README.txt
             ...
          Resources/
             Info.plist             # (Required) framework's configuration and metadata.
