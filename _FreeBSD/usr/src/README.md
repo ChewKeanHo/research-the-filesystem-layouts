@@ -27,6 +27,8 @@ will break the OS in any way. Use `/usr/local/src` or
 
 [![banner](/.internals/trademarks/banner_1200x100.svg)](#)
 
+Refer `development(7)` manual for specifications.
+
 It is a practice to house the files using `trademark` and `product`
 sub-directories pattern. This can significantly reduces the naming collision for
 common names.

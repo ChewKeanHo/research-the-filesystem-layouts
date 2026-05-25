@@ -13,6 +13,9 @@ Resources directory for functionalities extension, performing self-rescue, or
 straight up operational in resources constraint environment such as but not
 limited to OpenWRT embedded router.
 
+Due to its processing nature, one **MUST** carefully work here to prevent any
+data poisoning or losses.
+
 All files here are **ONLY** available to sysadmins (users in `wheel` group) and
 `root` account.
 

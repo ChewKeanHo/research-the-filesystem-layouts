@@ -16,6 +16,15 @@ consistently and uniformly across all the machines.
 All programs and applications here are **NOT AVAILABLE** as callable commands to
 any user. Anyone can execute them via full filepath manually.
 
+Due to its processing nature, one **MUST** carefully work here to prevent any
+data poisoning or losses.
+
+All files here are available to all users to read but **ONLY** available to
+specific user with permission, all sysadmins (user in `wheel` group), and `root`
+account to create, update, and delete.
+
+This directory is **ENTIRELY OPTIONAL** depending on the runtime OS usage.
+
 Generally, you **SHOULD NOT** place anything here **UNLESS** you are the OS
 distributor. This is to avoid any conflict with the upstream's registries that
 will break the OS in any way. Use `/usr/local/libexec` or

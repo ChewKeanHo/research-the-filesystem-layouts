@@ -6,4 +6,11 @@ This directory houses an user's downloaded files. It is a default functional
 directory where most network interacting software and services notably browsers
 expect its existence.
 
-The directory's access is **RESTRICTED TO OWNER** by default.
+Depending on the operating system's engineering specification, this directory
+can be **ENTIRELY OPTIONAL**.
+
+This directory is accessible by the owning user, `root`, and OS administrators
+(users with `wheel` permission) can access this directory.
+
+Programs **SHOULD NOT** assume any file or directory and always perform safe
+query before use.

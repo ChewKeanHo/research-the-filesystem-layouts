@@ -28,5 +28,4 @@ will break the OS in any way. Use the `pkg` command properly instead.
 
 [![banner](/.internals/trademarks/banner_1200x100.svg)](#)
 
-You must **STRICTLY** comply with the FreeBSD Ports Collections handbooks and
-manuals.
+Refer `ports(7)` manual for specifications.

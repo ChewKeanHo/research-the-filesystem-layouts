@@ -15,16 +15,20 @@ distributor installed packages (they are in `/` and `/usr` levels) allowing them
 to update the OS seamlessly and smoothly across time. This is why every setup
 here is specfically only for this machine.
 
-On some Linux UNIX-like OSs notably SystemD and UAPI, this directory is
-**UNAVAILABLE** as they shifted all user customizations entirely into user home
-directory with dedicated software like rootless package manager implementations
-like Flatpak (`$ flatpak --user install`) instead.
+Due to its processing nature, one **MUST** carefully work here to prevent any
+data poisoning or losses.
 
-All files here are available to all users.
+All files here are available to all users to read but **ONLY** available to
+specific user with permission, all sysadmins (user in `wheel` group), and `root`
+account to create, update, and delete.
+
+This directory is **ENTIRELY OPTIONAL** depending on the runtime OS usage.
 
 Generally, you **SHOULD** place your custom system-wide files here. If you wish
 do it ONLY for a single specific user, place it inside his/her
 `/home/[USERNAME]/.local` directory instead.
+
+In FreeBSD, this directory is setup by `pkg` and `ports`.
 
 
 
@@ -32,6 +36,8 @@ do it ONLY for a single specific user, place it inside his/her
 ## The Localized UNIX System Resources (`usr/local`) Directory
 
 [![banner](/.internals/trademarks/banner_1200x100.svg)](#)
+
+Refer `pkg(7)` and `ports(7)` manuals for specifications.
 
 The `/usr/local` directory is one of the foundational directory for completing
 the entire OS' functionalities. When `/usr/local` combines with the
