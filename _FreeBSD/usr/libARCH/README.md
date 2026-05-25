@@ -13,7 +13,21 @@ distributor's supplied packages. All library files' names and locations are
 registered by OS distributor. Therefore, they are available consistently and
 uniformly across all the machines.
 
-All files here are available to all users.
+This directory pattern is considered old and obselete when `x86` CPU
+architecture was migrated completely from `i386` to `amd64` architectures.
+During the migrations, both architectures are required to exist so this pattern
+was invented. Use unless absolutely necessary and only only place your own
+system-wide custom CPU architecture specific library files here (e.g. `arm64`
+library files on an `amd64` OS where they are used for cross-compilation).
+
+Due to its processing nature, one **MUST** carefully work here to prevent any
+data poisoning or losses.
+
+All files here are available to all users to read but **ONLY** available to
+specific user with permission, all sysadmins (user in `wheel` group), and `root`
+account to create, update, and delete.
+
+This directory is **ENTIRELY OPTIONAL** depending on the runtime OS usage.
 
 Generally, you **SHOULD NOT** place anything here **UNLESS** you are the OS
 distributor. This is to avoid any conflict with the upstream's registries that
@@ -22,13 +36,6 @@ will break the OS in any way. Use `/usr/local/lib[ARCH]` instead.
 Also, if this directory is used, you **SHOULD ALWAYS** utilize the main
 `/usr/lib` directory at all time. Library files can be named with the
 `[COMPILER]-[OS]-[ARCH]` triplet for identifications over there.
-
-This directory pattern is considered old and obselete when `x86` CPU
-architecture was migrated completely from `i386` to `amd64` architectures.
-During the migrations, both architectures are required to exist so this pattern
-was invented. Use unless absolutely necessary and only only place your own
-system-wide custom CPU architecture specific library files here (e.g. `arm64`
-library files on an `amd64` OS where they are used for cross-compilation).
 
 
 

@@ -15,12 +15,21 @@ only for sysadmins and root user to debug mountable transactions.
 You can place files or directory in the media directory here in accordance to
 the designated filesystem ownership and permissions.
 
+Due to its processing nature, one **MUST** carefully work here to prevent any
+data poisoning or losses.
+
+All files here are available to all users to read but **ONLY** available to
+specific user with permission, all sysadmins (user in `wheel` group), and `root`
+account to create, update, and delete.
+
 
 
 
 ## Naming Conventions
 
 [![banner](/.internals/trademarks/banner_1200x100.svg)](#)
+
+Refer to `automount(8)` and `bsdisks(8)` manuals for specifications.
 
 Each sub-directory holds a mounted device be it physical or virtual
 (e.g. decrypted partitions). The first sub-directory layer is recommended to use

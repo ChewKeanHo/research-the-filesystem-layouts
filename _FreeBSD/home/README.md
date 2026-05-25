@@ -7,8 +7,12 @@ sub-directory name is usually mapped to an user's username or user identity. The
 control is defined by `/etc/passwd` therefore it is not a compulsory rule for
 the strict username matching.
 
-Depending on the operating system (OS)'s engineering specification, this
-directory can be **ENTIRELY OPTIONAL** especially on an user-less system.
+All files here are available to all users to read but **ONLY** available to
+specific user with permission, all sysadmins (user in `wheel` group), and `root`
+account to create, update, and delete.
+
+This directory is **ENTIRELY OPTIONAL** depending on the runtime OS'
+implementations and usage especially on an user-less system.
 
 Programs **SHOULD NOT** assume any file or directory and always perform safe
 query before use.

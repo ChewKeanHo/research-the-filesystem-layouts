@@ -14,6 +14,13 @@ The goal is plain simple: boot up the OS with a hardware-software matching boot
 configurations, initialize kernel until the OS can take over for achieving
 `Minimal & Critical` functionalities stage.
 
+Due to its processing nature, one **MUST** carefully work here to prevent any
+data poisoning or losses.
+
+All files here are available to all users to read but **ONLY** available to
+specific user with permission, all sysadmins (user in `wheel` group), and `root`
+account to create, update, and delete.
+
 Generally, you **SHOULD ONLY** place bootloading programs and their
 configuration files inside this directory. Due to early boot sequences are
 hardware specific which can be very complex yet critical, this directory is

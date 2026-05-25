@@ -113,3 +113,7 @@ The following are the references sourced to construct this dataset repository:
     Apple Developer; Apple Inc.; Cupertino, California,
     United States of America; Viewed on 2026-05-20; Available at:
     https://developer.apple.com/documentation/AppClip/creating-an-app-clip-with-xcode
+31. FREEBSD; 2025; "`hier` - Miscellaneous Information Manual";
+    *FreeBSD Manual Pages*; The FreeBSD Project via The FreeBSD Community and
+    The FreeBSD Foundation; Viewed 2025-12-20; Available at:
+    https://man.freebsd.org/cgi/man.cgi?query=hier&manpath=FreeBSD+16.0-CURRENT

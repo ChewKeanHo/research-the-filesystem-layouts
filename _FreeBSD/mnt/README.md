@@ -10,3 +10,10 @@ device partition.
 
 For production deployment or permanent mounting, use `/media` base directory
 instead.
+
+Due to its processing nature, one **MUST** carefully work here to prevent any
+data poisoning or losses.
+
+All files here are available to all users to read but **ONLY** available to
+specific user with permission, all sysadmins (user in `wheel` group), and `root`
+account to create, update, and delete.

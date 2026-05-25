@@ -8,8 +8,14 @@ programs, applications, and files.
 The goal is simple: to facilitate Linux-based operating systems' (OS) programs,
 applications, and files in this OS.
 
-This directory is **ENTIRELY OPTIONAL** depending on the use of cross
-linux-based OS features.
+Due to its processing nature, one **MUST** carefully work here to prevent any
+data poisoning or losses.
+
+All files here are available to all users to read but **ONLY** available to
+specific user with permission, all sysadmins (user in `wheel` group), and `root`
+account to create, update, and delete.
+
+This directory is **ENTIRELY OPTIONAL** depending on the runtime OS usage.
 
 You **SHOULD ONLY** place distributor's registered files in here only. The first
 sub-directories layer denotes the origin OS.

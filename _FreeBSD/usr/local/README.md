@@ -15,16 +15,20 @@ distributor installed packages (they are in `/` and `/usr` levels) allowing them
 to update the OS seamlessly and smoothly across time. This is why every setup
 here is specfically only for this machine.
 
-On some Linux UNIX-like OSs notably SystemD and UAPI, this directory is
-**UNAVAILABLE** as they shifted all user customizations entirely into user home
-directory with dedicated software like rootless package manager implementations
-like Flatpak (`$ flatpak --user install`) instead.
+Due to its processing nature, one **MUST** carefully work here to prevent any
+data poisoning or losses.
 
-All files here are available to all users.
+All files here are available to all users to read but **ONLY** available to
+specific user with permission, all sysadmins (user in `wheel` group), and `root`
+account to create, update, and delete.
+
+This directory is **ENTIRELY OPTIONAL** depending on the runtime OS usage.
 
 Generally, you **SHOULD** place your custom system-wide files here. If you wish
 do it ONLY for a single specific user, place it inside his/her
 `/home/[USERNAME]/.local` directory instead.
+
+In FreeBSD, this directory is setup by `pkg` and `ports`.
 
 
 
@@ -33,21 +37,26 @@ do it ONLY for a single specific user, place it inside his/her
 
 [![banner](/.internals/trademarks/banner_1200x100.svg)](#)
 
+Refer `pkg(7)` and `ports(7)` manuals for specifications.
+
 The `/usr/local` directory is one of the foundational directory for completing
 the entire OS' functionalities. When `/usr/local` combines with the
 [Common](/Common) FHS, you get a list of basic functional directories as such:
 
 ```
-/usr/local/bin     - user supplied utilities programs and applications.
-/usr/local/etc     - user supplied configuration files.
-/usr/local/include - user supplied include files (e.g. c header files).
-/usr/local/lib     - user supplied libraries used by user customized
-                     non-critical programs and applications.
-/usr/local/sbin    - user supplied non-critical system administration
-                     programs and applications.
-/usr/local/share   - user supplied architecture independent files.
-/usr/local/src     - user supplied source files.
-/usr/local/tmp     - user supplied content temporary workspaces.
+/usr/local/bin       - user supplied utilities programs and applications.
+/usr/local/etc       - user supplied configuration files.
+/usr/local/include   - user supplied include files (e.g. c header files).
+/usr/local/lib       - user supplied libraries used by user customized
+                       non-critical programs and applications.
+/usr/local/lib[ARCH] - user supplied cross CPU architectures library files.
+/usr/local/libexec   - user supplied system daemons and system utilities
+                       executed by other programs and applications.
+/usr/local/sbin      - user supplied non-critical system administration
+                       programs and applications.
+/usr/local/share     - user supplied architecture independent files.
+/usr/local/src       - user supplied source files.
+/usr/local/tmp       - user supplied content temporary workspaces.
 ```
 
 Then, the OS can specify its specific directories such as:
@@ -55,10 +64,7 @@ Then, the OS can specify its specific directories such as:
 ```
 FreeBSD
 -------
-/usr/local/liba[ARCH] - user supplied cross CPU architectures library files.
 /usr/local/libdata    - user supplied misc. data files.
-/usr/local/libexec    - user supplied system daemons and system utilities
-                        executed by other programs and applications.
 /usr/local/www        - user supplied static web content by web servers (e.g.
                         Nginx).
 ```

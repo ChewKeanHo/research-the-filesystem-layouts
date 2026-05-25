@@ -12,7 +12,14 @@ The goal is to extend the OS' functionalities to its complete form by isolating
 OS distributor's packages away from user's system-wide OS customizations. These
 customizations, in theory, only specific to this machine instance.
 
-All files here are available to all users.
+Due to its processing nature, one **MUST** carefully work here to prevent any
+data poisoning or losses.
+
+All files here are available to all users to read but **ONLY** available to
+specific user with permission, all sysadmins (user in `wheel` group), and `root`
+account to create, update, and delete.
+
+This directory is **ENTIRELY OPTIONAL** depending on the runtime OS usage.
 
 Generally, you **SHOULD** place your own custom programs and applications here.
 It will be made available only for you.

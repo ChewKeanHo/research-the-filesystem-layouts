@@ -8,20 +8,22 @@ user-specific, programs and applications for extending the operating system
 that executables in this directory only appears specifically for this user.
 
 The main purpose of such separation is to make sure the operating system's
-update transaction goes smoothly without any conflicting files with the users'
-customization. The secondary purpose is to facilitate a way to procure programs
-and applications without using sysadmins or root account (e.g. `sudo`) that
-affects the entire OS' security.
+update transaction goes smoothly without any conflicting files with yours.
+The second purpose is to facilitate a way to procure software without requiring
+`root` or administrator(s) account for installation affecting the entire OS.
 
-Generally, you **SHOULD** place your own custom programs and applications here.
-It will be made available only for you.
+Depending on the operating system's engineering specification, this directory
+can be **ENTIRELY OPTIONAL**.
 
-All files here are available only to the owning user.
+Programs **SHOULD NOT** assume any file or directory and always perform safe
+query before use.
+
+This directory is accessible by the owning user, `root`, and OS administrators
+(users with `wheel permission).
+
+Generally, you **SHOULD** place your files here.
 
 This directory **MUST NOT** have any sub-directory.
-
-This directory is **ENTIRELY OPTIONAL** as it serves as a clean design
-structure.
 
 
 

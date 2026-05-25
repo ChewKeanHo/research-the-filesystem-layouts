@@ -1,4 +1,4 @@
-# `/home/[USERNAME]/.local`
+# `/root/.local`
 
 [![banner](/.internals/trademarks/banner_1200x100.svg)](#)
 
@@ -7,26 +7,23 @@ This directory houses all user-specific system directory with its own
 operating system (OS)'s functionalities from *Complete* stage to *Personalized*
 stage.
 
-The goal is to extend the complete OS for this specific user (e.g. his/her own
-programs, configurations, etc) without affecting the OS' *Complete* system
-functionalities. Different user has different `.local` configurations and the
-OS will personalize for that user.
+The goal is to extend the complete OS for `root` account without affecting the
+OS' *Complete* system functionalities. It has its own `.local` configurations
+and the OS will personalize for this account.
 
 Depending on the operating system's engineering specification, this directory
 can be **ENTIRELY OPTIONAL**.
 
-All files here are available only to the `root` account.
+**Only `root` and administrators (users with `wheel` permission) can access the
+directory**.
 
 Programs **SHOULD NOT** assume any file or directory and always perform safe
 query before use.
 
-Generally, you **SHOULD AND EXTREMELY ENCOURAGED** to place your programs,
-applications, and files here. All of them are only available for you and you
-only. The sole reason with the split between the OS and your `.local` filesystem
-is to ensure you **DO NOT** interfere with the OS at all while providing you
-freedom to customize your experiences. Moreover, **this setup is ROOTLESS**
-(does not need root or system adminstrators (sysadmin) privileges) so you know
-your setup only affects YOU; not everyone using the OS or the OS itself.
+Generally, unless absolute necessary, you **SHOULD NOT** place anything here
+**UNLESS** you are the OS distributor. This is to avoid any conflict with the
+upstream's registries that will break the OS in any way. Use `/home/[USERNAME]`
+instead.
 
 On some Linux UNIX-like OSs notably SystemD-based, Red Hat, and Fedora; this
 directory is heavily used as they shifted all user customizations into here with
@@ -46,7 +43,7 @@ personalized it just for this user. The combination happens inside a `.local`
 sub-directory of this directory. The commonly seen structures would be:
 
 ```
-/home/[USERNAME]/.local/
+/root/.local/
   bin/
   etc/
   include/
