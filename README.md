@@ -1,14 +1,14 @@
-# The Filesystem Hierarchy Layouts | (Holloway) Chew, Kean Ho's Knowledge Research
+# The Filesystem Layouts | (Holloway) Chew, Kean Ho's Knowledge Research
 
 [![banner](/.internals/trademarks/banner_1200x100.svg)](#)
 
-Having trouble working with filesystems hierarchy layouts especially those that
+Having trouble working with filesystem hierarchy layouts especially those that
 has standardized regulations like UNIX and Windows? Are you looking for some
 design references that are comforming and portable to as many operating as
 possible? This is the right research dataset.
 
-At (Holloway) Chew, Kean Ho's The Filesystem Hierarchy Layouts Research Project,
-tech volunteers and me are continuously updating this repository for abstracting
+At (Holloway) Chew, Kean Ho's The Filesystem Layouts Research Project, tech
+volunteers and me are continuously updating this repository for abstracting
 common filesystems and directory layouts for various purposes. The research
 goals are simple:
 
@@ -25,10 +25,10 @@ goals are simple:
    directory layout.
 
 This dataset is a 100% deterministic with futuristic directive concequencies.
-It is **100% human-made. Direct artificial intelligences (A.I) contributions
-(e.g. vibe coding) IS STRICTLY PROHIBITED**. Only use A.I. for
+It is **100% human-made and direct artificial intelligences (A.I) contributions
+(e.g. vibe coding) IS STRICTLY PROHIBITED**. Only A.I. usage is for
 non-concequential tasks like scouting for data source materials across the
-broken search engines.
+broken search engines and language corrections (e.g. grammar).
 
 > [!WARNING]
 >
@@ -43,7 +43,7 @@ broken search engines.
 
 To use this dataset, first setup the markdown rendering `git` repository
 (e.g. its GitHub mirror:
-https://github.com/ChewKeanHo/research-the-filesystem-hierarchy-layouts). There
+https://github.com/ChewKeanHo/research-the-filesystem-layouts). There
 you can read the descriptions of each directory. For dataset, you need an UNIX
 program called `tree`. Then execute the command:
 
@@ -66,23 +66,14 @@ Any specific filesystem hierarchies are prefixed with an underscore (`_`). These
 are dedicated directories for consolidating their respective specific designs
 prior to `/UNIX` abstractions. Among them are:
 
-* **FreeBSD Filesystems Hierarchy** - the [/_FreeBSD](/_FreeBSD) UNIX-like OS.
-* **Linux Filesystems Hierarchy** - the [/_Linux](/_Linux)-based UNIX-like OS.
-  Note that this consolidates all kinds of Linux-based OSes including but not
-  limited to SystemD, FreeDesktop.org, Red Hat, Debian, Devuan, Void Linux,
-  Fedora, etc.
-* **Project Directory Structures** - the [/_Project](/_Project) commonly used
-  for small modular project repository (e.g. `git` project repository).
+* **FreeBSD Filesystem** - the [/_FreeBSD](/_FreeBSD) UNIX-like OS.
+* **Linux Filesystem** - the [/_Linux](/_Linux)-based UNIX-like OS.
 
-
-
-
-## Design Sources & References
-
-[![banner](/.internals/trademarks/banner_1200x100.svg)](#)
-
-1. Please refer to [REFERENCES.md](REFERENCES.md) for source and references
-   list.
+> [!IMPORTANT]
+>
+> For Linux, it is the consolidated version of all its distributions including
+> but not limited to SystemD, FreeDesktop.org, Red Hat, Debian, Devuan,
+> Void Linux, Fedora, etc.
 
 
 
@@ -131,6 +122,15 @@ $ gpg --no-default-keyring --keyring /path/to/public.gpg --verify /path/to/file.
 ```
 $ openssl dgst -verify /path/to/pubkey.pem -signature /path/to/file.sig /path/to/file
 ```
+
+
+
+## Design Sources & References
+
+[![banner](/.internals/trademarks/banner_1200x100.svg)](#)
+
+1. Please refer to [REFERENCES.md](REFERENCES.md) for source and references
+   list.
 
 
 
@@ -184,11 +184,11 @@ Unless otherwise specified in writing, you **MUST** attribute back to the
 creator(s) as follows:
 
 ```
-Title: The Filesystem Hierarchy Layouts
+Title: The Filesystem Layouts
 Creators: (Holloway) Chew, Kean Ho
 Packaged-By: (Holloway) Chew, Kean Ho
 Contact: hello@chewkeanho.com
-SKU: chewkeanho-research-the-filesystem-hierarchy-layouts
+SKU: chewkeanho-research-the-filesystem-layouts
 UUID: 3113F0A2-61BD-449C-BC0F-DE4C09997AC6
 DOI: 10.5281/zenodo.17864564
 License: Creative Commons Attribution-NoDerivatives 4.0 International License (https://creativecommons.org/licenses/by-nd/4.0)
