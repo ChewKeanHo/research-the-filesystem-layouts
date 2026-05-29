@@ -6,4 +6,11 @@ This directory houses an user's files displayable onto the Desktop (screen).
 Hidden files by default are hidden unless the user configures it to be shown
 explictly.
 
-The directory's access is **RESTRICTED TO OWNER** by default.
+Depending on the operating system's engineering specification, this directory
+can be **ENTIRELY OPTIONAL**.
+
+This directory is accessible by the owning user, `root`, and OS administrators
+(users with `wheel` permission) can access this directory.
+
+Programs **SHOULD NOT** assume any file or directory and always perform safe
+query before use.

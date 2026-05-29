@@ -8,7 +8,8 @@ On many OSes design, this directory gets cleared and cleaned on boot up.
 Programs **SHOULD NOT** assume any file and directory here and **SHOULD** always
 practice safe-querying before use.
 
-All files here are available to all users.
+All files here are available to all users and is restricted based on UNIX
+filesystem permissions.
 
 Also, it is recommended to clean up the temporary files before **AND** after use
 to avoid post-use blaming or corrupted data usage.

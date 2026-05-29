@@ -7,9 +7,11 @@ This directory houses all operating system's (OS) user email files.
 Due to its processing nature, one **MUST** carefully work here to prevent any
 data poisoning or losses.
 
-All files here are available to all users.
+All files here are available to all users to read but **ONLY** available to
+specific user with permission, all sysadmins (user in `wheel` group), and `root`
+account to create, update, and delete.
 
-This directory is **ENTIRELY OPTIONAL** depending on the OS' uses.
+This directory is **ENTIRELY OPTIONAL** depending on the runtime OS usage.
 
 Programs **SHOULD NOT** assume any file and directory here and **SHOULD** always
 practice safe-querying before use.
@@ -33,17 +35,13 @@ mailing services the OS is using.
 Here are the `trademark` and `product` naming:
 
 ```
-/var/
-  spool/
-    mail/
-      trademark_product
-      ...
+/var/spool/mail/
+  trademark_product
+  ...
 
 OR
 
-/var/
-  spool/
-    mail/
-      product
-      ...
+/var/spool/mail/
+  product
+  ...
 ```

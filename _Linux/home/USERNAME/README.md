@@ -4,12 +4,20 @@
 
 This directory houses all user data directory. Depending on the operating
 system's engineering specification, this directory can be **ENTIRELY OPTIONAL**.
+
 Each user data directory's ownership and permissions are set to the owning
 user itself. **Only `root` and administrators (users with `wheel` permission)
 can access the directory**.
 
+This directory is accessible by the owning user, `root`, and OS administrators
+(users with `wheel` permission) can access this directory.
+
 Programs **SHOULD NOT** assume any file or directory and always perform safe
 query before use.
+
+This directory is **ENTIRELY OPTIONAL** depending on the runtime OS usage.
+
+Generally, you **SHOULD** place your files here.
 
 
 

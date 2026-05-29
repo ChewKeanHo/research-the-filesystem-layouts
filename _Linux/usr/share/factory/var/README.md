@@ -6,13 +6,25 @@ This directory houses all operating system's (OS) multi-purpose transient
 variable data files like log files, data files, saved games files, databases,
 states files, etc.
 
-Some data files are sharable while some are not. Programs should check the
-file's ownership and access permissions before performing any action.
+The goal is to extend the OS' functionalities all the way to its OS
+distributor's supplied packages. All files names and locations are registered by
+OS distributor. Therefore, they are available consistently and uniformly across
+all the machines.
 
-All files here are available to all users.
+Due to its processing nature, one **MUST** carefully work here to prevent any
+data poisoning or losses.
 
-Generally, you **SHOULD ONLY** place data files used by the programs
-and applications here.
+All files here are available to all users to read but **ONLY** available to
+specific user with permission, all sysadmins (user in `wheel` group), and `root`
+account to create, update, and delete.
+
+Programs **SHOULD NOT** assume any file and directory here and **SHOULD** always
+practice safe-querying before use.
+
+Generally, you **SHOULD NOT** place anything here **UNLESS** you are the OS
+distributor. This is to avoid any conflict with the upstream's registries that
+will break the OS in any way. Keep in mind that everything in this directory
+resets the root filesystems to factory default settings.
 
 This directory is a factory reset default configurations files that will
 overwrite the `/var` directory when triggered.

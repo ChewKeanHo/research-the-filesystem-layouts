@@ -6,14 +6,15 @@ This directory houses all operating system's (OS) `arpwatch` databases and
 control files. Due to its processing nature, one **MUST** carefully work here to
 prevent any data poisoning or losses.
 
-This directory is **ENTIRELY OPTIONAL** depending on the OS' engineering
-specifications and `arpwatch` being used. In Red Hat Linux, it is by default
-for arp spoofing monitoring.
+This directory is **ENTIRELY OPTIONAL** depending on the runtime OS usage. In
+Red Hat Linux, it is by default for arp spoofing monitoring.
 
-All files here are available to all users.
+Due to its processing nature, one **MUST** carefully work here to prevent any
+data poisoning or losses.
 
-This directory is **ENTIRELY OPTIONAL** depending on the OS' engineering
-specifications.
+All files here are available to all users to read but **ONLY** available to
+specific user with permission, all sysadmins (user in `wheel` group), and `root`
+account to create, update, and delete.
 
 Programs **SHOULD NOT** assume any file and directory here and **SHOULD** always
 practice safe-querying before use.
@@ -25,4 +26,4 @@ practice safe-querying before use.
 
 [![banner](/.internals/trademarks/banner_1200x100.svg)](#)
 
-Consult `arpwatch` manual when used.
+Refer `arpwatch` manual for specification.

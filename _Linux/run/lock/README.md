@@ -7,17 +7,15 @@ This directory houses all operating system's (OS) serial devices' lock files.
 Due to its processing nature, one **MUST** carefully work here to prevent any
 data poisoning or losses.
 
-All files here are available to all users.
-
-This directory is **ENTIRELY OPTIONAL** depending on the OS' engineering
-specifications.
+All files here are available to all users to read but **ONLY** available to
+specific user with permission, all sysadmins (user in `wheel` group), and `root`
+account to create, update, and delete.
 
 Programs **SHOULD NOT** assume any file and directory here and **SHOULD** always
 practice safe-querying before use.
 
-In some Linux OSes like Red Hat Linux, SystemD, and UAPI, this directory is
-**REPLACING** `/var/lock`. Some UNIX-like OSes like FreeBSD uses
-`/var/spool/lock` directory instead.
+In some Linux-based OSes like Red Hat Linux, SystemD, and UAPI, this directory
+is **REPLACING** `/var/lock` for reducing total numbers of used `tmpfs`.
 
 
 

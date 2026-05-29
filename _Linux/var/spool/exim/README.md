@@ -7,10 +7,11 @@ This directory houses all operating system's (OS) `exim` email files.
 Due to its processing nature, one **MUST** carefully work here to prevent any
 data poisoning or losses.
 
-All files here are available to all users.
+All files here are available to all users to read but **ONLY** available to
+specific user with permission, all sysadmins (user in `wheel` group), and `root`
+account to create, update, and delete.
 
-This directory is **ENTIRELY OPTIONAL** depending on `exim` being used in the
-OS.
+This directory is **ENTIRELY OPTIONAL** depending on the runtime OS usage.
 
 Programs **SHOULD NOT** assume any file and directory here and **SHOULD** always
 practice safe-querying before use.
@@ -22,4 +23,4 @@ practice safe-querying before use.
 
 [![banner](/.internals/trademarks/banner_1200x100.svg)](#)
 
-Refer `exim` manual.
+Refer `exim` manual for specifications.

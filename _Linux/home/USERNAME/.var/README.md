@@ -9,8 +9,11 @@ Otherwise, modern OSes symlinked it to the `/home/[USERNAME]/.local/var`
 directory, a `.local` common directory for consistency with the filesystem
 hierarchy standards.
 
-Depending on the OS' engineering specification, this directory can be
-**ENTIRELY OPTIONAL**.
+Depending on the operating system's engineering specification, this directory
+can be **ENTIRELY OPTIONAL**.
+
+This directory is accessible by the owning user, `root`, and OS administrators
+(users with `wheel` permission) can access this directory.
 
 Programs **SHOULD NOT** assume any file or directory and always perform safe
 query before use.
