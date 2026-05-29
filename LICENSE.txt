@@ -1,4 +1,4 @@
-Copyright 2025 The Filesystem Hierarchy Layouts Project Team (https://github.com/ChewKeanHo/research-the-filesystem-hierarchy-layouts)
+Copyright 2025 The Filesystem Layouts Project Team (https://github.com/ChewKeanHo/research-the-filesystem-layouts)
 
 The above unified aliases have one or more actual legal entities listed outside
 of this document: (1) 'CREATORS.txt' or 'AUTHORS.txt'; and

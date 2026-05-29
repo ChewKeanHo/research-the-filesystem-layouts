@@ -1,12 +1,12 @@
 cff-version: "1.2.0"
 type: "dataset"
 date-released: "2025-11-30"
-title: "Filesystems Hierarchy Layouts Research Project"
+title: "The Filesystems Layouts"
 version: "1.0.0"
 license: "CC-BY-ND-4.0"
-repository: "https://github.com/ChewKeanHo/research-filesystems-hierarchy"
-repository-code: "https://github.com/ChewKeanHo/research-filesystems-hierarchy"
-repository-artifact: "https://github.com/ChewKeanHo/research-filesystems-hierarchy"
+repository: "https://github.com/ChewKeanHo/research-filesystem-layouts"
+repository-code: "https://github.com/ChewKeanHo/research-filesystem-layouts"
+repository-artifact: "https://github.com/ChewKeanHo/research-filesystem-layouts"
 url: "https://doi.org/10.5281/zenodo.17864564"
 contact:
   - affiliation: "(Holloway) Chew, Kean Ho"
@@ -15,48 +15,50 @@ contact:
     email: "research@chewkeanho.com"
     website: "https://research.chewkeanho.com"
 abstract: |-
-  Having trouble working with filesystems hierarchy layouts especially those
-  that has standardized regulations like UNIX and Windows? Are you looking
-  for some design references that are comforming and portable to as many
-  operating as possible? This is the right research dataset.
+  Having trouble working with filesystem hierarchy layouts especially those
+  that has standardized regulations like UNIX and Windows? Are you looking for
+  some design references that are comforming and portable to as many operating
+  as possible? This is the right research dataset.
 
-  At (Holloway) Chew, Kean Ho's Filesystems Hierarchy Layouts Research
-  Project, tech volunteers and me are continuously updating this repository
-  for abstracting common filesystems and directory layouts for various
-  purposes. The research goals are simple:
+  At (Holloway) Chew, Kean Ho's The Filesystem Layouts Research Project, tech
+  volunteers and me are continuously updating this repository for abstracting
+  common filesystems and directory layouts for various purposes. The research
+  goals are simple:
 
   1. **Maximizing Compatibilities, Minimizing Conflicts** - analyzes and
      abstracts various standards for common patterns. Through these patterns,
-     new projects can maximize inter-compatibilities across multiple operating
-     systems and minimizing conflicts; AND
+     new projects can maximize inter-compatibilities and minimizing conflicts
+     across multiple operating systems; AND
   2. **Unifying Filesystems** - With common patterns in filesystems and
      directory organizations, packaging software for end-user can be simplified
-     and unified for maintenances, automations, documentations, and
-     communitions sakes; AND
+     and unified for easier and maintainable maintenances works, automations,
+     documentations, and communitions sakes; AND
   3. **Solid and Hygienic Design References For Project Structuring** -
      something clean and reliable to refer (not a rule to enforce) when
      designing a project directory layout.
 
   This dataset is a 100% deterministic with futuristic directive concequencies.
-  It is **100% human-made. Direct artificial intelligences (A.I) contributions
-  (e.g. vibe coding) IS STRICTLY PROHIBITED**. Only use A.I. for
-  non-concequential tasks like scouting for data source materials across the
-  broken search engines.
+  It is **100% human-made and direct artificial intelligences (A.I)
+  contributions (e.g. vibe coding) IS STRICTLY PROHIBITED**. Only A.I. usage is
+  for non-concequential tasks like scouting for data source materials across the
+  broken search engines and language corrections (e.g. grammar).
 
-  **REMEMBER: THESE ARE DESIGN REFERENCES; NOT RELIGIOUS RULES**. In other
-  words, they are **opinions**.
-
-  **DO NOT ATTEMPT TO RELIGIOUSLY ENFORCE** your project layouts by pointing
-  back to this project. **IN NO WAY** this project is encourages anyone to
-  adhere opinions.
-
-  **Fanatism destroys**. Please act responsbily and sensibly.
+  > [!WARNING]
+  >
+  > **REMEMBER: THESE ARE DESIGN REFERENCES; NOT RELIGIOUS RULES**. In other
+  > words, they are **opinions**.
+  >
+  > **DO NOT ATTEMPT TO RELIGIOUSLY ENFORCE** your project layouts by pointing
+  > back to this project. **IN NO WAY** this project is encourages anyone to
+  > adhere opinions.
+  >
+  > **Fanaticism destroys**. Please act responsbily and sensibly.
 
   To use this dataset, first setup the markdown rendering `git` repository
   (e.g. its GitHub mirror:
-  https://github.com/ChewKeanHo/researches-filesystems-hierarchy). There you can
-  read the descriptions of each directory. For dataset, you need an UNIX program
-  called `tree`. Then execute the command:
+  https://github.com/ChewKeanHo/research-the-filesystem-layouts). There
+  you can read the descriptions of each directory. For dataset, you need an UNIX
+  program called `tree`. Then execute the command:
 
   ```
   $ tree -a -d path/to/TARGET/
@@ -77,13 +79,14 @@ abstract: |-
   These are dedicated directories for consolidating their respective specific
   designs prior to `/UNIX` abstractions. Among them are:
 
-  * **FreeBSD Filesystems Hierarchy** - the [/_FreeBSD](/_FreeBSD) UNIX-like OS.
-  * **Linux Filesystems Hierarchy** - the [/_Linux](/_Linux)-based UNIX-like OS.
-    Note that this consolidates all kinds of Linux-based OSes including but not
-    limited to SystemD, FreeDesktop.org, Red Hat, Debian, Devuan, Void Linux,
-    Fedora, etc.
-  * **Project Directory Structures** - the [/_Project](/_Project) commonly used
-    for small modular project repository (e.g. `git` project repository).
+  * **FreeBSD Filesystem** - the [/_FreeBSD](/_FreeBSD) UNIX-like OS.
+  * **Linux Filesystem** - the [/_Linux](/_Linux)-based UNIX-like OS.
+
+  > ![IMPORTANT]
+  >
+  > For Linux, it is the consolidated version of all its distributions including
+  > but not limited to SystemD, FreeDesktop.org, Red Hat, Debian, Devuan,
+  > Void Linux, Fedora, etc.
 message: |-
   Please cite and reference this repository accordingly.
 authors:
@@ -99,16 +102,17 @@ identifiers:
     value: "10.5281/zenodo.17864564"
     description: "(General) DOI Identifier"
   - type: other
-    value: "chewkeanho-research-filesystems-hierarchy"
+    value: "chewkeanho-research-the-filesystem-layouts"
     description: "Product SKU Identifier"
   - type: other
     value: "3113F0A2-61BD-449C-BC0F-DE4C09997AC6"
     description: "Product UUID Identifier"
 keywords:
-  - "filesystems hierarchy standards"
-  - "filesystems hierarchy"
+  - "filesystem hierarchy standards"
+  - "filesystem hierarchy"
+  - "filesystem layouts"
   - "directory layouts"
-  - "filesystems directory layouts"
+  - "filesystem directory layouts"
   - "continuous developed research"
   - "self-improving research"
   - "independent research"
