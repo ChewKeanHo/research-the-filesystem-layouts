@@ -20,7 +20,15 @@ On some Linux UNIX-like OSs notably SystemD and UAPI, this directory is
 directory with dedicated software like rootless package manager implementations
 (e.g. `$ flatpak --user install`) instead.
 
-All files here are available to all users.
+Due to its processing nature, one **MUST** carefully work here to prevent any
+data poisoning or losses.
+
+All files here are available to all users to read but **ONLY** available to
+specific user with permission, all sysadmins (user in `wheel` group), and `root`
+account to create, update, and delete.
+
+Programs **SHOULD NOT** assume any file and directory here and **SHOULD** always
+practice safe-querying before use.
 
 Generally, you **SHOULD** place your custom system-wide files here. If you wish
 do it ONLY for a single specific user, place it inside his/her
@@ -38,24 +46,19 @@ the entire OS' functionalities. When `/usr/local` combines with the
 [Common](/Common) FHS, you get a list of basic functional directories as such:
 
 ```
-/usr/local/bin     - user supplied utilities programs and applications.
-/usr/local/etc     - user supplied configuration files.
-/usr/local/include - user supplied include files (e.g. c header files).
-/usr/local/lib     - user supplied libraries used by user customized
-                     non-critical programs and applications.
-/usr/local/sbin    - user supplied non-critical system administration
-                     programs and applications.
-/usr/local/share   - user supplied architecture independent files.
-/usr/local/src     - user supplied source files.
-/usr/local/tmp     - user supplied content temporary workspaces.
-```
-
-Then, the OS can specify its specific directories such as:
-
-```
-/usr/local/liba[ARCH] - user supplied cross CPU architectures library files.
-/usr/local/libexec    - Unused by majority OS distributor. Red Hat Linux does
-                        use this directory.
+/usr/local/bin       - user supplied utilities programs and applications.
+/usr/local/etc       - user supplied configuration files.
+/usr/local/include   - user supplied include files (e.g. c header files).
+/usr/local/lib       - user supplied libraries used by user customized
+                       non-critical programs and applications.
+/usr/local/lib[ARCH] - user supplied cross CPU architectures library files.
+/usr/local/libexec   - Unused by majority OS distributor. Red Hat Linux does
+                       use this directory.
+/usr/local/sbin      - user supplied non-critical system administration
+                       programs and applications.
+/usr/local/share     - user supplied architecture independent files.
+/usr/local/src       - user supplied source files.
+/usr/local/tmp       - user supplied content temporary workspaces.
 ```
 
 Feel free to explore all the sub-directories. When it's done. Head over

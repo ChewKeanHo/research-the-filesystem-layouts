@@ -12,18 +12,26 @@ The goal is to extend the OS' functionalities to its complete form by isolating
 OS distributor's packages away from user's system-wide OS customizations. These
 customizations, in theory, only specific to this machine instance.
 
-All files here are available to all users.
-
-Generally, you **SHOULD ALWAYS** utilize the main `/usr/local/lib` directory at
-all time. Library files can be named with the `[COMPILER]-[OS]-[ARCH]` triplet
-for identifications over there.
-
 This directory pattern is considered old and obselete when `x86` CPU
 architecture was migrated completely from `i386` to `amd64` architectures.
 During the migrations, both architectures are required to exist so this pattern
 was invented. Use unless absolutely necessary and only only place your own
 system-wide custom CPU architecture specific library files here (e.g. `arm64`
 library files on an `amd64` OS where they are used for cross-compilation).
+
+Due to its processing nature, one **MUST** carefully work here to prevent any
+data poisoning or losses.
+
+All files here are available to all users to read but **ONLY** available to
+specific user with permission, all sysadmins (user in `wheel` group), and `root`
+account to create, update, and delete.
+
+Programs **SHOULD NOT** assume any file and directory here and **SHOULD** always
+practice safe-querying before use.
+
+Generally, you **SHOULD ALWAYS** utilize the main `/usr/local/lib` directory at
+all time. Library files can be named with the `[COMPILER]-[OS]-[ARCH]` triplet
+for identifications over there.
 
 In many Linux OSes like SystemD and UAPI, this directory is
 **DEPRECATED AND REMOVED** in favor of using `/home/[USERNAME]/.local/lib[ARCH]`

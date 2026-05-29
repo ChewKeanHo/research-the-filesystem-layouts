@@ -5,7 +5,7 @@
 This is the base directory for housing system administrators (sysadmins) only
 critical programs and applications of an operating system (OS) to function
 properly and minimally without any mounting (e.g. `/usr` is not mounted or
-absent). This means it can operate in `Emergency Mode` mode.
+absent). This means it can operate in `Emergency Mode`.
 
 The goal is to have minimally sufficient programs enough for basic
 functionalities to perfrom critical tasks like mounting `/usr` UNIX System
@@ -13,8 +13,14 @@ Resources directory for functionalities extension, performing self-rescue, or
 straight up operational in resources constraint environment such as but not
 limited to OpenWRT embedded router.
 
+Due to its processing nature, one **MUST** carefully work here to prevent any
+data poisoning or losses.
+
 All files here are **ONLY** available to sysadmins (users in `wheel` group) and
 `root` account.
+
+Programs **SHOULD NOT** assume any file and directory here and **SHOULD** always
+practice safe-querying before use.
 
 In some UNIX-like OSes like Oracle's Solaris (first to transform back in 2012)
 and Red Hat's Fedora (second to transform back in 2023), due to `/usr` is always

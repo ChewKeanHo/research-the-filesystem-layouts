@@ -2,22 +2,22 @@
 
 [![banner](/.internals/trademarks/banner_1200x100.svg)](#)
 
-This is the base directory for housing user's system-wide, custom supplied,
-non-critical, font files to extend the operating system (OS)'s functionalities
-from *Full Catalogue* stage to *Complete* stage. This means it can operate in
-both `Multi-User` mode in BSD realm or `Full Mode` in Linux realm.
+This is the base directory for housing operating system (OS)'s system-wide,
+OS distributor supplied, non-critical, font files to extend the OS'
+functionalities from *Critical & Minimal* stage to *Full Catalogue* stage. This
+means it can operate in both `Multi-User` mode in BSD realm or `Full Mode` in
+Linux realm.
 
-The goal is to extend the OS' functionalities to its complete form by isolating
-OS distributor's packages away from user's system-wide OS customizations. These
-customizations, in theory, only specific to this machine instance.
+The goal is to extend the OS' functionalities all the way to its OS
+distributor's supplied packages. All font files' names and locations are
+registered by OS distributor. Therefore, they are available consistently and
+uniformly across all the machines.
 
-All files here are available to all users.
+All files here are available to all users to read but **ONLY** available to all
+sysadmins (user in `wheel` group) and root account to create, update, and
+delete.
 
 Generally, you **SHOULD** place your own system-wide custom font files here.
-
-In many Linux OSes like SystemD and UAPI, this directory is
-**DEPRECATED AND REMOVED** in favor of using
-`/home/[USERNAME]/.local/share/fonts` instead.
 
 
 
@@ -33,7 +33,7 @@ common names.
 Here are the examples:
 
 ```
-/usr/local/share/fonts/
+/usr/share/fonts/
   trademark/
     product1/
       font1.tff
@@ -47,7 +47,7 @@ Here are the examples:
 
 # OR
 
-/usr/local/share/fonts/
+/usr/share/fonts/
   product1/
     font1.tff
     LICENSE.txt

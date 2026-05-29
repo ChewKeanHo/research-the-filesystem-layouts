@@ -13,7 +13,15 @@ Resources directory for functionalities extension, performing self-rescue, or
 straight up operational in resources constraint environment such as but not
 limited to OpenWRT embedded router.
 
-All files here are available to all users.
+Due to its processing nature, one **MUST** carefully work here to prevent any
+data poisoning or losses.
+
+All files here are available to all users to read but **ONLY** available to
+specific user with permission, all sysadmins (user in `wheel` group), and `root`
+account to create, update, and delete.
+
+Programs **SHOULD NOT** assume any file and directory here and **SHOULD** always
+practice safe-querying before use.
 
 In some UNIX-like OSes like Oracle's Solaris (first to transform back in 2012)
 and Red Hat's Fedora (second to transform back in 2023), due to `/usr` is always
@@ -35,9 +43,6 @@ and use `/usr/lib` exclusively instead.
 ## Naming Conventions
 
 [![banner](/.internals/trademarks/banner_1200x100.svg)](#)
-
-All libraries here are POSIX compliant registered libraries that are usable
-across all UNIX and UNIX-like OSes.
 
 It is a practice to house the files using `trademark` and `product`
 sub-directories pattern. This can significantly reduces the naming collision for

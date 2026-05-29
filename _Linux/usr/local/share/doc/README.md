@@ -3,10 +3,10 @@
 [![banner](/.internals/trademarks/banner_1200x100.svg)](#)
 
 This is the base directory for housing user's system-wide, custom supplied,
-non-critical, document files (e.g. man pages) to extend the operating system
-(OS)'s functionalities from *Full Catalogue* stage to *Complete* stage. This
-means it can operate in both `Multi-User` mode in BSD realm or `Full Mode` in
-Linux realm.
+non-critical, document files (e.g. PDF, text README) to extend the operating
+system (OS)'s functionalities from *Full Catalogue* stage to *Complete* stage.
+This means it can operate in both `Multi-User` mode in BSD realm or `Full Mode`
+in Linux realm.
 
 The goal is to extend the OS' functionalities to its complete form by isolating
 OS distributor's packages away from user's system-wide OS customizations. These
@@ -15,10 +15,6 @@ customizations, in theory, only specific to this machine instance.
 All files here are available to all users.
 
 Generally, you **SHOULD** place your own system-wide custom document files here.
-
-In many Linux OSes like SystemD and UAPI, this directory is
-**DEPRECATED AND REMOVED** in favor of using `/home/[USERNAME]/.local/share/doc`
-instead.
 
 
 
@@ -39,12 +35,10 @@ Here are the examples:
     product1/
       program.pdf
       program.txt
-      program.1
       ...
     product2/
       program.pdf
       program.txt
-      program.1
       ...
     ...
 
@@ -54,12 +48,10 @@ Here are the examples:
   product1/
     program.pdf
     program.txt
-    program.1
     ...
   product2/
     program.pdf
     program.txt
-    program.1
     ...
   ...
 ```

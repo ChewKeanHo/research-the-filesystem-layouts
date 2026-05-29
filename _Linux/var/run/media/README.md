@@ -16,8 +16,8 @@ You can place files or directory in the media directory here in accordance to
 the designated filesystem ownership and permissions.
 
 In majority of Linux-based OSes, this directory **IS REPLACED BY** `/media`
-directory. For some like Red Hat Linux or Fedora, this directory replaces
-`/var/media` and `/media` directory.
+directory. For some like Red Hat Linux or Fedora, this directory is symlinked
+from `/media` and to `/var/media` directories.
 
 
 

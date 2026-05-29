@@ -19,6 +19,13 @@ In majority of Linux-based OSes, this directory **IS REPLACED BY** `/media`
 directory. For some like Red Hat Linux or Fedora, this directory was replaced as
 `/var/run/media` directory instead.
 
+All files here are available to all users depending on access permissions.
+
+This directory is **ENTIRELY OPTIONAL** depending on the runtime OS usage.
+
+Programs **SHOULD NOT** assume any file and directory here and **SHOULD** always
+practice safe-querying before use.
+
 
 
 

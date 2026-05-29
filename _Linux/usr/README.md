@@ -9,6 +9,16 @@ sharable but read-only for preventing unwanted temperment.
 The goal is to expand the OS' functionalities from *Minimum & Critical* stage to
 *Full Catalogue* stage.
 
+Due to its processing nature, one **MUST** carefully work here to prevent any
+data poisoning or losses.
+
+All files here are available to all users to read but **ONLY** available to
+specific user with permission, all sysadmins (user in `wheel` group), and `root`
+account to create, update, and delete.
+
+Programs **SHOULD NOT** assume any file and directory here and **SHOULD** always
+practice safe-querying before use.
+
 
 
 
@@ -27,6 +37,9 @@ filesystems, you get a list of basic functional directories as such:
                      files).
 /usr/lib           - OS distributor's supplied libraries used by non-critical
                      programs and applications.
+/usr/lib[ARCH]     - OS distributor's cross CPU architectures library files.
+/usr/libexec       - OS distributor's supplied system daemons and system
+                     utilities executed by other programs and applications.
 /usr/sbin          - OS distributor's supplied non-critical system
                      administration programs and applications.
 /usr/share         - OS distributor's supplied architecture independent files.
@@ -41,9 +54,6 @@ various system roles:
                      Linux does use this directory.
 /usr/kerberos      - Unused by many OS distributors. Red Hat Linux does use
                      this directory.
-/usr/liba[ARCH]    - OS distributor's cross CPU architectures library files.
-/usr/libexec       - OS distributor's supplied system daemons and system
-                     utilities executed by other programs and applications.
 /usr/local         - local user-installed system-wide utilities programs and
                      applications.
 /usr/share/factory - Unused by many OS distributors. SystemD uses this for
