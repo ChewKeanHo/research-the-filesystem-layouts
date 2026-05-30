@@ -117,3 +117,7 @@ The following are the references sourced to construct this dataset repository:
     *FreeBSD Manual Pages*; The FreeBSD Project via The FreeBSD Community and
     The FreeBSD Foundation; Viewed 2025-12-20; Available at:
     https://man.freebsd.org/cgi/man.cgi?query=hier&manpath=FreeBSD+16.0-CURRENT
+32. MICROSOFT; 2026; "Recognized environment variables"; *Windows - Deployment*;
+    Microsoft Corporation; Washington, United States of America; Viewed on
+    2026-05-31; Available at:
+    https://learn.microsoft.com/en-us/windows/deployment/usmt/usmt-recognized-environment-variables

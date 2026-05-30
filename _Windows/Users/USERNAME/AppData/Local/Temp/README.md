@@ -15,6 +15,11 @@ update, and delete.
 Generally, you **SHOULD NOT** place any files in here unless you are a Microsoft
 Windows OS developer.
 
+This directory is accessible via the the following environment variables:
+
+* `%TEMP%`
+* `%TMP%`
+
 
 
 

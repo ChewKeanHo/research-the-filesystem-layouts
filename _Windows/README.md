@@ -9,6 +9,10 @@ directories instead of structuring the directory in a specific pattern.
 Therefore, the layout here are specifically analyzed based on a common drive
 (e.g. `C:\`) single flat directory installation.
 
+This directory is accessible via the the following environment variables:
+
+* `%SYSTEMDRIVE%` - NOTE: you need to append `\` manually.
+
 
 
 
