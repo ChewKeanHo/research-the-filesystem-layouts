@@ -23,11 +23,11 @@ This design is commonly known as `MVVM`.
 
 There are 3 main components:
 
-* **models** - holds the data models with `create`, `read`, `update`, and
+* **Models** - holds the data models with `create`, `read`, `update`, and
   `delete` interfaces for `view-models` to call.
-* **views** - holds the input and output interfaces rendering with `read` and
+* **Views** - holds the input and output interfaces rendering with `read` and
   `update` interfaces.
-* **views-models** - holds the data processing functions with `create`, `read`,
+* **ViewModels** - holds the data processing functions with `create`, `read`,
   `update`, and `delete` interfaces for `views` to call.
 
 
@@ -39,14 +39,13 @@ There are 3 main components:
 
 1. `Client` calls the application's `main`/Server function/application
    programmable interface (API).
-2. `main`/API function initializes and seeks the corresponding `views`
-   function.
-3. `views` function received `Client`'s signal and calls its corresponding
-   binded `views-models` reactive function.
-4. `views-models` calls the `models` function for data processing with new
-   data as response body.
-5. `views-models` returns the response body back to `views` function.
-6. `views` function received the new data and update the rendering layout.
+2. `main`/API function initializes and seeks the corresponding `Views` function.
+3. `Views` function received `Client`'s signal and calls its corresponding
+   binded `ViewModels` reactive function.
+4. `ViewModels` calls the `Models` function for data processing with new data as
+   response body.
+5. `ViewModels` returns the response body back to `Views` function.
+6. `Views` function received the new data and update the rendering layout.
 7. Transaction ends and `main`/API function is terminated with success.
 
 A data flow diagram is shown as follows:
@@ -69,7 +68,7 @@ Unlike `MVC`, `MVVM` has a list of its own caveats on top of `MVC` ones.
 
 Unlike `MVC` and `VIPER`, `MVVM` depends heavily on reactive/signal (or from
 hardware folks: interrupt) processing paradigm. Since the entire idea is based
-on how the Client reacts on the GUI from `views` layer (e.g. pressing a button).
+on how the Client reacts on the GUI from `Views` layer (e.g. pressing a button).
 
 Among other vital knowledge are signal processing like filtering spams, wait
 and observe, process pipelining, concurrent processing, parallel processing,
@@ -81,11 +80,11 @@ Therefore, this paradigm can unconventional for inexperienced developers.
 
 ### Possible Resources Intensive Weakness
 
-As the control is passed into `views` layer and every single input rendering is
+As the control is passed into `Views` layer and every single input rendering is
 an observer server, GUI design with many inputs can cause significant computer
 resources consumption on stand-by.
 
-Hence, each `views` presentation **MUST** have well designed user-experience
+Hence, each `Views` presentation **MUST** have well designed user-experience
 with limited inputs at a time for optimized resources vs. performance
 throughput.
 
@@ -97,16 +96,15 @@ through either composite or compound relations (e.g. a `User` can have
 multi-layers identity and authentications management data model (IAM) and a
 separate personal identifiable information (PII) data model). `MVVM` cannot
 easily honor such separation of concerns and due to resources constriants, the
-`model` often get spegetti-ed up making the entire project difficult to
+`Model` often get spegetti-ed up making the entire project difficult to
 maintain.
 
 
 ### Supply Chain Vulnerability
 
-As of year 2026, `MVVM` model is highly vulnerable to supply chain vulnerability
-especially in composited or compounded data `model`s. Due to the simplicity of
-ts architecture patterns, 3rd-party libraries are often directly integrated into
-all layers instead.
+As of year 2026, `MVVM` architecture is highly vulnerable to supply chain
+vulnerability especially in composited or compounded data `Models`. 3rd-party
+libraries are often directly integrated into all layers instead.
 
 Now, when the 3rd-party libraries' owner perform an "After-the-Fact" (or in
 layman terms: "rug pull") move (including bogus copyright infrigment lawsuit),

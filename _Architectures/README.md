@@ -99,3 +99,10 @@ complexity and speed.
 
 An architecture **MUST** be able to seamlessly learnable in the fastest manner
 in order to be deemed worthy of low learning curve.
+
+
+### Scaling Migration
+
+
+An architecture **MUST NOT** introduce any architectural-level migration due to
+scaling; especially for a production-grade application.

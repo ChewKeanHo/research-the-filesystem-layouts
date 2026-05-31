@@ -21,15 +21,15 @@ Robert C. Martin (Uncle Bob).
 
 There are 5 main components:
 
-* **models** - holds the data models with `create`, `read`, `update`, and
+* **Models** - holds the data models with `create`, `read`, `update`, and
   `delete` interfaces for `interactors` to call.
-* **views** - holds the output interface design rendering with `read` and
+* **Views** - holds the output interface design rendering with `read` and
   `update` interfaces for `interactors` to call.
-* **interactors** - holds the applications business libraries with `create`,
+* **Interactors** - holds the applications business libraries with `create`,
   `read`, `update`, and `delete` interfaces for `presenter` to call.
-* **presenters** - holds the business logics interfaces for the `routers` to
+* **Presenters** - holds the business logics interfaces for the `routers` to
   call.
-* **routers** - holds the user experience coordination and business flows for
+* **Routers** - holds the user experience coordination and business flows for
   client to call.
 
 
@@ -43,17 +43,17 @@ The following flow from client to server per transaction:
 
 1. `Client` calls the application's `main`/Server function/application
    programmable interface (API).
-2. `main`/API function initializes and seek out the corresponding `router`
+2. `main`/API function initializes and seek out the corresponding `Router`
    function.
-3. `router` function calls the corresponding `presenter` business logic
+3. `Router` function calls the corresponding `Presenter` business logic
    function.
-4. `presenter` function calls the underlying `interactor` functions to process
+4. `Presenter` function calls the underlying `Interactor` functions to process
    the data and query.
-5. `interactors` calls the respective `entities` functions for data processing.
-6. `interactors` calls the respective `views` functions for constructing the
-   response body and returns back to `presenter` function as output.
-7. `presenter` function returns the response body as output.
-8. `router` function returns the response body as output.
+5. `Interactors` calls the respective `Entities` functions for data processing.
+6. `Interactors` calls the respective `Views` functions for constructing the
+   response body and returns back to `Presenter` function as output.
+7. `Presenter` function returns the response body as output.
+8. `Router` function returns the response body as output.
 9. Transaction ends and `main`/API function is terminated with success.
 
 A data flow diagram is shown as follows:
@@ -103,7 +103,7 @@ the entire business application.
 
 ### Facilitates Chaotic Changes From All Directions
 
-Due to the `Router`, `Presenter`, and `Interactor` separation layers, this
+Due to the `Routers`, `Presenters`, and `Interactors` separation layers, this
 architecture facilitates maximum chaotic changes from any direction:
 
 1. Designer team only need to deal with `Views` and `Interactors` layer.
@@ -126,7 +126,7 @@ can scale infinitely large without needing a migration.
 
 [![banner](/.internals/trademarks/banner_1200x100.svg)](#)
 
-`VIPER`, while having `MVC`/`MVP` and `MVVM` architectures' caveats resolved,
+`VIPER`, while having `MVC`|`MVP` and `MVVM` architectures' caveats resolved,
 has its own caveats listed here.
 
 
