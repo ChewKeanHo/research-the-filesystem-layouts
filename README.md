@@ -66,6 +66,7 @@ Any specific filesystem hierarchies are prefixed with an underscore (`_`). These
 are dedicated directories for consolidating their respective specific designs
 prior to `/UNIX` abstractions. Among them are:
 
+* **Architectures** - the general [_Architectures](/_Architectures) patterns.
 * **FreeBSD** - the [_FreeBSD](/_FreeBSD) UNIX-like OS.
 * **Linux** - the [_Linux](/_Linux)-based UNIX-like OS.
 * **Microsoft Windows** - the [_Windows](/_Windows) Windows OS.

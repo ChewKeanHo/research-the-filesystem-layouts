@@ -96,11 +96,11 @@ The following are the references sourced to construct this dataset repository:
     United States of America; Viewed on 2026-04-30; Available at:
     https://developer.apple.com/library/archive/documentation/FileManagement/Conceptual/FileSystemProgrammingGuide/FileSystemOverview/FileSystemOverview.html
 27. DAVID NEDROW; 2025; "Leveraging a User Applications Folder on macOS";
-    *GitHub's Gists*; GitHub via GitHub.Inc; viewed 2026-05-19; available at:
+    *GitHub's Gists*; GitHub via GitHub.Inc; Viewed 2026-05-19; Available at:
     https://gist.github.com/dnedrow/e96944ad8bf5ea199a226345e696b33b
 28. APPLE; 2026; "Article - Placing content in a bundle"; *Bundle Resources*;
-    Apple Developer; Apple Inc.; Cupertino, California, United States of America; Viewed on
-    2026-05-19; Available at: https://developer.apple.com/documentation/BundleResources/placing-content-in-a-bundle
+    Apple Developer; Apple Inc.; Cupertino, California, United States of America;
+    Viewed on 2026-05-19; Available at: https://developer.apple.com/documentation/BundleResources/placing-content-in-a-bundle
 29. APPLE; 2026; "Bundles and Frameworks"; *Xcode*; Apple Developer; Apple Inc.;
     Cupertino, California, United States of America; Viewed on 2026-05-19;
     Available at:
@@ -121,3 +121,18 @@ The following are the references sourced to construct this dataset repository:
     Microsoft Corporation; Washington, United States of America; Viewed on
     2026-05-31; Available at:
     https://learn.microsoft.com/en-us/windows/deployment/usmt/usmt-recognized-environment-variables
+33. TRYGVE M. H. REENSKAUG; 1978; "MVC"; *XEROX PARC 1978-79*; University of
+    Oslo; Norway; Viewed on 2026-05-31; Available at:
+    https://folk.universitetetioslo.no/trygver/index.html
+34. ROBERT C. MARTIN; 2011; "Clean Architecture"; *The Clean Code Blog*; The
+    Clean Coder Blog via cleancoder.com; World Wide Web; Viewed on 2026-05-31;
+    Available at:
+    https://blog.cleancoder.com/uncle-bob/2011/11/22/Clean-Architecture.html
+35. STRONGSELF FOUNDATION; 2017; "Introduction to VIPER"; *The Book of VIPER*;
+    StrongSelf Foundation via GitHub and GitHub.Inc; Viewed on 2026-05-31;
+    Available at:
+    https://github.com/strongself/The-Book-of-VIPER/blob/master/english/introduction-to-viper.md
+36. MARIO FUKSA; SANDRO SPETH; STEFFEN BECKER; 2025; "MVVM Revisited: Exploring
+    Design Variants of the Model-View-ViewModel Pattern"; arXiv: 2504.18191v1;
+    Cornell University; Ithaca, New York, United States of America;
+    Viewed on 2026-05-31; Available at: https://arxiv.org/html/2504.18191v1
