@@ -10,4 +10,4 @@ This directory is part of the `system domain`.
 Only Apple internal systems can access this directory.
 
 You **DEFINITELY MUST NOT** place or modify any files and folders here for
-avoiding breakage.
+avoiding any breakage (e.g. bricking the `MacOS`).

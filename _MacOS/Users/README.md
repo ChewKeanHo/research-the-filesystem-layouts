@@ -4,10 +4,17 @@
 
 This directory houses all user level data directory. The first-level
 sub-directory name is mapped based on the user's username. The directory's
-access are configured specifically to that user.
+access are configured specifically to that user. The control is defined by
+Apple Account server with strict username matching.
+
+All files here are available to all users to read but **ONLY** available to
+specific user with permission, all sysadmins (user in `wheel` group), and `root`
+account to create, update, and delete.
 
 Programs **SHOULD NOT** assume any file or directory and always perform safe
 query before use.
+
+This directory is part of the `local domain`.
 
 
 

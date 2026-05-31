@@ -2,18 +2,31 @@
 
 [![banner](/.internals/trademarks/banner_1200x100.svg)](#)
 
-This is the directory for housing programs' and applications' library files to
-function properly faciliated mainly for maintaining UNIX BSD filesystems
-inter-compatibilties. It is unused by the MacOS system operations.
+This is the base directory for housing user's system-wide, custom supplied,
+non-critical, library files (e.g. C object artifact files) to extend the
+operating system (OS)'s functionalities from *Full Catalogue* stage to
+*Complete* stage. This means it can operate in both `Multi-User` mode in BSD
+realm or `Full Mode` in Linux realm.
 
-All libraries here are available to all users.
+The goal is to extend the OS' functionalities to its complete form by isolating
+OS distributor's packages away from user's system-wide OS customizations. These
+customizations, in theory, only specific to this machine instance.
 
-Generally, you **SHOULD ONLY** use this directory if you are a software
-developer. Otherwise, to avoid confusion, this directory is hidden from the
-end-user. Software developer can and know how to enable it.
+Due to its processing nature, one **MUST** carefully work here to prevent any
+data poisoning or losses.
 
-This directory is **entirely optional** as it serves as a clean design
-structure.
+All files here are available to all users to read but **ONLY** available to
+specific user with permission, all sysadmins (user in `wheel` group), and `root`
+account to create, update, and delete.
+
+This directory is **ENTIRELY OPTIONAL** depending on the runtime OS usage.
+
+Generally, you **SHOULD** place your own system-wide custom library files here.
+
+This directory is part of the `local domain`.
+
+Apple MacOS does not use this directory. However, it is made available for
+developer power users via hidden access for BSD OS inter-compatibility purposes.
 
 
 
@@ -22,18 +35,18 @@ structure.
 
 [![banner](/.internals/trademarks/banner_1200x100.svg)](#)
 
-It is a practice to house the libraries files using `trademark` and `product`
-sub-directories organization. This can significantly reduces the naming
-collision for common names.
+It is a practice to house the files using `trademark` and `product`
+sub-directories pattern. This can significantly reduces the naming collision for
+common names.
 
-Here are the examples with and without using `trademark` directory:
+Here are the examples:
 
 ```
 /usr/local/lib/
   trademark/
     product/
-      lib1.so
-      lib1_freebsd-amd64.so
+      lib1.a
+      lib1_freebsd-amd64.a
       kernel8.ko
       kernel8_freebsd-amd64.ko
       ...
@@ -42,16 +55,9 @@ Here are the examples with and without using `trademark` directory:
 
 /usr/local/lib/
   product/
-    lib1.so
-    lib1_freebsd-amd64.so
+    lib1.a
+    lib1_freebsd-amd64.a
     kernel8.ko
     kernel8_freebsd-amd64.ko
     ...
-```
-
-Optional layouts introduced by some specific operating systems are:
-
-```
-# GNU+Linux
-modules  - houses Linux kernel modules' library and configuration files.
 ```

@@ -2,22 +2,30 @@
 
 [![banner](/.internals/trademarks/banner_1200x100.svg)](#)
 
-This is the directory for housing system administrators (sysadmins) only
-programs and applications faciliated mainly for maintaining UNIX BSD filesystems
-inter-compatibilties. It is unused by the MacOS system operations.
+This is the base directory for housing user's system-wide, custom supplied,
+non-critical, system administrators (sysadmins) programs and applications to
+extend the operating system (OS)'s functionalities from *Full Catalogue* stage
+to *Complete* stage. This means it can operate in both `Multi-User` mode in BSD
+realm or `Full Mode` in Linux realm.
 
-All programs and applications here are available to administrator (user with
-`wheel` privilege). In some cases, they are unavailable as commands and can only
-be called explictly calling their full path instead.
+The goal is to extend the OS' functionalities to its complete form by isolating
+OS distributor's packages away from user's system-wide OS customizations. These
+customizations, in theory, only specific to this machine instance.
 
-Generally, you **SHOULD ONLY** use this directory if you are a software
-developer. Otherwise, to avoid confusion, this directory is hidden from the
-end-user. Software developer can and know how to enable it.
+Due to its processing nature, one **MUST** carefully work here to prevent any
+data poisoning or losses.
 
-This directory is **entirely optional** as it serves as a clean design
-structure.
+All files here are **ONLY** available to sysadmins (users in `wheel` group) and
+`root` account.
+
+This directory is **ENTIRELY OPTIONAL** depending on the runtime OS usage.
 
 This directory **MUST NOT** have any sub-directory.
+
+This directory is part of the `local domain`.
+
+Apple MacOS does not use this directory. However, it is made available for
+developer power users via hidden access for BSD OS inter-compatibility purposes.
 
 
 

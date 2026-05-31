@@ -5,8 +5,13 @@
 This directory houses an user's published personal web pages. The web pages
 **MUST** be served by a web server and `Web Sharing` **MUST** be enabled.
 
-Only admin-privileged (`wheel`) and owning users can access this directory.
+This directory is part of the `local domain`.
 
-Depending on content, you **MAY** be able to place or modify any files and
-folders manually. Otherwise, you **DEFINITELY MUST NOT** do so and let the
-installed apps handle it.
+Due to its processing nature, one **MUST** carefully work here to prevent any
+data poisoning or losses.
+
+This directory is accessible by the owning user, `root`, and OS administrators
+(users with `wheel permission).
+
+Programs **SHOULD NOT** assume any file or directory and always perform safe
+query before use.

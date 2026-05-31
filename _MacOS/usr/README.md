@@ -9,6 +9,18 @@ sharable but read-only for preventing unwanted temperment.
 The goal is to expand the OS' functionalities from *Minimum & Critical* stage to
 *Full Catalogue* stage.
 
+Due to its processing nature, one **MUST** carefully work here to prevent any
+data poisoning or losses.
+
+All files here are available to all users to read but **ONLY** available to
+specific user with permission, all sysadmins (user in `wheel` group), and `root`
+account to create, update, and delete.
+
+Programs **SHOULD NOT** assume any file and directory here and **SHOULD** always
+practice safe-querying before use.
+
+This directory is part of the `local domain`.
+
 Apple MacOS does not use this directory. However, it is made available for
 developer power users via hidden access for BSD OS inter-compatibility purposes.
 
@@ -30,6 +42,9 @@ filesystems, you get a list of basic functional directories as such:
                      files).
 /usr/lib           - OS distributor's supplied libraries used by non-critical
                      programs and applications.
+/usr/lib[ARCH]     - OS distributor's cross CPU architectures library files.
+/usr/libexec       - OS distributor's supplied system daemons and system
+                     utilities executed by other programs and applications.
 /usr/sbin          - OS distributor's supplied non-critical system
                      administration programs and applications.
 /usr/share         - OS distributor's supplied architecture independent files.
@@ -43,10 +58,7 @@ The `/usr` directory also has other critical system directories that provides
 various system roles:
 
 ```
-/usr/liba[ARCH]    - OS distributor's cross CPU architectures library files.
 /usr/libdata       - OS distributor's supplied miscellaneous utility data files.
-/usr/libexec       - OS distributor's supplied system daemons and system
-                     utilities executed by other programs and applications.
 /usr/local         - local user-installed system-wide utilities programs and
                      applications.
 /usr/ports         - The FreeBSD Ports Collection (optional).

@@ -9,7 +9,11 @@ control (e.g. parental control) are housed here automatically.
 
 This directory is part of the `local domain`.
 
-Only admin-privileged (`wheel`) and owning users can access this directory.
+Due to its processing nature, one **MUST** carefully work here to prevent any
+data poisoning or losses.
+
+This directory is accessible by the owning user, `root`, and OS administrators
+(users with `wheel` permission) can access this directory.
 
 You **CAN AND SHOULD** place or modify any files and folders manually.
 

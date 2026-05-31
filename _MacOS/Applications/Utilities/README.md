@@ -10,7 +10,7 @@ This directory is part of the `local domain`.
 Only admin-privileged (`wheel`) users can access this directory.
 
 You **DEFINITELY MUST NOT** place or modify any files and folders here for
-avoiding breakage.
+avoiding any breakage (e.g. signed signature).
 
 
 

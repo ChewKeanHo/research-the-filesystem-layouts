@@ -14,4 +14,5 @@ when being restricted. Only admin-privileged (`wheel`) users and system-level
 installed apps can modify or delete contents in this directory.
 
 You **DEFINITELY MUST NOT** place or modify any files and folders manually here
-for avoiding breakage. Let the installed apps from Apple's AppStore handle it.
+for avoiding any breakage (signed signature). Let the installed apps from
+Apple's AppStore handle it.

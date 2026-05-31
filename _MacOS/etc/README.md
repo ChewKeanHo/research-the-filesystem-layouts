@@ -14,13 +14,14 @@ functionalities extension, performing self-rescue, or straight up operational in
 resources constraint environment such as but not limited to OpenWRT embedded
 router.
 
-All files here are available to all users.
+Due to its processing nature, one **MUST** carefully work here to prevent any
+data poisoning or losses.
 
-Generally, you **SHOULD ONLY** place or modify system-level configuration files
-that are very critical to the operating systems excluding bootloader artifacts
-(as they are housed inside `/boot`, `/boot/efi`, or `/efi` respectively
-instead). However, bootloader artifacts' generator is allowed here as it is part
-of the operating system maintenance tool.
+All files here are available to all users to read but **ONLY** available to
+specific user with permission, all sysadmins (user in `wheel` group), and `root`
+account to create, update, and delete.
+
+This directory is part of the `local domain`.
 
 Apple MacOS does not use this directory. However, it is made available for
 developer power users via hidden access for BSD OS inter-compatibility purposes.

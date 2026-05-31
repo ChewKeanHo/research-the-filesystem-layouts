@@ -13,7 +13,9 @@ Resources directory for functionalities extension, performing self-rescue, or
 straight up operational in resources constraint environment such as but not
 limited to OpenWRT embedded router.
 
-All files here are available to all users.
+All files here are available to all users to read but **ONLY** available to
+specific user with permission, all sysadmins (user in `wheel` group), and `root`
+account to create, update, and delete.
 
 In some UNIX-like OSes like Oracle's Solaris (first to transform back in 2012)
 and Red Hat's Fedora (second to transform back in 2023), due to `/usr` is always
@@ -30,6 +32,8 @@ case of `/bin` being symbolic linked to `/usr/bin`, you **MUST NOT** place
 anything here and use `/usr/bin` exclusively instead.
 
 This directory **MUST NOT** have any sub-directory.
+
+This directory is part of the `local domain`.
 
 Apple MacOS does not use this directory. However, it is made available for
 developer power users via hidden access for BSD OS inter-compatibility purposes.

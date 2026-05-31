@@ -1,16 +1,17 @@
-# `/usr/local/lib[ARCH]`
+# `/Users/[USERNAME]/.local/lib[ARCH]`
 
 [![banner](/.internals/trademarks/banner_1200x100.svg)](#)
 
-This is the base directory for housing user's system-wide, custom supplied,
-non-critical, CPU architecture specific library files (e.g. C object artifact
-files) to extend the operating system (OS)'s functionalities from
-*Full Catalogue* stage to *Complete* stage. This means it can operate in both
-`Multi-User` mode in BSD realm or `Full Mode` in Linux realm.
+This is the user-specific directory housing user supplied, non-critical,
+CPU architecture specific library files (e.g. C object artifact files) for
+extending the operating system (OS)'s functionalities from *Complete* stage to
+*Personalized* stage. This means that the library files in this directory only
+appears specifically for this user.
 
-The goal is to extend the OS' functionalities to its complete form by isolating
-OS distributor's packages away from user's system-wide OS customizations. These
-customizations, in theory, only specific to this machine instance.
+The main purpose of such separation is to make sure the operating system's
+update transaction goes smoothly without any conflicting files with yours.
+The second purpose is to facilitate a way to procure software without requiring
+`root` or administrator(s) account for installation affecting the entire OS.
 
 This directory pattern is considered old and obselete when `x86` CPU
 architecture was migrated completely from `i386` to `amd64` architectures.
@@ -19,11 +20,16 @@ was invented. Use unless absolutely necessary and only only place your own
 system-wide custom CPU architecture specific library files here (e.g. `arm64`
 library files on an `amd64` OS where they are used for cross-compilation).
 
-All files here are available to all users.
+Depending on the operating system's engineering specification, this directory
+can be **ENTIRELY OPTIONAL**.
 
-Generally, you **SHOULD ALWAYS** utilize the main `/usr/local/lib` directory at
-all time. Library files can be named with the `[COMPILER]-[OS]-[ARCH]` triplet
-for identifications over there.
+Programs **SHOULD NOT** assume any file or directory and always perform safe
+query before use.
+
+This directory is accessible by the owning user, `root`, and OS administrators
+(users with `wheel permission).
+
+Generally, you **SHOULD** place your files here.
 
 This directory is part of the `local domain`.
 
@@ -44,7 +50,7 @@ common names.
 Here are the examples for ARCH is `32` (32-bit on 64-bit OS):
 
 ```
-/usr/local/lib32/
+/usr/lib32/
   trademark/
     product/
       lib1.a
@@ -55,7 +61,7 @@ Here are the examples for ARCH is `32` (32-bit on 64-bit OS):
 
 # OR
 
-/usr/local/lib32/
+/usr/lib32/
   product/
     lib1.a
     lib1_freebsd-amd64.a

@@ -2,14 +2,18 @@
 
 [![banner](/.internals/trademarks/banner_1200x100.svg)](#)
 
-This is the base directory for housing user-specific font files.
+This is the base directory for housing font files specifically for this user.
 
 App is allowed to create additional directory here. Any app **SHOULD NOT**
 assume any file or directory and always perform safe query before use.
 
 This directory is part of the `local domain`.
 
-Only admin-privileged (`wheel`) and owning users can access this directory.
+Due to its processing nature, one **MUST** carefully work here to prevent any
+data poisoning or losses.
+
+This directory is accessible by the owning user, `root`, and OS administrators
+(users with `wheel` permission) can access this directory.
 
 You **CAN AND SHOULD** place or modify any files and folders manually.
 

@@ -2,19 +2,32 @@
 
 [![banner](/.internals/trademarks/banner_1200x100.svg)](#)
 
-This is the directory for housing CPU architecture independent data files
-(e.g. documents, icons, images, audios, etc) faciliated mainly for maintaining
-UNIX BSD filesystems inter-compatibilties. It is unused by the MacOS system
-operations.
+This is the base directory for housing user's system-wide, custom supplied,
+non-critical, architecture independent data files (e.g. PDF files, SVG vector
+files, etc) to extend the operating system (OS)'s functionalities from
+*Full Catalogue* stage to *Complete* stage. This means it can operate in both
+`Multi-User` mode in BSD realm or `Full Mode` in Linux realm.
 
-All files here are available to all users.
+The goal is to extend the OS' functionalities to its complete form by isolating
+OS distributor's packages away from user's system-wide OS customizations. These
+customizations, in theory, only specific to this machine instance.
 
-Generally, you **SHOULD ONLY** use this directory if you are a software
-developer. Otherwise, to avoid confusion, this directory is hidden from the
-end-user. Software developer can and know how to enable it.
+Due to its processing nature, one **MUST** carefully work here to prevent any
+data poisoning or losses.
 
-This directory is **entirely optional** as it serves as a clean design
-structure.
+All files here are available to all users to read but **ONLY** available to
+specific user with permission, all sysadmins (user in `wheel` group), and `root`
+account to create, update, and delete.
+
+This directory is **ENTIRELY OPTIONAL** depending on the runtime OS usage.
+
+Generally, you **SHOULD** place your own system-wide custom architecture
+independent data files here.
+
+This directory is part of the `local domain`.
+
+Apple MacOS does not use this directory. However, it is made available for
+developer power users via hidden access for BSD OS inter-compatibility purposes.
 
 
 
@@ -23,27 +36,39 @@ structure.
 
 [![banner](/.internals/trademarks/banner_1200x100.svg)](#)
 
-It is a practice to house the data files using `trademark` and `product`
-sub-directories organization. This can significantly reduces the naming
-collision for common names.
+It is a practice to house the files using `trademark` and `product`
+sub-directories pattern. This can significantly reduces the naming collision for
+common names.
 
-Here are the examples with and without using `trademark` directory:
+Here are the examples:
 
 ```
-/usr/local/
-  share/
-    trademark/
-      product/
-        file1.pdf
-        file2.txt
-        ...
-
-OR
-
-/usr/local/
-  share/
+/usr/local/share/
+  trademark/
     product/
-      file1.pdf
-      file2.txt
+      docs/
+        README.pdf
+        Terms-of-Service.pdf
+        ...
+      licenses/
+        LICENSE.pdf
+        LICENSE.txt
+        LICENSE.html
+        ...
       ...
+
+# OR
+
+/usr/local/share/
+  product/
+    docs/
+      README.pdf
+      Terms-of-Service.pdf
+      ...
+    licenses/
+      LICENSE.pdf
+      LICENSE.txt
+      LICENSE.html
+      ...
+    ...
 ```

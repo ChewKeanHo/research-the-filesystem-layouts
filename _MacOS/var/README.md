@@ -9,10 +9,14 @@ states files, etc.
 Some data files are sharable while some are not. Programs should check the
 file's ownership and access permissions before performing any action.
 
-All files here are available to all users.
+All files here are available to all users to read but **ONLY** available to
+specific user with permission, all sysadmins (user in `wheel` group), and `root`
+account to create, update, and delete.
 
-Generally, you **SHOULD ONLY** place data files used by the programs
-and applications here.
+Generally, you **SHOULD ONLY** place data files used by the programs and
+applications here.
+
+This directory is part of the `local domain`.
 
 Apple MacOS does not use this directory. However, it is made available for
 developer power users via hidden access for BSD OS inter-compatibility purposes.

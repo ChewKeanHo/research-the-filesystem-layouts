@@ -13,6 +13,9 @@ Resources directory for functionalities extension, performing self-rescue, or
 straight up operational in resources constraint environment such as but not
 limited to OpenWRT embedded router.
 
+Due to its processing nature, one **MUST** carefully work here to prevent any
+data poisoning or losses.
+
 All files here are **ONLY** available to sysadmins (users in `wheel` group) and
 `root` account.
 
@@ -31,6 +34,8 @@ case of `/sbin` being symbolic linked to `/usr/sbin`, you **MUST NOT** place
 anything here and use `/usr/sbin` exclusively instead.
 
 This directory **MUST NOT** have any sub-directory.
+
+This directory is part of the `local domain`.
 
 Apple MacOS does not use this directory. However, it is made available for
 developer power users via hidden access for BSD OS inter-compatibility purposes.

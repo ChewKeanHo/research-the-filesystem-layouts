@@ -4,11 +4,16 @@
 
 This directory houses a single user's all data directory.
 
-Only admin-privileged (`wheel`) and owning users can access this directory.
+This directory is accessible by the owning user, `root`, and OS administrators
+(users with `wheel` permission) can access this directory. The applies to all
+directories here **except `Public`** which is available to all users.
 
-Depending on content, you **MAY** be able to place or modify any files and
-folders manually. Otherwise, you **DEFINITELY MUST NOT** do so and let the
-installed apps handle it.
+Programs **SHOULD NOT** assume any file or directory and always perform safe
+query before use.
+
+Generally, you **SHOULD** place your files here.
+
+This directory is part of the `local domain`.
 
 
 
@@ -17,9 +22,18 @@ installed apps handle it.
 
 [![banner](/.internals/trademarks/banner_1200x100.svg)](#)
 
-By default creation, this directory houses the following user directory with
-slight deviation from the common UNIX [User](/User) pattern (notably `Videos` ->
-`Movies` instead):
+By default, `MacOS` has the user-specific system applications as follows:
+
+```
+/Users/
+  [USERNAME]/
+    Applications/
+    Library/
+```
+
+Then this directory houses the following user directory with slight deviation
+from the common UNIX [User](/User) pattern (notably `Videos` -> `Movies`
+instead):
 
 ```
 /Users/
@@ -35,9 +49,6 @@ slight deviation from the common UNIX [User](/User) pattern (notably `Videos` ->
     Public/
     Sites/
 ```
-
-All directories **except `Public`** are inaccessible by other users on the
-system by default.
 
 MacOS retains the traditional [Common](/Common) UNIX directories structure not
 for end-user but for software developers. Upon combinations with the above,
