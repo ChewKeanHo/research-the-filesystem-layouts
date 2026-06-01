@@ -1,4 +1,4 @@
-# `/boot/efi`
+# `/efi`
 
 [![banner](/.internals/trademarks/banner_1200x100.svg)](#)
 
@@ -7,8 +7,14 @@ and configuration files to initialize the operating system (OS) using
 Unified Extensible Firmware Interface (UEFI), a successor to
 Extensible Firmware Interface (EFI), with a single boot standards across
 multiple CPU architectures such as but not limited to `i386`, `amd64`, `arm`,
-`arm64`, and `risv`. This partition, called EFI System Partition (ESP), has
-specific rules where it **MUST** be:
+`arm64`, and `risv`.
+
+The goal is plain simple: boot up the OS with a hardware-software matching boot
+configurations, initialize kernel until the OS can take over for achieving
+`Minimal & Critical` functionalities stage.
+
+This partition, called EFI System Partition (ESP), has specific rules where it
+**MUST** be:
 
 1. Hardware supporting UEFI boot; AND
 2. is the **first** partition (as close to `0x0` address as possible); AND
@@ -29,10 +35,6 @@ specific rules where it **MUST** be:
 > support legacy boot systems (e.g. BIOS boot for `i386` and `amd64` CPU
 > architectures).
 
-The goal is plain simple: boot up the OS with a hardware-software matching boot
-configurations, initialize kernel until the OS can take over for achieving
-`Minimal & Critical` functionalities stage.
-
 Generally, you **SHOULD ONLY** place EFI bootloading programs and their
 configuration files inside this directory. Due to early boot sequences are
 hardware specific which can be very complex yet critical, this directory is
@@ -40,10 +42,10 @@ often housing the bootloading artifacts reliably and systematically generated
 from the higher OS' functionalities.
 
 This directory is the legacy mount point for the EFI boot partition. In some
-UNIX-Like OS notably SystemD implementations, this directory is no longer used
-and is replaced by `/efi` or `/boot` entirely instead. According to their
-specifications, tools will look for this directory as a fallback after searching
-for `/efi`.
+UNIX-Like OS notably SystemD implementations, this directory is used and
+replacing `/boot/efi` or `/boot` entirely instead. According to their
+specifications, tools will look for those directories as a fallback after
+searching for `/efi`.
 
 Due to its processing nature, one **MUST** carefully work here to prevent any
 data poisoning or losses.
@@ -52,8 +54,8 @@ All files here are available to all users to read but **ONLY** available to
 specific user with permission, all sysadmins (user in `wheel` group), and `root`
 account to create, update, and delete.
 
-Programs **SHOULD NOT** assume any file and directory here and **SHOULD** always
-practice safe-querying before use.
+This directory is **ENTIRELY OPTIONAL** depending on the runtime OS'
+implementation and usage.
 
 
 

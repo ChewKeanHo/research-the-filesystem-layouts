@@ -2,8 +2,8 @@
 
 [![banner](/.internals/trademarks/banner_1200x100.svg)](#)
 
-This is the base directory housing all kernel, devices, drivers, and process
-nodes (special files) for Linux kernel.
+This is the base directory for housing all Linux kernel's runtime query nodes
+(special files) of an operating system (OS) to function properly.
 
 The goal is simple: allowing Linux kernel to map its control surfaces into the
 filesystems for use.
@@ -18,6 +18,12 @@ account to create, update, and delete.
 Programs **SHOULD NOT** assume any file and directory here and **SHOULD** always
 practice safe-querying before use.
 
+In any Linux-based OSes, the directory is available.
+
+In FreeBSD, this directory is unused.
+
+In Apple `MacOS`, this directory is unused.
+
 You **DEFINITELY MUST NOT** place anything here. Let the OS controls it
 entirely.
 
@@ -28,5 +34,4 @@ entirely.
 
 [![banner](/.internals/trademarks/banner_1200x100.svg)](#)
 
-You need to refer to the OS distributor's documentation for the device nodes
-definitions.
+Refer OS distributor's documentations for specifications.

@@ -2,13 +2,11 @@
 
 [![banner](/.internals/trademarks/banner_1200x100.svg)](#)
 
-This is the base directory housing all the critical programs, applications,
-configuration files, libraries, and data files for perfoming self-rescue to the
-operating system (OS).
+This is the base directory for housing all programs, applications,
+configurations, data files of an operating system (OS) to perform self-rescue
+during `Single-User` mode in BSD realm.
 
-The goal is to have minimally sufficient programs enough for basic
-functionalities for performing OS self-rescue. All programs and applications
-here are available to root account users operating in `Single User` mode only.
+The goal is to self-rescue the OS.
 
 Due to its processing nature, one **MUST** carefully work here to prevent any
 data poisoning or losses.
@@ -19,8 +17,14 @@ account to create, update, and delete.
 
 This directory is **ENTIRELY OPTIONAL** depending on the runtime OS usage.
 
-Generally, you **SHOULD ONLY** place programs that are very critical at early
-booting stage without conflicting with existing POSIX compliant programs.
+Generally, you **SHOULD ONLY** place files vital to perform the OS self-rescue
+operation only.
+
+In Linux-based OSes, this directory is unavailable.
+
+In FreeBSD, this directory is used.
+
+In Apple `MacOS`, this directory is unavailable.
 
 
 

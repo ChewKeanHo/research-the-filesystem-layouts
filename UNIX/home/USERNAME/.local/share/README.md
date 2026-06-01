@@ -1,24 +1,26 @@
-# `/home/USERNAME/.local/share`
+# `/home/[USERNAME]/.local/share`
 
 [![banner](/.internals/trademarks/banner_1200x100.svg)](#)
 
-This is the user-specific directory housing user supplied, non-critical,
-user-specific CPU architecture independent data files (e.g. fonts, pdfs, etc)
-for extending the operating system's functionalities from complete stage to
-personalized stage. This means that data in this directory only appears
-specifically for this user.
+This is the user-specific directory housing user-specific, user supplied,
+non-critical, CPU architecture independent files (e.g. PDF files, SVG vector
+image files, manual files) for extending the operating system (OS)'s
+functionalities from *Complete* stage to *Personalized* stage.
 
-Generally, you **SHOULD** place your own custom data here. It will be made
-available only for you.
+Depending on the operating system's engineering specification, this directory
+can be **ENTIRELY OPTIONAL**.
 
-The main purpose of such separation is to make sure the operating system's
-update transaction goes smoothly without any conflicting files with yours.
-The second purpose is to facilitate a way to procure programs and applications
-without using sysadmins or root account that affects the entire operating
-system.
+Due to its processing nature, one **MUST** carefully work here to prevent any
+data poisoning or losses.
 
-This directory is **entirely optional** as it serves as a clean design
-structure.
+This directory is accessible by the owning user, `root`, and OS administrators
+(users with `wheel` permission).
+
+Programs **SHOULD NOT** assume any file or directory and always perform safe
+query before use.
+
+Generally, you **SHOULD** place your files here. All of them are only available
+specifically for you.
 
 
 
@@ -27,39 +29,140 @@ structure.
 
 [![banner](/.internals/trademarks/banner_1200x100.svg)](#)
 
-It is a practice to house the data files using `trademark` and `product`
-sub-directories organization. This can significantly reduces the naming
-collision for common names.
+There are 2 systems in this directory organizations:
 
-Here are the examples with and without using `trademark` directory:
+* functional directories (e.g. `fonts`, `doc`, `man`).
+* non-functional directories.
+
+Before designating where to place the files, one **MUST** check the functional
+directory's availability before implementing the latter pattern.
+
+It is a practice to house the files using `trademark` and `product`
+sub-directories pattern for both of them. This can significantly reduces the
+naming collision for common names. Deploy them accordingly for all the
+directory organizations above.
+
+Here are the examples:
 
 ```
-/home/USERNAME/.local/
-  share/
+/home/[USERNAME]/.local/share/
+  doc/
     trademark/
-      product/
-        docs/
-          README.pdf
-          Terms-of-Service.pdf
-          ...
-        licenses/
-          LICENSE.pdf
-          LICENSE.txt
-          LICENSE.html
+      product1/
+        program1.pdf
+        program1.txt
         ...
-
-# OR
-
-/home/USERNAME/.local/
-  share/
-    product/
-      docs/
-        README.pdf
-        Terms-of-Service.pdf
+      product2/
+        program2.pdf
+        program2.txt
+        ...
+      ...
+    ...
+  man/
+    trademark/
+      product1/
+        man1/
+          amd64
+          aarch64
+          ...
+        man2/
+          amd64
+          aarch64
+          ...
+        ...
+      product2/
+        man1/
+          amd64
+          aarch64
+          ...
+        man2/
+          amd64
+          aarch64
+          ...
+        ...
+      ...
+    ...
+  fonts/
+    trademark/
+      product1/
+        font1.tff
+        LICENSE.txt
+        ...
+      product2/
+        font2.tff
+        LICENSE.txt
+        ...
+      ...
+    ...
+  ...
+  trademark/                      # when functional directory is unavailable
+    product3/
+      resources/
+        background.svg
+        background.webm
         ...
       licenses/
         LICENSE.pdf
         LICENSE.txt
         LICENSE.html
+        ...
       ...
+
+# OR
+
+/home/[USERNAME]/.local/share/
+  doc/
+    product1/
+      program1.pdf
+      program1.txt
+      ...
+    product2/
+      program2.pdf
+      program2.txt
+      ...
+    ...
+  man/
+    product1/
+      man1/
+        amd64
+        aarch64
+        ...
+      man2/
+        amd64
+        aarch64
+        ...
+      ...
+    product2/
+      man1/
+        amd64
+        aarch64
+        ...
+      man2/
+        amd64
+        aarch64
+        ...
+      ...
+    ...
+  fonts/
+    product1/
+      font1.tff
+      LICENSE.txt
+      ...
+    product2/
+      font2.tff
+      LICENSE.txt
+      ...
+    ...
+  ...
+  product3/                       # when functional directory is unavailable
+    resources/
+      background.svg
+      background.webm
+      ...
+    licenses/
+      LICENSE.pdf
+      LICENSE.txt
+      LICENSE.html
+      ...
+  ...
 ```

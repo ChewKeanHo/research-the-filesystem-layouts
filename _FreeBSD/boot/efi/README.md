@@ -7,8 +7,14 @@ and configuration files to initialize the operating system (OS) using
 Unified Extensible Firmware Interface (UEFI), a successor to
 Extensible Firmware Interface (EFI), with a single boot standards across
 multiple CPU architectures such as but not limited to `i386`, `amd64`, `arm`,
-`arm64`, and `risv`. This partition, called EFI System Partition (ESP), has
-specific rules where it **MUST** be:
+`arm64`, and `risv`.
+
+The goal is plain simple: boot up the OS with a hardware-software matching boot
+configurations, initialize kernel until the OS can take over for achieving
+`Minimal & Critical` functionalities stage.
+
+This partition, called EFI System Partition (ESP), has specific rules where it
+**MUST** be:
 
 1. Hardware supporting UEFI boot; AND
 2. is the **first** partition (as close to `0x0` address as possible); AND
@@ -28,10 +34,6 @@ specific rules where it **MUST** be:
 > For setting `boot` flag as `enabled`, it is **NOT** a requirement but to
 > support legacy boot systems (e.g. BIOS boot for `i386` and `amd64` CPU
 > architectures).
-
-The goal is plain simple: boot up the OS with a hardware-software matching boot
-configurations, initialize kernel until the OS can take over for achieving
-`Minimal & Critical` functionalities stage.
 
 Generally, you **SHOULD ONLY** place EFI bootloading programs and their
 configuration files inside this directory. Due to early boot sequences are

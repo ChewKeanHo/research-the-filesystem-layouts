@@ -1,59 +1,68 @@
-#  Linux Filesystem Hierarchy Standard
+#  Consolidated Linux-based OSes' Filesystem Layout
 
 [![banner](/.internals/trademarks/banner_1200x100.svg)](#)
 
-This is a specific Filesystem Hierarchy Standard (FHS) for Linux-based operating
-system (OS). This directory is to consolidate all Linux based OSes datapoints
-before performing data abstractions for the common points.
+This is the consolidated Linux-based operating system (OS)es Filesystem Layout
+based on various Filesystem Hierarchy Standard (FHS) sources notable:
 
-This leaves room for innovation across time while maintaining common abstracted
-patterns as a standards. It is a win-win for both situations.
+1. FreeDesktop.org
+2. Red Hat Linux
+3. Fedora
+4. Debian
+5. SystemD
 
-Keep in mind that for Linux-based OSes, there are 2 internal factions duking out
-for leading the development and standarizations:
-
-1. The SystemD Community
-  * https://lwn.net/Articles/1041316/
-  * https://www.freedesktop.org/software/systemd/man/latest/file-hierarchy.html
-  * https://github.com/systemd/systemd/issues/38563#issuecomment-3242736658
-2. The SysV Community
-  * https://www.devuan.org/
-  * https://voidlinux.org/
-
-Each communities may introduce their own innovations which is one of the cause
-of Linux-based OSes fragmentations. While this research tries to cover as many
-of them as possible, it cannot cover all the edge cases.
+> [!WARNING]
+>
+> This is not a rule. Depending on OS, the distrbutor designer can customize the
+> layout on its own. To avoid constricting innovation, this layout is abstracted
+> from existing UNIX-based OSes instead of enforcing them to all OSes.
 
 
 
 
-# Understanding The 4 Stages of Functionalities Extensions
+## Primary Objective
 
 [![banner](/.internals/trademarks/banner_1200x100.svg)](#)
 
-Linux-based OS generally go through 4 stages of functionalities extensions:
+The primary objective is to produce a common mapping of the latest UNIX
+filesystem evolution. This map allows an OS designer to decide and to maximize
+inter-OS compatibility purposes for better portability and user experience.
+
+You can explore each directory here in details.
+
+
+
+
+## Understanding The 4 Stages of Powering Up
+
+[![banner](/.internals/trademarks/banner_1200x100.svg)](#)
+
+Generally, any OS (including Microsoft `Windows`) go through 4 stages:
 
 1. **Critical & Minimal** - focuses on booting up the OS upto the minimal
-   operational level. This only uses tools from the Root (`/`) directory
-   excluding any system directories mounting (e.g. `/usr`). The goal varies
-   depending on the system's holistic design ranging from operating entirely
-   in a resources limited environment (e.g. as OpenWRT router firmware),
-   performing operating systems self-rescue, or extending its functionality
-   to the next level.
-2. **Full Catalogue** - focuses on extending the OS' functionalities upto its
-   full potentials. This involves mounting the OS system directories (`/usr`).
-   The goal here is to extend the OS' capabilities upto to the OS distributor's
-   warranted functionalities with their supplied software packages.
-3. **Complete** - focuses on extending the OS' functionalities further
-   with user introduced system-wide functionalities. This involves mounting
-   the OS' localized system directories (`/usr/local`). The goal here is to
-   completely make the OS fully functional with localized functionalities
-   (e.g. custom downloaded software packages setup by the user for all users).
-   At this point, the OS' functionalities are marked as completed.
-4. **Personalized** - focuses on extending the OS' functionalities with
-   user-specific system directories (`/home/[USERNAME]/.local`). This stage can
-   change from time-to-time across different users as it based on the
-   user-only configurations.
+   operational level. The goal varies but usually about OS self-rescue, boot
+   selections, self-auditing, low-resources environment operations (e.g.
+   embedded. This stage only uses the Root (`/`) directory layer.
+2. **Full Catalogue** - focuses on extending the OS functionalities upto its
+   distributor's designed full potentials. The goal is to extend the OS
+   capabilities to the full functionalities warranted by the OS designer. This
+   usually involves mounting `/usr` directory layer.
+3. **Complete** - focuses on extending the OS functionalities further with
+   user's localized system-wide capabilities. The goal here is to extend the
+   OS capabilities further to cater user's system-wide customized
+   functionalities. This usually involves mounting `/usr/local` directory layer.
+4. **Personalized** - focuses on extending the OS functionalities specifically
+   for a user. The goal here is to further customize the OS capabilities
+   specifically for a user. This usually involves mounting `${HOME}/.local`
+   directory layer. This stage can revert back to **Complete** stage from
+   time-to-time whenever an user is logged in or out.
+
+> [!NOTE]
+>
+> Most proprietary OSes notably Apple's `MacOS` and Microsoft `Windows` skip the
+> **Full Catalogue** stage as they are not facing the open-source multiple
+> distributors fragmentations like the open source OSes (e.g. `FreeBSD` and
+> `Linux`-based OSes).
 
 
 
@@ -62,59 +71,76 @@ Linux-based OS generally go through 4 stages of functionalities extensions:
 
 [![banner](/.internals/trademarks/banner_1200x100.svg)](#)
 
-The root directory is the very foundational and critical directory
-represented by `/` in FreeBSD OS. When root combines with [Common](/Common)
-filesystem hierarchy, you get a list of basic functional directories such as:
+The root directory is the very fundational  and critical directory layer for
+**Critical & Minimal** stage. When it combines with [Common](/Common)
+filesystem layout, you get a list of basic functional directories such as:
 
 ```
 /bin       - OS critical user utilities programs.
 /etc       - OS critical configuration files and scripts.
 /lib       - OS critical libraries used by `/bin` and `/sbin` programs.
 /sbin      - OS critical system administration (sysadmins) programs.
-/tmp       - OS temporary work files.
-```
-
-The root directory also has other system directories that provides
-various system roles:
-
-```
-/boot      - OS critical bootloading component.
-/efi       - OS critical EFI-type bootloading component (optional as some OS
-             distributors mapped it as `/boot/efi` or `/boot/EFI` by default).
-/dev       - OS mapped IO device nodes for hardware interactions.
-/home      - OS users' home directories (optional).
-/media     - OS mounted removable media like CDs, floppy disks, and portable
-             disks.
-/mnt       - temporary mountpoint for sysadmins and root users to troubleshoot
-             mountable nodes and devices.
-/proc      - OS process files (optional).
-/root      - OS root account's home directory (optional).
-/run       - OS critical runtime data component.
-/srv       - OS general server payload data files which might be available very
-             late at boot (optional).
-/sys       - Linux kernel interactable user interface.
-/usr       - OS UNIX Systems Resources for extended functionalities.
 /var       - OS variable data directory like log, data, and spool files.
 ```
 
+> [!IMPORTANT]
+>
+> `/include`, `/share` and `/src` are too bloated at this stage. Therefore, they
+> are always excluded.
+
+The root directory also has other system directories that provide various system
+roles. For examples (not exhaustive):
+
+```
+# FreeBSD
+/boot        - OS critical bootloading component.
+/compat      - Files supporting binary compatibilities with other operating
+               systems like linux (`/compat/linux`).
+/dev         - OS mapped IO device nodes for hardware interactions.
+/entropy     - Provides initial state to random number generator (RNG).
+/home        - OS users' home directories (optional).
+/libexec     - OS critical system files not importable as libraries but not
+               suitable for any users to call upon.
+/media       - OS mounted removable media like CDs, floppy disks, and portable
+               disks.
+/mnt         - temporary mountpoint for sysadmins and root users to troubleshoot
+               mountable nodes and devices.
+/net         - Automounted Network Area Storage (NAS) share mounting.
+/nonexistent - Home directory for users who do not need an actual '/home'
+               directory (optional).
+/proc        - OS legacy `procfs` interface (optional).
+/rescue      - Statically linked programs for emergency recovery.
+/root        - OS root account's home directory (optional).
+/tmp         - OS temporary work files.
+/usr         - OS UNIX Systems Resources for extended functionalities.
 
 
+# Linux
+/boot        - OS critical bootloading component.
+/dev         - OS mapped IO device nodes for hardware interactions.
+/efi         - OS critical UEFI bootloading component.
+/home        - OS users' home directories (optional).
+/lib[ARCH]   - OS critical multi-CPU architectures' inter-compatible library
+               files.
+/media       - OS mounted removable media like CDs, floppy disks, and portable
+               disks.
+/mnt         - temporary mountpoint for sysadmins and root users to troubleshoot
+               mountable nodes and devices.
+/proc        - OS legacy `procfs` interface.
+/root        - OS root account's home directory (optional).
+/run         - OS unified `tmpfs` interface.
+/spool       - OS unified spooling `tmpfs` interface.
+/srv         - OS unified service `tmpfs` interface.
+/sys         - OS kernel interface.
+/tmp         - OS temporary work files.
+/usr         - OS UNIX Systems Resources for extended functionalities.
 
-## Primary Objectives
 
-[![banner](/.internals/trademarks/banner_1200x100.svg)](#)
-
-The primary objective of this layer is to boot the OS critical component
-up and running with minimum resources and be functionally operational.
-This is known as `Emergency Mode` in many Linux OSes.
-
-There are 2 possibilities:
-
-* user use the operating system as it is (commonly seen in bare-metal
-  embedded deployment like OpenWRT project); OR
-* operating system expands to its full potentials by mount and load
-  the `/usr` directory (common computing deployment).
-
-You can explore each root layer's base directories in details. Once
-done, head over to [`/usr`](/_Linux/usr) directory which is the second
-layer for functionalities' expansions.
+# MacOS
+/dev         - OS mapped IO device nodes for hardware interactions.
+/mnt         - temporary mountpoint for sysadmins and root users to troubleshoot
+               mountable nodes and devices.
+/root        - OS root account's home directory (optional).
+/tmp         - OS temporary work files.
+/usr         - OS UNIX Systems Resources for extended functionalities.
+```

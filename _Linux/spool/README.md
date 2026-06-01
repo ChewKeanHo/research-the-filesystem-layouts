@@ -2,7 +2,14 @@
 
 [![banner](/.internals/trademarks/banner_1200x100.svg)](#)
 
-This directory houses all operating system's (OS) spooling tasks' data files.
+This is the base directory for housing all runtime spooling data files of an
+operating system (OS) to function properly. The goal is to provision spooling
+functionalities like paper printing for the OS.
+
+This directory is marked **AS COMPULSORY TO EXIST** by Linux's Filesystems
+Standards (https://specifications.freedesktop.org/fhs/latest/varRequirements.html).
+However, in practice, this directory is **OPTIONAL** depending on the runtime
+OS uses and specifications.
 
 Due to its processing nature, one **MUST** carefully work here to prevent any
 data poisoning or losses.
@@ -14,16 +21,17 @@ account to create, update, and delete.
 Programs **SHOULD NOT** assume any file and directory here and **SHOULD** always
 practice safe-querying before use.
 
-This directory is marked **AS COMPULSORY TO EXIST** by Linux's Filesystems
-Standards (https://specifications.freedesktop.org/fhs/latest/varRequirements.html).
-However, in practice, this directory is **OPTIONAL** depending on the runtime
-OS uses and specifications.
+You **DEFINITELY MUST NOT** place anything here. Let the OS controls it
+entirely.
 
-Programs **SHOULD NOT** assume any file and directory here and **SHOULD** always
-practice safe-querying before use.
+In FreeBSD, this is unused.
 
-On majority of Linux-based OSes, this directory is symlinked to `/var/spool`
-directory for reducing the total numbers of used `tmpfs`.
+In Linux-based OSes, many OSes are migrating the runtime `tmpfs` into this
+directory mainly for reducing the total use of `tmpfs` counts. For supporting
+backward compatibility, some OSes is symlinking this directory to `/var/spool`
+directory.
+
+In MacOS, this is unused.
 
 
 

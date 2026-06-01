@@ -1,24 +1,28 @@
-# `/home/USERNAME/.local/var`
+# `/home/[USERNAME]/.local/var`
 
 [![banner](/.internals/trademarks/banner_1200x100.svg)](#)
 
-This is the user-specific directory housing user supplied, non-critical,
-user-specific transient variable data files (e.g. game saves, web server files,
-etc) for extending the operating system's functionalities from complete stage
-to personalized stage. This means that executables in this directory only
-appears specifically for this user.
+This is the user-specific directory housing user-specific, user supplied,
+non-critical, transient data files (e.g. state files, saved files, web server
+files, log files) for extending the operating system (OS)'s functionalities from
+*Complete* stage to *Personalized* stage.
 
-Generally, you **SHOULD** place your own custom data here. It will be made
-available only for you.
+This directory **MUST NOT** have any sub-directory.
 
-The main purpose of such separation is to make sure the operating system's
-update transaction goes smoothly without any conflicting files with yours.
-The second purpose is to facilitate a way to procure programs and applications
-without using sysadmins or root account that affects the entire operating
-system.
+Depending on the operating system's engineering specification, this directory
+can be **ENTIRELY OPTIONAL**.
 
-This directory is **ENTIRELY OPTIONAL** as it serves as a clean design
-structure.
+Due to its processing nature, one **MUST** carefully work here to prevent any
+data poisoning or losses.
+
+This directory is accessible by the owning user, `root`, and OS administrators
+(users with `wheel` permission).
+
+Programs **SHOULD NOT** assume any file or directory and always perform safe
+query before use.
+
+Generally, you **SHOULD** place your files here. All of them are only available
+specifically for you.
 
 
 
@@ -27,39 +31,55 @@ structure.
 
 [![banner](/.internals/trademarks/banner_1200x100.svg)](#)
 
-It is a practice to house the data files using `trademark` and `product`
-sub-directories organization. This can significantly reduces the naming
-collision for common names.
+The first sub-directory layer is a list of function oriented directories (e.g.
+`log`, `mail`, `lock`, `cache`, `tmp`, `crash`, `www`, `spool`, ...). This is
+defined by the OS' engineering specification.
 
-Here are the examples with and without using `trademark` directory:
+Within each function oriented sub-directory, it is a practice to house the
+configuration files using `trademark` and `product` sub-directories pattern.
+This can significantly reduces the naming collision for common names.
+
+Here are the examples:
 
 ```
-/home/USERNAME/.local/
-  var/
+/home/[USERNAME]/.local/var/
+  cache/
     trademark/
       product/
-        log/
-          access.log
-          info.log
-          ...
-        cache/
-          icons/
-            banner_1200x1200.svg
-            ...
-        ...
-
-# OR
-
-/home/USERNAME/.local/
-  var/
-    product/
-      log/
-        access.log
-        info.log
-        ...
-      cache/
         icons/
           banner_1200x1200.svg
           ...
+  lib/
+    trademark/
+      product/
+        icons/
+          banner_1200x1200.svg
+          ...
+  log/
+    trademark/
+      product/
+        access.log
+        info.log
+        ...
+  ...
+
+# OR
+
+/home/[USERNAME]/.local/var/
+  cache/
+    product/
+      icons/
+        banner_1200x1200.svg
+        ...
+  lib/
+    product/
+      icons/
+        banner_1200x1200.svg
+        ...
+  log/
+    product/
+      access.log
+      info.log
       ...
+  ...
 ```

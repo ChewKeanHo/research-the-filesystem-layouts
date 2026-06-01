@@ -1,23 +1,26 @@
-# `/home/USERNAME/.local/share/fonts`
+# `/home/[USERNAME]/.local/share/fonts`
 
 [![banner](/.internals/trademarks/banner_1200x100.svg)](#)
 
-This is the user-specific directory housing user supplied, non-critical,
-user-specific font data files for extending the operating system's
-functionalities from *Complete* stage to *Personalized* stage. This means that
-font files in this directory only appears specifically for this user.
+This is the user-specific directory housing user-specific, user supplied,
+non-critical, CPU architecture independent font files for extending the
+operating system (OS)'s functionalities from *Complete* stage to *Personalized*
+stage.
 
-Generally, you **SHOULD** place your own custom data here. It will be made
-available only for you.
+Depending on the operating system's engineering specification, this directory
+can be **ENTIRELY OPTIONAL**.
 
-The main purpose of such separation is to make sure the operating system's
-update transaction goes smoothly without any conflicting files with yours.
-The second purpose is to facilitate a way to procure programs and applications
-without using sysadmins or root account that affects the entire operating
-system.
+Due to its processing nature, one **MUST** carefully work here to prevent any
+data poisoning or losses.
 
-This directory is **ENTIRELY OPTIONAL** as it serves as a clean design
-structure.
+This directory is accessible by the owning user, `root`, and OS administrators
+(users with `wheel` permission).
+
+Programs **SHOULD NOT** assume any file or directory and always perform safe
+query before use.
+
+Generally, you **SHOULD** place your files here. All of them are only available
+specifically for you.
 
 
 
@@ -26,30 +29,15 @@ structure.
 
 [![banner](/.internals/trademarks/banner_1200x100.svg)](#)
 
-It is a practice to house the font data files using `trademark` and `product`
-sub-directories organization. This can significantly reduces the naming
-collision for common names.
+It is a practice to house the files using `trademark` and `product`
+sub-directories pattern. This can significantly reduces the naming collision for
+common names.
 
-Here are the examples with and without using `trademark` directory:
+Here are the examples:
 
 ```
-/home/USERNAME/.local/share/
-  fonts/
-    trademark/
-      product1/
-        font1.tff
-        LICENSE.txt
-        ...
-      product2/
-        font2.tff
-        LICENSE.txt
-        ...
-      ...
-
-# OR
-
-/home/USERNAME/.local/share/
-  fonts/
+/home/[USERNAME]/.local/share/fonts/
+  trademark/
     product1/
       font1.tff
       LICENSE.txt
@@ -59,4 +47,18 @@ Here are the examples with and without using `trademark` directory:
       LICENSE.txt
       ...
     ...
+  ...
+
+# OR
+
+/home/[USERNAME]/.local/share/fonts/
+  product1/
+    font1.tff
+    LICENSE.txt
+    ...
+  product2/
+    font2.tff
+    LICENSE.txt
+    ...
+  ...
 ```

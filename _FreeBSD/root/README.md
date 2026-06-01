@@ -11,15 +11,19 @@ can be **ENTIRELY OPTIONAL**.
 **Only `root` and administrators (users with `wheel` permission) can access the
 directory**.
 
+This directory is **ENTIRELY OPTIONAL** depending on the runtime OS usage.
+
 Programs **SHOULD NOT** assume any file or directory and always perform safe
 query before use.
 
-This directory is **ENTIRELY OPTIONAL** depending on the runtime OS usage.
+In Apple `MacOS`, this directory is facilitated mainly for supporting BSD
+inter-compatibilities purposes only. `MacOS` does not not really use and depend
+on it. Also this directory is part of the `local domain`.
 
-Generally, unless absolute necessary, you **SHOULD NOT** place anything here
-**UNLESS** you are the OS distributor. This is to avoid any conflict with the
-upstream's registries that will break the OS in any way. Use `/home/[USERNAME]`
-instead.
+Generally, you **SHOULD NOT** place anything here **UNLESS ABSOLUTE NECESSARY**.
+This is to avoid any conflict with the OS. Moreover, this is to
+**STRONGLY DISCOURAGE** any user operating non-OS tasks with extremely powerful
+`root` account privilege that can brick a hardware.
 
 
 

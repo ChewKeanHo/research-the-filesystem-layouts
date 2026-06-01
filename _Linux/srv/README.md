@@ -2,9 +2,12 @@
 
 [![banner](/.internals/trademarks/banner_1200x100.svg)](#)
 
-This is the base directory housing all site-specific data served by specific
-Linux-based OSes like Red Hat Linux. This directory gives users the location of
-data files for a particular service, such as FTP, WWW, or CVS.
+This is the base directory for housing all serving site-specific data of an
+operating system (OS) to function properly. The goal is to provision network
+services (e.g. FTP, WWW, CVS) for serving designated data files.
+
+This directory is **ENTIRELY OPTIONAL** depending on the type of Linux-based
+OSes. By default, it is absent. Only Ret Hat Linux is using this directory.
 
 Due to its processing nature, one **MUST** carefully work here to prevent any
 data poisoning or losses.
@@ -16,11 +19,14 @@ account to create, update, and delete.
 Programs **SHOULD NOT** assume any file and directory here and **SHOULD** always
 practice safe-querying before use.
 
-This directory is **ENTIRELY OPTIONAL** depending on the type of Linux-based
-OSes. By default, it is absent. Only Ret Hat Linux is using this directory.
-
 You **DEFINITELY MUST NOT** place anything here. Let the OS controls it
 entirely.
+
+In FreeBSD, this is unused.
+
+In Linux-based OSes, this is mostly unused except Red Hat Linux OS.
+
+In MacOS, this is unused.
 
 
 
@@ -29,4 +35,4 @@ entirely.
 
 [![banner](/.internals/trademarks/banner_1200x100.svg)](#)
 
-You need to refer to the OS distributor's documentation for the definitions.
+Refer OS distributor's documentations for specifications.

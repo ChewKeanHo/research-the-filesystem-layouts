@@ -2,26 +2,30 @@
 
 [![banner](/.internals/trademarks/banner_1200x100.svg)](#)
 
-This is the user-specific directory housing user supplied, non-critical,
-user-specific, programs and applications for extending the operating system
-(OS)'s functionalities from *Complete* stage to *Personalized* stage. This means
-that executables in this directory only appears specifically for this user.
+This is the `root` account's directory housing user-specific, user supplied,
+non-critical, programs and applications for extending the operating system
+(OS)'s functionalities from *Complete* stage to *Personalized* stage.
+
+This directory **MUST NOT** have any sub-directory.
 
 Depending on the operating system's engineering specification, this directory
 can be **ENTIRELY OPTIONAL**.
 
-**Only `root` and administrators (users with `wheel` permission) can access the
-directory**.
+Due to its processing nature, one **MUST** carefully work here to prevent any
+data poisoning or losses.
+
+This directory is **ONLY** accessible `root` and OS administrators (users with
+`wheel` permission).
 
 Programs **SHOULD NOT** assume any file or directory and always perform safe
 query before use.
 
-Generally, unless absolute necessary, you **SHOULD NOT** place anything here
-**UNLESS** you are the OS distributor. This is to avoid any conflict with the
-upstream's registries that will break the OS in any way. Use `/home/[USERNAME]`
-instead.
+In Apple `MacOS`, this directory is facilitated mainly for supporting BSD
+inter-compatibilities purposes only. `MacOS` does not not really use and depend
+on it. Also this directory is part of the `local domain`.
 
-This directory **MUST NOT** have any sub-directory.
+Generally, you **SHOULD** place your files here. All of them are only available
+specifically for you.
 
 
 

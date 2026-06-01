@@ -34,6 +34,6 @@ from the higher OS functionalities.
 
 [![banner](/.internals/trademarks/banner_1200x100.svg)](#)
 
-No restrictions. It is all depending on the chosen bootloader (e.g. `U-Boot`,
-`Grub`, etc), hardware, firmware, etc). Some bootloaders have strict partitions
-setup, strict file names and pathing, stricts locations, and etc.
+No restrictions. It is all depending on the chosen bootloader (e.g. `UEFI`,
+`U-Boot`, `Grub`, `LILO`). Some bootloaders have strict partitions setup,
+filenames, pathing, locations, and etc.

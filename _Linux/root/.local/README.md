@@ -2,33 +2,49 @@
 
 [![banner](/.internals/trademarks/banner_1200x100.svg)](#)
 
-This directory houses all user-specific system directory with its own
-[Common](/Common) filesystems specifically for a user. This extends the
-operating system (OS)'s functionalities from *Complete* stage to *Personalized*
-stage.
+This directory houses all `root` account's user-specific directory with its own
+[Common](/Common) filesystems. This extends the operating system (OS)'s
+functionalities from *Complete* stage to *Personalized* stage.
 
-The goal is to extend the complete OS for `root` account without affecting the
-OS' *Complete* system functionalities. It has its own `.local` configurations
-and the OS will personalize for this account.
+The goal is to extend the complete OS for this specific user (e.g. his/her own
+programs, configurations, etc) without affecting the OS' *Complete* system
+functionalities. Different user has different `.local` configurations and the
+OS will personalize for the specific user.
 
-Depending on the operating system's engineering specification, this directory
-can be **ENTIRELY OPTIONAL**.
+The main purposes are:
 
-**Only `root` and administrators (users with `wheel` permission) can access the
-directory**.
-
-Programs **SHOULD NOT** assume any file or directory and always perform safe
-query before use.
-
-Generally, unless absolute necessary, you **SHOULD NOT** place anything here
-**UNLESS** you are the OS distributor. This is to avoid any conflict with the
-upstream's registries that will break the OS in any way. Use `/home/[USERNAME]`
-instead.
+1. Extends the OS completeness to user's specific personalized configurations.
+   Different user has different unique `.local` configurations.
+2. Extends the personalization without affecting the OS' *Complete* system
+   initialization.
+3. Allows user to procure software without requiring `root` or administrator(s)
+   account for installation that affects the entire OS (also known as
+   `Rootless Install`).
 
 On some Linux UNIX-like OSs notably SystemD-based, Red Hat, and Fedora; this
 directory is heavily used as they shifted all user customizations into here with
 dedicated software like rootless package manager (e.g. Flatpak -
 `$ flatpak --user install`).
+
+Depending on the operating system's engineering specification, this directory
+can be **ENTIRELY OPTIONAL**.
+
+Due to its processing nature, one **MUST** carefully work here to prevent any
+data poisoning or losses.
+
+This directory is **ONLY** accessible `root` and OS administrators (users with
+`wheel` permission).
+
+Programs **SHOULD NOT** assume any file or directory and always perform safe
+query before use.
+
+In Apple `MacOS`, this directory is facilitated mainly for supporting BSD
+inter-compatibilities purposes only. `MacOS` does not not really use and depend
+on it. Also this directory is part of the `local domain`.
+
+Generally, you **SHOULD AND EXTREMELY ENCOURAGED** to place your programs,
+applications, and files here. All of them are only available specifically for
+you.
 
 
 
@@ -37,10 +53,8 @@ dedicated software like rootless package manager (e.g. Flatpak -
 
 [![banner](/.internals/trademarks/banner_1200x100.svg)](#)
 
-When this directory combines with [Common](/Common) directories structure, it
-houses user-only specific filesystems on top of the operating system (OS),
-personalized it just for this user. The combination happens inside a `.local`
-sub-directory of this directory. The commonly seen structures would be:
+This directory itself is a [Common](/Common) directories structure. Hence, its
+downstream can be as follows:
 
 ```
 /root/.local/
@@ -48,6 +62,7 @@ sub-directory of this directory. The commonly seen structures would be:
   etc/
   include/
   lib/
+  lib[ARCH]/
   libexec/
   sbin/
   share/
