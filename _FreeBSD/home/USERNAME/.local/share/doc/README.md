@@ -2,27 +2,25 @@
 
 [![banner](/.internals/trademarks/banner_1200x100.svg)](#)
 
-This is the user-specific directory housing user supplied, non-critical,
-user-specific document files (e.g. man pages) for extending the operating
-system (OS)'s functionalities from *Complete* stage to *Personalized* stage.
-This means that font files in this directory only appears specifically for this
-user.
-
-The main purpose of such separation is to make sure the operating system's
-update transaction goes smoothly without any conflicting files with yours.
-The second purpose is to facilitate a way to procure software without requiring
-`root` or administrator(s) account for installation affecting the entire OS.
+This is the user-specific directory housing user-specific, user supplied,
+non-critical, CPU architecture independent documentation files (e.g. PDFs, HTML)
+for extending the operating system (OS)'s functionalities from *Complete* stage
+to *Personalized* stage.
 
 Depending on the operating system's engineering specification, this directory
 can be **ENTIRELY OPTIONAL**.
 
+Due to its processing nature, one **MUST** carefully work here to prevent any
+data poisoning or losses.
+
+This directory is accessible by the owning user, `root`, and OS administrators
+(users with `wheel` permission).
+
 Programs **SHOULD NOT** assume any file or directory and always perform safe
 query before use.
 
-This directory is accessible by the owning user, `root`, and OS administrators
-(users with `wheel permission).
-
-Generally, you **SHOULD** place your files here.
+Generally, you **SHOULD** place your files here. All of them are only available
+specifically for you.
 
 
 
@@ -41,29 +39,26 @@ Here are the examples:
 /home/[USERNAME]/.local/share/doc/
   trademark/
     product1/
-      program.pdf
-      program.txt
-      program.1
+      program1.pdf
+      program1.txt
       ...
     product2/
-      program.pdf
-      program.txt
-      program.1
+      program2.pdf
+      program2.txt
       ...
     ...
+  ...
 
 # OR
 
 /home/[USERNAME]/.local/share/doc/
   product1/
-    program.pdf
-    program.txt
-    program.1
+    program1.pdf
+    program1.txt
     ...
   product2/
-    program.pdf
-    program.txt
-    program.1
+    program2.pdf
+    program2.txt
     ...
   ...
 ```

@@ -1,4 +1,4 @@
-# `Users\[USERNAME]\AppData\Local\Temp`
+# `[DRIVE]\Users\[USERNAME]\AppData\Local\Temp`
 
 [![banner](/.internals/trademarks/banner_1200x100.svg)](#)
 
@@ -8,12 +8,14 @@ This is the base directory for housing operating system (OS)'s user-specific,
 Due to its processing nature, one **MUST** carefully work here to prevent any
 data poisoning or losses.
 
-All files here are available to all users to read but **ONLY** available to
-specific user with permission, all sysadmins, and `root` account to create,
-update, and delete.
+This directory is accessible by the owning user, `root`, and OS administrators.
 
-Generally, you **SHOULD NOT** place any files in here unless you are a Microsoft
-Windows OS developer.
+Programs **SHOULD NOT** assume any file or directory and always perform safe
+query before use.
+
+Generally, you **SHOULD** place anything temporary here for data processing.
+You are **STRONGLY RECOMMENDED** to remove the files before and after use for
+preventing data file poisoning.
 
 This directory is accessible via the the following environment variables:
 
@@ -32,6 +34,6 @@ Refer OS distributor's documentations for specifications.
 The structure is something like:
 
 ```
-[DRIVE]\Windows\Temp\
+[DRIVE]\Users\[USERNAME]\AppData\Local\Temp\
   ...
 ```

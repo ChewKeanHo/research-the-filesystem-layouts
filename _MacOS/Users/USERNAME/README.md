@@ -55,7 +55,7 @@ for end-user but for software developers. Upon combinations with the above,
 the full structure becomes:
 
 ```
-/home/
+/Users/
   [USERNAME]/
     Applications/
     bin/                -> ${HOME}/.local/bin

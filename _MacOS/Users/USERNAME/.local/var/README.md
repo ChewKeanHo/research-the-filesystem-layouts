@@ -2,28 +2,27 @@
 
 [![banner](/.internals/trademarks/banner_1200x100.svg)](#)
 
-This is the user-specific directory housing user supplied, non-critical,
-user-specific transient data files (e.g. state files, saved games files, web
-server files, log files, etc) for extending the operating system (OS)'s
-functionalities from *Complete* stage to *Personalized* stage. This means that
-architecture independent data files in this directory only appears specifically
-for this user.
+This is the user-specific directory housing user-specific, user supplied,
+non-critical, transient data files (e.g. state files, saved files, web server
+files, log files) for extending the operating system (OS)'s functionalities from
+*Complete* stage to *Personalized* stage.
 
-The main purpose of such separation is to make sure the operating system's
-update transaction goes smoothly without any conflicting files with yours.
-The second purpose is to facilitate a way to procure software without requiring
-`root` or administrator(s) account for installation affecting the entire OS.
+This directory **MUST NOT** have any sub-directory.
 
 Depending on the operating system's engineering specification, this directory
 can be **ENTIRELY OPTIONAL**.
 
+Due to its processing nature, one **MUST** carefully work here to prevent any
+data poisoning or losses.
+
+This directory is accessible by the owning user, `root`, and OS administrators
+(users with `wheel` permission).
+
 Programs **SHOULD NOT** assume any file or directory and always perform safe
 query before use.
 
-This directory is accessible by the owning user, `root`, and OS administrators
-(users with `wheel permission).
-
-Generally, you **SHOULD** place your files here.
+Generally, you **SHOULD** place your files here. All of them are only available
+specifically for you.
 
 This directory is part of the `local domain`.
 
@@ -37,37 +36,55 @@ developer power users via hidden access for BSD OS inter-compatibility purposes.
 
 [![banner](/.internals/trademarks/banner_1200x100.svg)](#)
 
-It is a practice to house the files using `trademark` and `product`
-sub-directories pattern. This can significantly reduces the naming collision for
-common names.
+The first sub-directory layer is a list of function oriented directories (e.g.
+`log`, `mail`, `lock`, `cache`, `tmp`, `crash`, `www`, `spool`, ...). This is
+defined by the OS' engineering specification.
+
+Within each function oriented sub-directory, it is a practice to house the
+configuration files using `trademark` and `product` sub-directories pattern.
+This can significantly reduces the naming collision for common names.
 
 Here are the examples:
 
 ```
 /Users/[USERNAME]/.local/var/
-  trademark/
-    product/
-      log/
-        access.log
-        info.log
-        ...
-      cache/
+  cache/
+    trademark/
+      product/
         icons/
           banner_1200x1200.svg
           ...
-      ...
+  lib/
+    trademark/
+      product/
+        icons/
+          banner_1200x1200.svg
+          ...
+  log/
+    trademark/
+      product/
+        access.log
+        info.log
+        ...
+  ...
 
 # OR
 
 /Users/[USERNAME]/.local/var/
-  product/
-    log/
-      access.log
-      info.log
-      ...
-    cache/
+  cache/
+    product/
       icons/
         banner_1200x1200.svg
         ...
-    ...
+  lib/
+    product/
+      icons/
+        banner_1200x1200.svg
+        ...
+  log/
+    product/
+      access.log
+      info.log
+      ...
+  ...
 ```
