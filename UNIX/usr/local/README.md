@@ -54,7 +54,6 @@ of basic functional directories such as:
                         programs and applications.
 /usr/local/share      - user supplied architecture independent files.
 /usr/local/src        - user supplied source files.
-/usr/local/var        - user supplied transient data files.
 /usr/local/tmp        - user supplied content temporary workspaces.
 ```
 

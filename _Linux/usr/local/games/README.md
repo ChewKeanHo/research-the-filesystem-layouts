@@ -2,16 +2,16 @@
 
 [![banner](/.internals/trademarks/banner_1200x100.svg)](#)
 
-This is the base directory for housing operating system (OS)'s system-wide,
-OS distributor supplied, non-critical gaming programs and applications to extend
-the OS' functionalities from *Critical & Minimal* stage to *Full Catalogue*
-stage. This means it can operate in both `Multi-User` mode in BSD realm or
+This is the base directory for housing system-wide, user supplied, non-critical
+gaming programs and applications of an operating system (OS) to function
+properly. This means it can operate in `Multi-User` mode in BSD realm or
 `Full Mode` in Linux realm.
 
-The goal is to extend the OS' functionalities all the way to its OS
-distributor's supplied packages. All programs' and applications' names and
-locations are registered by OS distributor. Therefore, they are available
-consistently and uniformly across all the machines.
+The goal is to expand the OS' functionalities from *Full Catalogue* stage to
+*Complete* stage achieving full user-customized system-wide capabilities. All
+payloads, filepaths, configurations, data, etc. are specific to this runtime
+hardware and is completely customizable by system administrator (user with
+`wheel` privilege).
 
 Due to its processing nature, one **MUST** carefully work here to prevent any
 data poisoning or losses.
@@ -20,17 +20,20 @@ All files here are available to all users to read but **ONLY** available to
 specific user with permission, all sysadmins (user in `wheel` group), and `root`
 account to create, update, and delete.
 
-Programs **SHOULD NOT** assume any file and directory here and **SHOULD** always
-practice safe-querying before use.
-
-Generally, you **SHOULD** place your own custom programs and applications here.
-It will be made available only for you.
-
-This directory **MUST NOT** have any sub-directory.
+In FreeBSD, this directory is unused.
 
 In many Linux OSes like SystemD and UAPI, this directory is
 **DEPRECATED AND REMOVED** in favor of using `/home/[USERNAME]/.local/games`
 instead.
+
+In Apple `MacOS`, this directory is facilitated mainly for supporting BSD
+inter-compatibilities purposes only. `MacOS` does not not really use and depend
+on it. Also this directory is part of the `local domain`.
+
+Generally, you **SHOULD** place your file here for all users. If you want only
+for a specific user, use `${HOME}/[USERNAME]/.local/games` instead.
+
+This directory **MUST NOT** have any sub-directory.
 
 
 
@@ -39,5 +42,4 @@ instead.
 
 [![banner](/.internals/trademarks/banner_1200x100.svg)](#)
 
-Like any executable programs and applications, on UNIX, the filename
-**MUST BE THE SAME** as desired command.
+The filename **MUST BE THE SAME** as desired command to call in terminal.

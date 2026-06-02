@@ -3,7 +3,7 @@
 [![banner](/.internals/trademarks/banner_1200x100.svg)](#)
 
 This is the base directory for housing system-wide, operating system (OS)
-distributor supplied, non-critical inclusion files (e.g. C source files) of an
+distributor supplied, non-critical source files (e.g. C source files) of an
 OS to function properly. This means it can operate in `Multi-User` mode in BSD
 realm or `Full Mode` in Linux realm.
 

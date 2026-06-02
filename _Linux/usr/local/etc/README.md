@@ -2,15 +2,15 @@
 
 [![banner](/.internals/trademarks/banner_1200x100.svg)](#)
 
-This is the base directory for housing user's system-wide, custom supplied,
-non-critical, configuration files to extend the operating system (OS)'s
-functionalities from *Full Catalogue* stage to *Complete* stage. This means it
-can operate in both `Multi-User` mode in BSD realm or `Full Mode` in Linux
-realm.
+This is the base directory for housing system-wide, user supplied, non-critical
+configuration files of an operating system (OS) to function properly. This means
+it can operate in `Multi-User` mode in BSD realm or `Full Mode` in Linux realm.
 
-The goal is to extend the OS' functionalities to its complete form by isolating
-OS distributor's packages away from user's system-wide OS customizations. These
-customizations, in theory, only specific to this machine instance.
+The goal is to expand the OS' functionalities from *Full Catalogue* stage to
+*Complete* stage achieving full user-customized system-wide capabilities. All
+payloads, filepaths, configurations, data, etc. are specific to this runtime
+hardware and is completely customizable by system administrator (user with
+`wheel` privilege).
 
 Due to its processing nature, one **MUST** carefully work here to prevent any
 data poisoning or losses.
@@ -19,15 +19,16 @@ All files here are available to all users to read but **ONLY** available to
 specific user with permission, all sysadmins (user in `wheel` group), and `root`
 account to create, update, and delete.
 
-Programs **SHOULD NOT** assume any file and directory here and **SHOULD** always
-practice safe-querying before use.
+In many `Linux`-based OSes, they do not practice using this directory but still
+honoring it. Instead all files are unified under `/etc` directory. Some like
+Red Hat Linux is still using this directory.
 
-Generally, you **SHOULD** place your own system-wide custom configuration files
-here.
+In Apple `MacOS`, this directory is facilitated mainly for supporting BSD
+inter-compatibilities purposes only. `MacOS` does not not really use and depend
+on it. Also this directory is part of the `local domain`.
 
-In many Linux OSes like SystemD and UAPI, this directory is
-**DEPRECATED AND REMOVED** in favor of using `/etc`, `/home/[USERNAME]/.config`,
-or `/home/[USERNAME]/.local/etc` instead.
+Generally, you **SHOULD** place your file here for all users. If you want only
+for a specific user, use `${HOME}/[USERNAME]/.local/etc` instead.
 
 
 
