@@ -28,7 +28,9 @@ responsibilites from `/usr/bin` directory.
 
 In Linux-based OSes, this directory is unused.
 
-In Apple `MacOS`, this directory is unused.
+In Apple `MacOS`, this directory is facilitated mainly for supporting BSD
+inter-compatibilities purposes only. `MacOS` does not not really use and depend
+on it. Also this directory is part of the `local domain`.
 
 You **SHOULD ONLY** place distributor's registered files in here only. The first
 sub-directories layer denotes the origin OS.

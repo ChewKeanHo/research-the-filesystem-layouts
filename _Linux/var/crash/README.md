@@ -2,7 +2,8 @@
 
 [![banner](/.internals/trademarks/banner_1200x100.svg)](#)
 
-This directory houses all operating system's (OS) kernel crash dump data files.
+This directory houses all operating system's (OS) kernel and other crash dump
+data report files.
 
 Due to its processing nature, one **MUST** carefully work here to prevent any
 data poisoning or losses.
@@ -16,12 +17,18 @@ This directory is **ENTIRELY OPTIONAL** depending on the runtime OS usage.
 Programs **SHOULD NOT** assume any file and directory here and **SHOULD** always
 practice safe-querying before use.
 
+In Apple `MacOS`, this directory is facilitated mainly for supporting BSD
+inter-compatibilities purposes only. `MacOS` does not not really use and depend
+on it. Also this directory is part of the `local domain`.
+
 
 
 
 ## Naming Conventions
 
 [![banner](/.internals/trademarks/banner_1200x100.svg)](#)
+
+Refer `crash(8)` and `savecore(8)` for specifications.
 
 It is a practice to house the files using `trademark` and `product`
 sub-directories pattern. This can significantly reduces the naming collision for

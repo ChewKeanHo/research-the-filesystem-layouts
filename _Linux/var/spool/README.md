@@ -11,16 +11,14 @@ All files here are available to all users to read but **ONLY** available to
 specific user with permission, all sysadmins (user in `wheel` group), and `root`
 account to create, update, and delete.
 
-This directory is marked **AS COMPULSORY TO EXIST** by Linux's Filesystems
-Standards (https://specifications.freedesktop.org/fhs/latest/varRequirements.html).
-However, in practice, this directory is **OPTIONAL** depending on the runtime
-OS uses and specifications.
+This directory is **ENTIRELY OPTIONAL** depending on usage in the runtime OS.
 
 Programs **SHOULD NOT** assume any file and directory here and **SHOULD** always
 practice safe-querying before use.
 
-On majority of Linux-based OSes, this directory is symlinked from `/spool`
-directory for reducing the total numbers of used `tmpfs`.
+In Apple `MacOS`, this directory is facilitated mainly for supporting BSD
+inter-compatibilities purposes only. `MacOS` does not not really use and depend
+on it. Also this directory is part of the `local domain`.
 
 
 
@@ -40,7 +38,7 @@ depends on the mailing services the OS is using.
 Here are the examples:
 
 ```
-/var/spool/
+/var/spool/output/
   trademark/
     product/
       file1
@@ -50,7 +48,7 @@ Here are the examples:
 
 OR
 
-/var/spool/
+/var/spool/output/
   product/
     file1
     file2

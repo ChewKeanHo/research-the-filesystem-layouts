@@ -6,10 +6,15 @@ This directory houses all operating system's temporary files and directory.
 Unlike `/tmp` base directory, this temporary directory **GET PERSISTED (without
 deletion on reboot)** enabling post booting forensic analytics use.
 
-All files here are available to all users.
+All files here are available to all users and is restricted based on UNIX
+filesystem permissions.
 
 Programs **SHOULD NOT** assume any file and directory here and **SHOULD** always
 practice safe-querying before use.
+
+In Apple `MacOS`, this directory is facilitated mainly for supporting BSD
+inter-compatibilities purposes only. `MacOS` does not not really use and depend
+on it. Also this directory is part of the `local domain`.
 
 Also, it is recommended to clean up the temporary files before and after use to
 avoid post-use blaming or corrupted data usage.

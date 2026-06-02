@@ -17,9 +17,15 @@ account to create, update, and delete.
 
 This directory is **ENTIRELY OPTIONAL** depending on the runtime OS usage.
 
-FreeBSD practices the use of `/usr/local/etc` so use `/usr/local/etc/devd`
-instead. Therefore, generally, you **SHOULD NOT** place or modify the
-configuration files that are very critical to the OS.
+In `FreeBSD`, it practices the use of `/usr/local/etc` so use
+`/usr/local/etc/devd` instead. Therefore, generally, you **SHOULD NOT** place or
+modify the configuration files that are very critical to the OS.
+
+In `Linux`-based OSes, this directory is named as `/etc/udev`.
+
+In Apple `MacOS`, this directory is facilitated mainly for supporting BSD
+inter-compatibilities purposes only. `MacOS` does not not really use and depend
+on it. Also this directory is part of the `local domain`.
 
 
 

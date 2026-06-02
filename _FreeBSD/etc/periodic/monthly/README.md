@@ -30,6 +30,10 @@ account to create, update, and delete.
 
 This directory is **ENTIRELY OPTIONAL** depending on the runtime OS usage.
 
+In Apple `MacOS`, this directory is facilitated mainly for supporting BSD
+inter-compatibilities purposes only. `MacOS` does not not really use and depend
+on it. Also this directory is part of the `local domain`.
+
 FreeBSD practices the use of `/usr/local/etc` so use
 `/usr/local/etc/periodic/monthly` instead. Therefore, generally, you
 **SHOULD NOT** place or modify the configuration files that are very critical to

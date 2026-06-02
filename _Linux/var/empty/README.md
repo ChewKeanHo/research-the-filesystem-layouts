@@ -3,7 +3,8 @@
 [![banner](/.internals/trademarks/banner_1200x100.svg)](#)
 
 This directory houses all operating system's (OS) empty directory facility for
-those programs and applications with specific needs.
+those programs and applications (e.g. `sshd`)  with specific needs primarily
+privilege separation.
 
 Due to its processing nature, one **MUST** carefully work here to prevent any
 data poisoning or losses.
@@ -16,3 +17,7 @@ This directory is **ENTIRELY OPTIONAL** depending on the runtime OS usage.
 
 Programs **SHOULD NOT** assume any file and directory here and **SHOULD** always
 practice safe-querying before use.
+
+In Apple `MacOS`, this directory is facilitated mainly for supporting BSD
+inter-compatibilities purposes only. `MacOS` does not not really use and depend
+on it. Also this directory is part of the `local domain`.

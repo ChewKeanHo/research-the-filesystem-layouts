@@ -1,8 +1,9 @@
-# `/var/lock`
+# `/var/spool/lock`
 
 [![banner](/.internals/trademarks/banner_1200x100.svg)](#)
 
-This directory houses all operating system's (OS) serial devices' lock files.
+This directory houses all operating system's (OS) serial devices or processors'
+lock files.
 
 Due to its processing nature, one **MUST** carefully work here to prevent any
 data poisoning or losses.
@@ -13,6 +14,10 @@ account to create, update, and delete.
 
 Programs **SHOULD NOT** assume any file and directory here and **SHOULD** always
 practice safe-querying before use.
+
+In Apple `MacOS`, this directory is facilitated mainly for supporting BSD
+inter-compatibilities purposes only. `MacOS` does not not really use and depend
+on it. Also this directory is part of the `local domain`.
 
 
 
@@ -33,7 +38,7 @@ naming collision for common names.
 Here are the examples with and without using `trademark` directory:
 
 ```
-/var/lock/
+/var/spool/lock/
   ...
   trademark/
     product/
@@ -45,7 +50,7 @@ Here are the examples with and without using `trademark` directory:
 
 OR
 
-/var/lock/
+/var/spool/lock/
   ...
   product/
     service1.lock

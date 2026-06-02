@@ -14,8 +14,15 @@ account to create, update, and delete.
 Programs **SHOULD NOT** assume any file and directory here and **SHOULD** always
 practice safe-querying before use.
 
+In FreeBSD, this directory is unused and is served from `/var/spool/lock`
+directory instead.
+
 In some Linux-based OSes like Red Hat Linux, SystemD, and UAPI, this directory
 is **REPLACING** `/var/lock` for reducing total numbers of used `tmpfs`.
+
+In Apple `MacOS`, this directory is facilitated mainly for supporting BSD
+inter-compatibilities purposes only. `MacOS` does not not really use and depend
+on it. Also this directory is part of the `local domain`.
 
 
 

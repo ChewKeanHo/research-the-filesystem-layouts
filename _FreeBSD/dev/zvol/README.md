@@ -16,6 +16,10 @@ account to create, update, and delete.
 
 This directory is **ENTIRELY OPTIONAL** depending on the runtime OS usage.
 
+In Apple `MacOS`, this directory is facilitated mainly for supporting BSD
+inter-compatibilities purposes only. `MacOS` does not not really use and depend
+on it. Also this directory is part of the `local domain`.
+
 You **DEFINITELY MUST NOT** place anything here. Let the OS controls it
 entirely.
 
