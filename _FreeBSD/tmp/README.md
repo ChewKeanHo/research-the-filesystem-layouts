@@ -24,6 +24,9 @@ based on the designated UNIX filesystem access permissions. **ONLY** all
 sysadmins (user in `wheel` group), and `root` account has the overriding
 capabilities.
 
+In some `Linux`-based OSes like Red Hat Linux and Fedora, this directory is
+symlinked to `/usr/tmp` directory.
+
 In Apple `MacOS`, this directory is facilitated mainly for supporting BSD
 inter-compatibilities purposes only. `MacOS` does not not really use and depend
 on it. Also this directory is part of the `local domain`.

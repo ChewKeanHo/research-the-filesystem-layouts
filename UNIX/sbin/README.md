@@ -20,9 +20,9 @@ All files here are available to all users to read but **ONLY** available to
 specific user with permission, all sysadmins (user in `wheel` group), and `root`
 account to create, update, and delete.
 
-In some UNIX-like OSes like Oracle's Solaris (first to transform back in 2012)
-and Red Hat's Fedora (second to transform back in 2023), due to `/usr` is always
-being mounted and hardware are no longer observing performance compromise
+In some `Linux`-based OSes like Oracle's Solaris (first to transform back in
+2012) and Red Hat's Fedora (second to transform back in 2023), due to `/usr` is
+always being mounted and hardware are no longer observing performance compromise
 between `/` and `/usr` layers, this directory is being symbolic linked to
 `/usr/sbin` instead; unifying both directories. This reduces the separation
 complexities for package managements and distributions as all packages only
@@ -37,8 +37,8 @@ on it. Also this directory is part of the `local domain`.
 
 Generally, you **SHOULD ONLY** place programs and applications that are very
 critical in the early booting stage here without conflicting with existing POSIX
-compliant programs. In the case of `/sbin` being symbolic linked to `/usr/sbin`,
-you **MUST NOT** place anything here and use `/usr/sbin` exclusively instead.
+compliant programs. In the case of `/sbin` being symbolically linked to
+`/usr/sbin`, you **MUST** place the content in `/usr/sbin` instead.
 
 This directory **MUST NOT** have any sub-directory.
 

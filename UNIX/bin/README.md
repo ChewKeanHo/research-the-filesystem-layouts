@@ -20,11 +20,11 @@ All files here are available to all users to read but **ONLY** available to
 specific user with permission, all sysadmins (user in `wheel` group), and `root`
 account to create, update, and delete.
 
-In some UNIX-like OSes like Oracle's Solaris (first to transform back in 2012)
-and Red Hat's Fedora (second to transform back in 2023), due to `/usr` is always
-being mounted and hardware are no longer observing performance compromise
-between `/` and `/usr` layers, this directory is being symbolic linked to
-`/usr/bin` instead; unifying both directories. This reduces the separation
+In some `Linux`-based OSes like Oracle's Solaris (first to transform back in
+2012) and Red Hat's Fedora (second to transform back in 2023), due to `/usr` is
+always being mounted and hardware are no longer observing performance compromise
+between `/` and `/usr` layers, `/usr/bin` directory is being symbolic linked to
+`/bin` instead; unifying both directories. This reduces the separation
 complexities for package managements and distributions as all packages only
 needs to target `/usr/bin` directory.
 
@@ -35,10 +35,12 @@ In Apple `MacOS`, this directory is facilitated mainly for supporting BSD
 inter-compatibilities purposes only. `MacOS` does not not really use and depend
 on it. Also this directory is part of the `local domain`.
 
-Generally, you **SHOULD ONLY** place programs and applications that are very
-critical in the early booting stage here without conflicting with existing POSIX
-compliant programs. In the case of `/bin` being symbolic linked to `/usr/bin`,
-you **MUST NOT** place anything here and use `/usr/bin` exclusively instead.
+Generally, you **SHOULD NOT** place anything here **UNLESS** you are the OS
+distributor. This is to avoid any conflict with the upstream's registries that
+will break the OS updates or upgardes in any way. Use `/usr/local/bin` or
+`${HOME}/[USERNAME]/.local/bin` instead. In the case of `/bin` being
+symbolically linked from `/usr/bin`, you **MUST** place the content in
+`/usr/bin` instead.
 
 This directory **MUST NOT** have any sub-directory.
 

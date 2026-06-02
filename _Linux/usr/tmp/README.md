@@ -2,23 +2,34 @@
 
 [![banner](/.internals/trademarks/banner_1200x100.svg)](#)
 
-This directory houses all operating system (OS)'s temporary files and directory.
-On many OSes design, this directory gets cleared and cleaned on boot up.
+This is the base directory for housing system-wide, operating system (OS)
+distributor supplied, non-critical temporary files and directory workspace of an
+OS to function properly. This means it can operate in `Multi-User` mode in BSD
+realm or `Full Mode` in Linux realm.
 
-Programs **SHOULD NOT** assume any file and directory here and **SHOULD** always
-practice safe-querying before use.
+The goal is to extend the OS' functionalities all the way to its OS
+distributor's supplied packages. All payloads, filepaths, configurations, data,
+etc. are strictly registered by the OS distributor for achieving uniformity
+and consistency across ALL hardware (fleet management).
 
-All files here are available to all users and is restricted based on UNIX
-filesystem permissions.
+Due to its processing nature, one **MUST** carefully work here to prevent any
+data poisoning or losses.
 
-Also, it is recommended to clean up the temporary files before **AND** after use
-to avoid post-use blaming or corrupted data usage.
+All files here are available to all users to create, read, update, and delete
+based on the designated UNIX filesystem access permissions. **ONLY** all
+sysadmins (user in `wheel` group), and `root` account has the overriding
+capabilities.
 
-On majority of Linux-based OSes, this directory replaces all other temporary
-directory (e.g., `/var/tmp`, `/usr/tmp`). In some Linux-based OSes like
-Red Hat Linux and Fedora, this directory is symlinked to `/tmp` directory,
-a symlink to `/var/tmp` directory. In short, if `/tmp` is unavailable, look for
-those 2 directories.
+In many `Linux`-based OSes, this directory is unused. Only Red Hat Linux and
+Fedora are using it and symlinked from `/tmp` directory.
+
+In FreeBSD, this directory is unused.
+
+In Apple `MacOS`, this directory is unused.
+
+Generally, you **SHOULD ONLY** place files that requires temporary space for
+operations here. It is **HIGHLY RECOMMENDED** to remove all the files before and
+after use for preventing any possible data poisoning occurances.
 
 
 

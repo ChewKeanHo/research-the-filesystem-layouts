@@ -2,36 +2,45 @@
 
 [![banner](/.internals/trademarks/banner_1200x100.svg)](#)
 
-This is the base directory for housing operating system (OS)'s system-wide, OS
-distributor supplied, non-critical, system administrators (sysadmins) only
-programs and applications to extend the OS' functionalities from
-*Critical & Minimal* stage to *Complete* stage. This means it can operate in
-both `Multi-User` mode in BSD realm or `Full Mode` in Linux realm.
+This is the base directory for housing system-wide, operating system (OS)
+distributor supplied, non-critical, system administrative programs and
+applications of an OS to function properly. This means it can operate in
+`Multi-User` mode in BSD realm or `Full Mode` in Linux realm.
 
 The goal is to extend the OS' functionalities all the way to its OS
-distributor's supplied packages. All programs' and applications' names and
-locations are registered by OS distributor. Therefore, they are available
-consistently and uniformly across all the machines.
+distributor's supplied packages. All payloads, filepaths, configurations, data,
+etc. are strictly registered by the OS distributor for achieving uniformity
+and consistency across ALL hardware (fleet management).
 
 Due to its processing nature, one **MUST** carefully work here to prevent any
 data poisoning or losses.
 
-All files here are **ONLY** available to sysadmins (users in `wheel` group) and
-`root` account.
+All files here are **ONLY** available to all sysadmins (user in `wheel` group)
+and `root` account to create, view, update, and delete.
 
-This directory is **ENTIRELY OPTIONAL** depending on the runtime OS usage.
+In some `Linux`-based OSes like Oracle's Solaris (first to transform back in
+2012) and Red Hat's Fedora (second to transform back in 2023), due to `/usr` is
+always being mounted and hardware are no longer observing performance compromise
+between `/` and `/usr` layers, `/usr/sbin` directory is being symbolic linked to
+`/sbin` instead; unifying both directories. This reduces the separation
+complexities for package managements and distributions as all packages only
+needs to target `/usr/sbin` directory.
+
+In FreeBSD, this directory is still maintaining its verbatim separated roles and
+responsibilites from `/usr/sbin` directory.
+
+In Apple `MacOS`, this directory is facilitated mainly for supporting BSD
+inter-compatibilities purposes only. `MacOS` does not not really use and depend
+on it. Also this directory is part of the `local domain`.
 
 Generally, you **SHOULD NOT** place anything here **UNLESS** you are the OS
 distributor. This is to avoid any conflict with the upstream's registries that
-will break the OS in any way. Use `/usr/local/sbin` or
-`${HOME}/[USERNAME]/.local/sbin` instead.
+will break the OS updates or upgardes in any way. Use `/usr/local/sbin` or
+`${HOME}/[USERNAME]/.local/sbin` instead. In the case of `/sbin` being
+symbolically linked from `/usr/sbin`, you **MUST** place the content here
+instead of `/sbin`.
 
 This directory **MUST NOT** have any sub-directory.
-
-This directory is part of the `local domain`.
-
-Apple MacOS does not use this directory. However, it is made available for
-developer power users via hidden access for BSD OS inter-compatibility purposes.
 
 
 
@@ -40,5 +49,4 @@ developer power users via hidden access for BSD OS inter-compatibility purposes.
 
 [![banner](/.internals/trademarks/banner_1200x100.svg)](#)
 
-Like any executable programs and applications, on UNIX, the filename
-**MUST BE THE SAME** as desired command.
+The filename **MUST BE THE SAME** as desired command to call in terminal.
