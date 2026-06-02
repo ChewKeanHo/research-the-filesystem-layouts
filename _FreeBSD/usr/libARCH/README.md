@@ -8,10 +8,11 @@ distributor supplied, non-critical, CPU architecture specific library files
 properly. This means it can operate in `Multi-User` mode in BSD realm or
 `Full Mode` in Linux realm.
 
-The goal is to extend the OS' functionalities all the way to its OS
-distributor's supplied packages. All payloads, filepaths, configurations, data,
-etc. are strictly registered by the OS distributor for achieving uniformity
-and consistency across ALL hardware (fleet management).
+The goal is to expand the OS' functionalities from *Minimum & Critical* stage to
+*Full Catalogue* stage achieving full distributor-grade warranted capabilities.
+All payloads, filepaths, configurations, data, etc. are strictly registered by
+the OS distributor for achieving uniformity and consistency across ALL hardware
+(fleet management).
 
 Due to its processing nature, one **MUST** carefully work here to prevent any
 data poisoning or losses.

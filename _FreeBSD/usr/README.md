@@ -9,6 +9,9 @@ can operate in `Multi-User` mode in BSD realm or `Full Mode` in Linux realm.
 
 The goal is to expand the OS' functionalities from *Minimum & Critical* stage to
 *Full Catalogue* stage achieving full distributor-grade warranted capabilities.
+All payloads, filepaths, configurations, data, etc. are strictly registered by
+the OS distributor for achieving uniformity and consistency across ALL hardware
+(fleet management).
 
 To protect the resources from any user's temperment, this directory is usally
 mounted as `read-only`.
