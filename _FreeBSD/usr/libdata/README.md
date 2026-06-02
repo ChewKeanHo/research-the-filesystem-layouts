@@ -30,8 +30,6 @@ distributor. This is to avoid any conflict with the upstream's registries that
 will break the OS updates or upgardes in any way. Use `/usr/local/libdata`
 instead.
 
-This directory **MUST NOT** have any sub-directory.
-
 
 
 

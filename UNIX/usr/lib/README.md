@@ -41,8 +41,6 @@ will break the OS updates or upgardes in any way. Use `/usr/local/lib` or
 symbolically linked from `/usr/lib`, you **MUST** place the content here instead
 of `/lib`.
 
-This directory **MUST NOT** have any sub-directory.
-
 
 
 

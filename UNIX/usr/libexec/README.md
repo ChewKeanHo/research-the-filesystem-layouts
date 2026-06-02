@@ -44,8 +44,6 @@ will break the OS updates or upgardes in any way. Use `/usr/local/libexec` or
 symbolically linked from `/usr/libexec`, you **MUST** place the content here
 instead of `/libexec`.
 
-This directory **MUST NOT** have any sub-directory.
-
 
 
 
