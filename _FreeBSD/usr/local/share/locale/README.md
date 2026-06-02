@@ -1,10 +1,10 @@
-# `/usr/local/share/man`
+# `/usr/share/locale`
 
 [![banner](/.internals/trademarks/banner_1200x100.svg)](#)
 
 This is the base directory for housing system-wide, user supplied, non-critical,
-manual documentation files of an OS to function properly. This means it can
-operate in `Multi-User` mode in BSD realm or `Full Mode` in Linux realm.
+localization data files of an OS to function properly. This means it can operate
+in `Multi-User` mode in BSD realm or `Full Mode` in Linux realm.
 
 The goal is to expand the OS' functionalities from *Full Catalogue* stage to
 *Complete* stage achieving full user-customized system-wide capabilities. All
@@ -24,7 +24,7 @@ inter-compatibilities purposes only. `MacOS` does not not really use and depend
 on it. Also this directory is part of the `local domain`.
 
 Generally, you **SHOULD** place your file here for all users. If you want only
-for a specific user, use `${HOME}/[USERNAME]/.local/share/man` instead.
+for a specific user, use `${HOME}/[USERNAME]/.local/share/locale` instead.
 
 
 
@@ -33,7 +33,7 @@ for a specific user, use `${HOME}/[USERNAME]/.local/share/man` instead.
 
 [![banner](/.internals/trademarks/banner_1200x100.svg)](#)
 
-Refer `man(1)` manual for specification.
+Refer `setlocale(3)` manual for specifications.
 
 It is a practice to house the files using `trademark` and `product`
 sub-directories pattern. This can significantly reduces the naming collision for
@@ -42,30 +42,20 @@ common names.
 Here are the examples:
 
 ```
-/usr/share/man/
+/usr/share/locale/[LAND_ID]/
   trademark/
     product/
-      man1/
-        amd64
-        aarch64
-        ...
-      man2/
-        amd64
-        aarch64
-        ...
+      encryption.mo
+      sign.mo
+      auth.mo
       ...
 
 OR
 
-/usr/share/man/
+/usr/share/locale/[LANG_ID]/
   product/
-    man1/
-      amd64
-      aarch64
-      ...
-    man2/
-      amd64
-      aarch64
-      ...
+    encryption.mo
+    sign.mo
+    auth.mo
     ...
 ```
