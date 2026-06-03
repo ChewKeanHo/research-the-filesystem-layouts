@@ -1,13 +1,14 @@
-#  UNIX Filesystem Layouts
+#  Root Filesystem Layouts
 
 [![banner](/.internals/trademarks/banner_1200x100.svg)](#)
 
-This is the UNIX filesystem abstracted from various operating system (OS)s such
+This is the Root filesystem abstracted from various operating system (OS)s such
 as but not limited to:
 
 1. `FreeBSD` Unix-like OS; AND
 2. `Linux`-based Unix-like OS; AND
-3. `MacOS` Unix-like OS.
+3. `MacOS` Unix-like OS; AND
+4. `Windows` OS.
 
 This layout **ONLY CAPTURES** the directories exist across all of them.
 
@@ -24,9 +25,9 @@ This layout **ONLY CAPTURES** the directories exist across all of them.
 
 [![banner](/.internals/trademarks/banner_1200x100.svg)](#)
 
-The primary objective is to produce a common mapping of the latest UNIX
-filesystem evolution. This map allows an OS designer to decide and to maximize
-inter-OS compatibility purposes for better portability and user experience.
+The primary objective is to produce a common mapping of the latest UNIX-based
+OSes filesystems. This allows an OS designer to decide and to maximize inter-OS
+compatibility purposes for better portability and user experience.
 
 You can explore each directory here in details.
 
