@@ -2,47 +2,52 @@
 
 [![banner](/.internals/trademarks/banner_1200x100.svg)](#)
 
-This is the `root` account's directory housing user-specific, user supplied,
-non-critical, volatile performance enhancing data files for extending the
-operating system (OS)'s functionalities from *Complete* stage to *Personalized*
-stage.
+This directory houses the `root` account's all production cache files.
 
-This directory **MUST NOT** have any sub-directory.
-
-Depending on the operating system's engineering specification, this directory
-can be **ENTIRELY OPTIONAL**.
+The goal is to expand the OS' functionalities from *Complete* stage to
+*Personalized* stage achieving full per-user customization capabilities. All
+payloads, filepaths, configurations, data, etc. are specific to this runtime
+hardware and to the owning user.
 
 Due to its processing nature, one **MUST** carefully work here to prevent any
 data poisoning or losses.
 
-This directory is **ONLY** accessible `root` and OS administrators (users with
-`wheel` permission).
+Programs **SHOULD NOT** assume any file and directory here and **SHOULD** always
+practice safe-querying before use.
 
-Programs **SHOULD NOT** assume any file or directory and always perform safe
-query before use.
+All files here are **ONLY** available to `root` account, and OS administrators
+(users with `wheel` permission) for create, read, update, and delete operation.
+
+In some `Linux`-based OSs notably SystemD-based, Red Hat, and Fedora; this
+directory is heavily used as they shifted user-oriented dedicated software like
+flatpak package manager (e.g. `$ flatpak --user install`) for achieving rootless
+operation.
 
 In Apple `MacOS`, this directory is facilitated mainly for supporting BSD
 inter-compatibilities purposes only. `MacOS` does not not really use and depend
 on it. Also this directory is part of the `local domain`.
 
+In Microsoft `Windows`, this directory is inter-compatible with other UNIX and
+UNIX-like OSes for localized software package management.
+
 Generally, you **SHOULD** place your files here. All of them are only available
-specifically for you. You are **STRONGLY RECOMMENDED** to remove the files after
-use for preventing data file poisoning.
+specifically for you.
 
 
 
 
-## Naming Conventions
+## Naming Convention
 
 [![banner](/.internals/trademarks/banner_1200x100.svg)](#)
 
-The first sub-directory layer is a list of function oriented directories (e.g.
-`log`, `mail`, `lock`, `cache`, `tmp`, `crash`, `www`, `spool`, ...). This is
-defined by the OS' engineering specification.
+The naming convention is **singular `cache`** as it represent the entire caching
+directory.
 
-Within each function oriented sub-directory, it is a practice to house the
-configuration files using `trademark` and `product` sub-directories pattern.
-This can significantly reduces the naming collision for common names.
+The file extension can be anything.
+
+It is a practice to house the files using `trademark` and `product`
+sub-directories pattern. This can significantly reduces the naming collision for
+common names.
 
 Here are the examples:
 
@@ -50,18 +55,20 @@ Here are the examples:
 /root/.local/var/cache/
   trademark/
     product/
-      icons/
-        banner_1200x1200.svg
-        ...
+      data.save
+      profile1.jpg
+      transient.json
+      ...
     ...
   ...
 
-# OR
+OR
 
 /root/.local/var/cache/
   product/
-    icons/
-      banner_1200x1200.svg
-        ...
+    data.save
+    profile1.jpg
+    transient.json
+    ...
   ...
 ```

@@ -43,14 +43,12 @@ applications supplied by the OS distributor here. Otherwise, you can use
 
 [![banner](/.internals/trademarks/banner_1200x100.svg)](#)
 
-Generally, *you want to avoid creating anything on the first sub-directory
-layer and likely want to use `/var/lib` instead*. The first sub-directory layer
-is a list of function oriented directories (e.g. `log`, `mail`, `lock`, `cache`,
-`tmp`, `crash`, `www`, `spool`, ...). This is defined by the OS' engineering
-specification.
+Generally, the first sub-directory layer is a list of function oriented
+directories (e.g. `log`, `mail`, `lock`, `cache`, `tmp`, `crash`, `www`,
+`spool`, ...).
 
 Within each function oriented sub-directory, notably the commonly used
-`/var/lib` data directory, it is a practice to house the configuration files
+`var/lib` data directory, it is a practice to house the configuration files
 using `trademark` and `product` sub-directories pattern. This can significantly
 reduces the naming collision for common names.
 

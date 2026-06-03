@@ -2,9 +2,13 @@
 
 [![banner](/.internals/trademarks/banner_1200x100.svg)](#)
 
-This directory houses all operating system's temporary files and directory.
-Unlike `/tmp` base directory, this temporary directory **GET PERSISTED (without
-deletion on reboot)** enabling post-booting forensic analytics use.
+This directory houses all operating system's temporary files and directories
+workspaces.
+
+Unlike `/tmp` directory, this directory **GET PERSISTED (without deletion on
+reboot)** enabling post-booting forensic analytics use. It is always recommended
+to clean up the temporary files after use to avoid any after-use corruption and
+hogging unwanted storage spaces.
 
 Due to its processing nature, one **MUST** carefully work here to prevent any
 data poisoning or losses.
@@ -16,9 +20,6 @@ This directory is **ENTIRELY OPTIONAL** depending on the runtime OS usage.
 
 Programs **SHOULD NOT** assume any file and directory here and **SHOULD** always
 practice safe-querying before use.
-
-Also, it is recommended to clean up the temporary files after use to avoid
-any after-use corruption.
 
 In Apple `MacOS`, this directory is facilitated mainly for supporting BSD
 inter-compatibilities purposes only. `MacOS` does not not really use and depend

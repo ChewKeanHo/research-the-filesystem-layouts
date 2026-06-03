@@ -2,71 +2,63 @@
 
 [![banner](/.internals/trademarks/banner_1200x100.svg)](#)
 
-This directory houses all user-specific system directory with its own
-[Common](/Common) filesystems. This extends the operating system (OS)'s
-functionalities from *Complete* stage to *Personalized* stage.
+This is the base directory for housing a single user's user-specific, user
+supplied, programs, applications, libraries files, configuration files, etc of
+an OS to function properly. This means it can operate in `Multi-User` mode in
+BSD realm or `Full Mode` in Linux realm.
 
-The goal is to extend the complete OS for this specific user (e.g. his/her own
-programs, configurations, etc) without affecting the OS' *Complete* system
-functionalities. Different user has different `.local` configurations and the
-OS will personalize for the specific user.
-
-The main purposes are:
-
-1. Extends the OS completeness to user's specific personalized configurations.
-   Different user has different unique `.local` configurations.
-2. Extends the personalization without affecting the OS' *Complete* system
-   initialization.
-3. Allows user to procure software without requiring `root` or administrator(s)
-   account for installation that affects the entire OS (also known as
-   `Rootless Install`).
-
-On some Linux UNIX-like OSs notably SystemD-based, Red Hat, and Fedora; this
-directory is heavily used as they shifted all user customizations into here with
-dedicated software like rootless package manager (e.g. Flatpak -
-`$ flatpak --user install`).
-
-Depending on the operating system's engineering specification, this directory
-can be **ENTIRELY OPTIONAL**.
+The goal is to expand the OS' functionalities from *Complete* stage to
+*Personalized* stage achieving full per-user customization capabilities. All
+payloads, filepaths, configurations, data, etc. are specific to this runtime
+hardware and to the owning user.
 
 Due to its processing nature, one **MUST** carefully work here to prevent any
 data poisoning or losses.
 
-This directory is accessible by the owning user, `root`, and OS administrators
-(users with `wheel` permission).
+Programs **SHOULD NOT** assume any file and directory here and **SHOULD** always
+practice safe-querying before use.
 
-Programs **SHOULD NOT** assume any file or directory and always perform safe
-query before use.
+All files here are available to the owning user, `root` account, and OS
+administrators (users with `wheel` permission) for create, read, update, and
+delete operation.
 
-Generally, you **SHOULD AND EXTREMELY ENCOURAGED** to place your programs,
-applications, and files here. All of them are only available specifically for
-you.
+In some `Linux`-based OSs notably SystemD-based, Red Hat, and Fedora; this
+directory is heavily used as they shifted user-oriented dedicated software like
+flatpak package manager (e.g. `$ flatpak --user install`) for achieving rootless
+operation.
 
-This directory is part of the `local domain`.
+In Apple `MacOS`, this directory is facilitated mainly for supporting BSD
+inter-compatibilities purposes only. `MacOS` does not not really use and depend
+on it. Also this directory is part of the `local domain`.
 
-Apple MacOS does not use this directory. However, it is made available for
-developer power users via hidden access for BSD OS inter-compatibility purposes.
+In Microsoft `Windows`, this directory is inter-compatible with other UNIX and
+UNIX-like OSes for localized software package management.
+
+Generally, you **SHOULD** place your files here. All of them are only available
+specifically for you.
 
 
 
 
-## File Structures
+## Directory Structure
 
 [![banner](/.internals/trademarks/banner_1200x100.svg)](#)
 
-This directory itself is a [Common](/Common) directories structure. Hence, its
-downstream can be as follows:
+When this directory combines with the [Common](/Common) filesystem, you get a
+list of basic functional directories such as:
+
 
 ```
 /Users/[USERNAME]/.local/
-  bin/
-  etc/
-  include/
-  lib/
-  lib[ARCH]/
-  libexec/
-  sbin/
-  share/
-  src/
-  var/
+  bin/               # user supplied utilities programs and applications.
+  etc/               # user supplied configuration files.
+  include/           # user supplied include files (e.g. c header files).
+  lib/               # user supplied library files (e.g. c object files).
+  lib[ARCH]/         # user supplied CPU-specific library files.
+  libexec/           # user supplied non-commandable programs and applications.
+  sbin/              # user supplied sysadmin programs and applications.
+  share/             # user supplied architecture independent data files.
+  src/               # user supplied source files (e.g. c source files).
+  tmp/               # user supplied temporary workspaces.
+  var/               # user supplied transient data files.
 ```

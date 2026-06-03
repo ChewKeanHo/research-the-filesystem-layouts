@@ -2,39 +2,41 @@
 
 [![banner](/.internals/trademarks/banner_1200x100.svg)](#)
 
-This is the user-specific directory housing user-specific, user supplied,
-non-critical, CPU architecture specific library files (e.g. C object artifact
-files) for extending the operating system (OS)'s functionalities from *Complete*
-stage to *Personalized* stage.
+This is the base directory for housing a single user's user-supplied, user
+supplied, non-critical CPU architecture specific library files (e.g compiled
+linkable object files) of an operating system (OS) to function properly. This
+means it can operate in `Multi-User` mode in BSD realm or `Full Mode` in Linux
+realm.
 
-This directory pattern is considered old and obselete when `x86` CPU
-architecture was migrated completely from `i386` to `amd64` architectures.
-During the migrations, both architecture-specific libraries are required to
-exist on an OS so this pattern was invented. Only place your files here (e.g.
-`arm64` library files on an `amd64` OS where they are used for
-cross-compilation) when absolute necessary.
-
-This directory **MUST NOT** have any sub-directory.
-
-Depending on the operating system's engineering specification, this directory
-can be **ENTIRELY OPTIONAL**.
+The goal is to expand the OS' functionalities from *Complete* stage to
+*Personalized* stage achieving full per-user customization capabilities. All
+payloads, filepaths, configurations, data, etc. are specific to this runtime
+hardware and to the owning user.
 
 Due to its processing nature, one **MUST** carefully work here to prevent any
 data poisoning or losses.
 
-This directory is accessible by the owning user, `root`, and OS administrators
-(users with `wheel` permission).
+Programs **SHOULD NOT** assume any file and directory here and **SHOULD** always
+practice safe-querying before use.
 
-Programs **SHOULD NOT** assume any file or directory and always perform safe
-query before use.
+All files here are available to the owning user, `root` account, and OS
+administrators (users with `wheel` permission) for create, read, update, and
+delete operation.
+
+In some `Linux`-based OSs notably SystemD-based, Red Hat, and Fedora; this
+directory is heavily used as they shifted user-oriented dedicated software like
+flatpak package manager (e.g. `$ flatpak --user install`) for achieving rootless
+operation.
+
+In Apple `MacOS`, this directory is facilitated mainly for supporting BSD
+inter-compatibilities purposes only. `MacOS` does not not really use and depend
+on it. Also this directory is part of the `local domain`.
+
+In Microsoft `Windows`, this directory is inter-compatible with other UNIX and
+UNIX-like OSes for localized software package management.
 
 Generally, you **SHOULD** place your files here. All of them are only available
 specifically for you.
-
-This directory is part of the `local domain`.
-
-Apple MacOS does not use this directory. However, it is made available for
-developer power users via hidden access for BSD OS inter-compatibility purposes.
 
 
 
@@ -47,25 +49,28 @@ It is a practice to house the files using `trademark` and `product`
 sub-directories pattern. This can significantly reduces the naming collision for
 common names.
 
-Here are the examples for ARCH is `32` (32-bit on 64-bit OS):
+Here are the examples:
 
 ```
 /Users/[USERNAME]/.local/lib[ARCH]/
   trademark/
     product/
-      lib1.a
-      lib1_freebsd-amd64.a
+      lib1.so
+      lib1_freebsd-amd64.so
       kernel8.ko
       kernel8_freebsd-amd64.ko
       ...
+    ...
+  ...
 
 # OR
 
 /Users/[USERNAME]/.local/lib[ARCH]/
   product/
-    lib1.a
-    lib1_freebsd-amd64.a
+    lib1.so
+    lib1_freebsd-amd64.so
     kernel8.ko
     kernel8_freebsd-amd64.ko
     ...
+  ...
 ```

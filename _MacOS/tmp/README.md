@@ -2,16 +2,19 @@
 
 [![banner](/.internals/trademarks/banner_1200x100.svg)](#)
 
-This is the base directory for housing temporary files and directories of an
-operating system (OS) to function properly and minimally without any mounting
-(e.g. `/usr` is not mounted or absent). This means it can operate in
-`Single-User` mode in BSD realm or `Emergency Mode` in Linux realm.
+This is the base directory for housing temporary files and directories
+workspaces of an operating system (OS) to function properly and minimally
+without any mounting (e.g. `/usr` is not mounted or absent). This means it can
+operate in `Single-User` mode in BSD realm or `Emergency Mode` in Linux realm.
 
 The goal is to have minimally sufficient programs enough for basic
 functionalities to perform critical tasks like mounting `/usr` UNIX System
 Resources directory for OS capabilities extension, performing self-rescue, or
 straight up being operational in this resources constraint environment such as
 but not limited to OpenWRT embedded router.
+
+It is always recommended to clean up the temporary files before and after use to
+avoid any after-use corruption and hogging unwanted storage spaces.
 
 Due to its processing nature, one **MUST** carefully work here to prevent any
 data poisoning or losses.
@@ -53,10 +56,13 @@ Here are the examples:
   trademark/
     product/
       ...
+    ...
+  ...
 
 OR
 
 /tmp/
   product/
     ...
+  ...
 ```

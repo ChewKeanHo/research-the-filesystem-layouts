@@ -19,9 +19,10 @@ All files here are available to all users to read but **ONLY** available to
 specific user with permission, all sysadmins (user in `wheel` group), and `root`
 account to create, update, and delete.
 
-In Apple `MacOS`, this directory is facilitated mainly for supporting BSD
-inter-compatibilities purposes only. `MacOS` does not not really use and depend
-on it. Also this directory is part of the `local domain`.
+In Apple `MacOS`, this directory is unused as it uses its `/Libraries/Fonts`
+directory instead. However, this directory is facilitated mainly for supporting
+BSD inter-compatibilities purposes only. `MacOS` does not not really use and
+depend on it. Also this directory is part of the `local domain`.
 
 Generally, you **SHOULD** place your file here for all users. If you want only
 for a specific user, use `${HOME}/[USERNAME]/.local/share/fonts` instead.
