@@ -1,10 +1,9 @@
-# `lib`
+# `include`
 
 [![banner](/.internals/trademarks/banner_1200x100.svg)](#)
 
-This directory houses library files (e.g compiled linkable object files).
-These files are accessible by various programs, applications, and development
-project for an unified repository management.
+This directory houses inclusion files (e.g. C header filers). These files are
+accessible by various development project for an unified repository management.
 
 
 
@@ -20,25 +19,25 @@ common names.
 Here are the examples:
 
 ```
-lib/
+include/
   trademark/
     product/
-      lib1.so
-      lib1_freebsd-amd64.so
-      kernel8.ko
-      kernel8_freebsd-amd64.ko
+      lib1.h
+      lib1_freebsd-amd64.h
+      kernel8.h
+      kernel8_freebsd-amd64.h
       ...
     ...
   ...
 
 # OR
 
-lib/
+include/
   product/
-    lib1.so
-    lib1_freebsd-amd64.so
-    kernel8.ko
-    kernel8_freebsd-amd64.ko
+    lib1.h
+    lib1_freebsd-amd64.h
+    kernel8.h
+    kernel8_freebsd-amd64.h
     ...
   ...
 ```

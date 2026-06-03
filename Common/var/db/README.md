@@ -1,18 +1,13 @@
-# `tmp`
+# `var/db`
 
 [![banner](/.internals/trademarks/banner_1200x100.svg)](#)
 
-This directory houses temporary files and directories workspaces. These files
+This directory houses all transient database and datastore files. These files
 are accessible by various programs, applications, and development project for an
 unified repository management.
 
-The lifetime of each file and directory depends on the operating system (OS)
-configurations. Some `tmp` directory (notably `/var/tmp` on UNIX-basd OSes)
-**GET PERSISTED (without deletion on reboot)** enabling post-booting forensic
-analytics use.
-
-It is always recommended to clean up the temporary files after use to avoid any
-after-use corruption and hogging unwanted storage spaces.
+Due to its processing nature, one **MUST** carefully work here to prevent any
+data poisoning or losses.
 
 
 
@@ -28,17 +23,25 @@ common names.
 Here are the examples:
 
 ```
-tmp/
+var/db/
   trademark/
     product/
+      node1
+      node2
+      file1.data
+      file2.data
       ...
     ...
   ...
 
-OR
+# OR
 
-tmp/
+var/db/
   product/
+    node1
+    node2
+    file1.data
+    file2.data
     ...
   ...
 ```

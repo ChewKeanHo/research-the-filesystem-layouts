@@ -9,37 +9,40 @@ directories instead of structuring the directory in a specific pattern.
 Therefore, the layout here are specifically analyzed based on a common drive
 (e.g. `C:\`) single flat directory installation.
 
-This directory is accessible via the the following environment variables:
-
-* `%SYSTEMDRIVE%` - NOTE: you need to append `\` manually.
 
 
 
-
-# Understanding The 4 Stages of Functionalities Extensions
+## Understanding The 4 Stages of Powering Up
 
 [![banner](/.internals/trademarks/banner_1200x100.svg)](#)
 
-Likewise, Microsoft Windows also generally go through 3 stages of
-functionalities extensions:
+Generally, any OS (including Microsoft `Windows`) go through 4 stages:
 
 1. **Critical & Minimal** - focuses on booting up the OS upto the minimal
-   operational level. This only uses tools from the Root (`[DRIVE]\Windows`)
-   directory excluding any system directories (e.g. `[DRIVE]\Program Files`).
-   The goal varies depending on the system's holistic design ranging from
-   operating entirely in a resources limited environment (e.g. before init
-   stage), performing operating systems self-rescue, or extending its
-   functionality to the next level.
-2. **Complete** - focuses on extending the OS functionalities further with user
-   introduced system-wide functionalities. This involves mounting the OS
-   localized system directories (`[DRIVE]\Windows\Program Files`). The goal here
-   is to completely make the OS fully functional with localized functionalities
-   (e.g. custom downloaded software packages setup by the user for all users).
-   At this point, the OS functionalities are marked as completed.
-3. **Personalized** - focuses on extending the OS functionalities with
-   user-specific system directories (`%LOCALAPPDATA%\Programs`). This stage can
-   change from time-to-time across different users as it based on the
-   user-only configurations.
+   operational level. The goal varies but usually about OS self-rescue, boot
+   selections, self-auditing, low-resources environment operations (e.g.
+   embedded. This stage only uses the Root (`/`) directory called `Layer-1`.
+2. **Full Catalogue** - focuses on extending the OS functionalities upto its
+   distributor's designed full potentials. The goal is to extend the OS
+   capabilities to the full functionalities warranted by the OS designer. This
+   stage only uses `/usr` directory called `Layer-2`.
+3. **Complete** - focuses on extending the OS functionalities further with
+   user's localized system-wide capabilities. The goal here is to extend the
+   OS capabilities further to cater user's system-wide customized
+   functionalities. This stage only uses `/usr/local` directory called
+   `Layer-3`.
+4. **Personalized** - focuses on extending the OS functionalities specifically
+   for a user. The goal here is to further customize the OS capabilities
+   specifically for an user. This stage can revert back and forth with
+   *Complete* stage whenever an user logged in or out of a session. This stage
+   only uses `${HOME}/.local` directory called `Layer-4`.
+
+> [!NOTE]
+>
+> Most proprietary OSes notably Apple's `MacOS` and Microsoft `Windows` skip the
+> **Full Catalogue** stage as they are not facing the open-source multiple
+> distributors fragmentations like the open source OSes (e.g. `FreeBSD` and
+> `Linux`-based OSes).
 
 
 
@@ -62,12 +65,6 @@ to designate a directory separation in their pathing definitions.
 
 For reducing learning curve, this layout maintains the use of backslash.
 
+This directory is accessible via the the following environment variables:
 
-
-
-## Primary Objectives
-
-[![banner](/.internals/trademarks/banner_1200x100.svg)](#)
-
-The primary objective of this layer is to boot the OS critical component up and
-running with minimum resources and be functionally operational.
+* `%SYSTEMDRIVE%` - NOTE: you need to append `\` manually.

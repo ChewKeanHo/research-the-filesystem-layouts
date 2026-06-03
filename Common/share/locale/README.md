@@ -1,8 +1,8 @@
-# `lib`
+# `share/locale`
 
 [![banner](/.internals/trademarks/banner_1200x100.svg)](#)
 
-This directory houses library files (e.g compiled linkable object files).
+This directory houses CPU architecture independent localization data files.
 These files are accessible by various programs, applications, and development
 project for an unified repository management.
 
@@ -13,6 +13,8 @@ project for an unified repository management.
 
 [![banner](/.internals/trademarks/banner_1200x100.svg)](#)
 
+Refer FreeBSD's `setlocale(3)` manual for specifications.
+
 It is a practice to house the files using `trademark` and `product`
 sub-directories pattern. This can significantly reduces the naming collision for
 common names.
@@ -20,25 +22,23 @@ common names.
 Here are the examples:
 
 ```
-lib/
+share/locale/[LAND_ID]/
   trademark/
     product/
-      lib1.so
-      lib1_freebsd-amd64.so
-      kernel8.ko
-      kernel8_freebsd-amd64.ko
+      encryption.mo
+      sign.mo
+      auth.mo
       ...
     ...
   ...
 
-# OR
+OR
 
-lib/
+share/locale/[LAND_ID]/
   product/
-    lib1.so
-    lib1_freebsd-amd64.so
-    kernel8.ko
-    kernel8_freebsd-amd64.ko
+    encryption.mo
+    sign.mo
+    auth.mo
     ...
   ...
 ```

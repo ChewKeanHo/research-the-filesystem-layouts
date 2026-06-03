@@ -1,8 +1,8 @@
-# `src`
+# `var/crash`
 
 [![banner](/.internals/trademarks/banner_1200x100.svg)](#)
 
-This directory houses source files (e.g C source files). These files are
+This directory houses all transient crash dumped data files. These files are
 accessible by various programs, applications, and development project for an
 unified repository management.
 
@@ -13,6 +13,8 @@ unified repository management.
 
 [![banner](/.internals/trademarks/banner_1200x100.svg)](#)
 
+Refer FreeBSD's `crash(8)` and `savecore(8)` for specifications.
+
 It is a practice to house the files using `trademark` and `product`
 sub-directories pattern. This can significantly reduces the naming collision for
 common names.
@@ -20,25 +22,24 @@ common names.
 Here are the examples:
 
 ```
-src/
+var/crash/
+  202511011500_kernel.log
+  202511011530_kernel.log
+  ...
   trademark/
     product/
-      lib1.c
-      lib1_freebsd-amd64.c
-      kernel8.c
-      kernel8_freebsd-amd64.c
+      file1.log
+      file2.log
       ...
-    ...
-  ...
 
 # OR
 
-src/
-  product/
-    lib1.c
-    lib1_freebsd-amd64.c
-    kernel8.c
-    kernel8_freebsd-amd64.c
-    ...
+var/crash/
+  202511011500_kernel.log
+  202511011530_kernel.log
   ...
+  product/
+    file1.log
+    file2.log
+    ...
 ```

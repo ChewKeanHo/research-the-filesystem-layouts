@@ -1,8 +1,8 @@
-# `src`
+# `share/fonts`
 
 [![banner](/.internals/trademarks/banner_1200x100.svg)](#)
 
-This directory houses source files (e.g C source files). These files are
+This directory houses CPU architecture independent font files. These files are
 accessible by various programs, applications, and development project for an
 unified repository management.
 
@@ -20,25 +20,29 @@ common names.
 Here are the examples:
 
 ```
-src/
+share/fonts/
   trademark/
-    product/
-      lib1.c
-      lib1_freebsd-amd64.c
-      kernel8.c
-      kernel8_freebsd-amd64.c
+    product1/
+      font1.tff
+      LICENSE.txt
+      ...
+    product2/
+      font2.tff
+      LICENSE.txt
       ...
     ...
   ...
 
 # OR
 
-src/
-  product/
-    lib1.c
-    lib1_freebsd-amd64.c
-    kernel8.c
-    kernel8_freebsd-amd64.c
+share/fonts/
+  product1/
+    font1.tff
+    LICENSE.txt
+    ...
+  product2/
+    font2.tff
+    LICENSE.txt
     ...
   ...
 ```

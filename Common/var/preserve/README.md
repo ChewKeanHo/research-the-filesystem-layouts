@@ -1,10 +1,10 @@
-# `lib`
+# `var/preserve`
 
 [![banner](/.internals/trademarks/banner_1200x100.svg)](#)
 
-This directory houses library files (e.g compiled linkable object files).
-These files are accessible by various programs, applications, and development
-project for an unified repository management.
+This directory houses all transient unused and presented for historical reasons
+data files. These files are accessible by various programs, applications, and
+development project for an unified repository management.
 
 
 
@@ -20,25 +20,24 @@ common names.
 Here are the examples:
 
 ```
-lib/
+var/preserve/
   trademark/
     product/
-      lib1.so
-      lib1_freebsd-amd64.so
-      kernel8.ko
-      kernel8_freebsd-amd64.ko
+      node1
+      node2
+      file1.data
+      file2.data
       ...
-    ...
   ...
 
 # OR
 
-lib/
+var/preserve/
   product/
-    lib1.so
-    lib1_freebsd-amd64.so
-    kernel8.ko
-    kernel8_freebsd-amd64.ko
+    node1
+    node2
+    file1.data
+    file2.data
     ...
   ...
 ```

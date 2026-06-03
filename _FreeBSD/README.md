@@ -36,20 +36,21 @@ Generally, any OS (including Microsoft `Windows`) go through 4 stages:
 1. **Critical & Minimal** - focuses on booting up the OS upto the minimal
    operational level. The goal varies but usually about OS self-rescue, boot
    selections, self-auditing, low-resources environment operations (e.g.
-   embedded. This stage only uses the Root (`/`) directory layer.
+   embedded. This stage only uses the Root (`/`) directory called `Layer-1`.
 2. **Full Catalogue** - focuses on extending the OS functionalities upto its
    distributor's designed full potentials. The goal is to extend the OS
    capabilities to the full functionalities warranted by the OS designer. This
-   usually involves mounting `/usr` directory layer.
+   stage only uses `/usr` directory called `Layer-2`.
 3. **Complete** - focuses on extending the OS functionalities further with
    user's localized system-wide capabilities. The goal here is to extend the
    OS capabilities further to cater user's system-wide customized
-   functionalities. This usually involves mounting `/usr/local` directory layer.
+   functionalities. This stage only uses `/usr/local` directory called
+   `Layer-3`.
 4. **Personalized** - focuses on extending the OS functionalities specifically
    for a user. The goal here is to further customize the OS capabilities
-   specifically for a user. This usually involves mounting `${HOME}/.local`
-   directory layer. This stage can revert back to **Complete** stage from
-   time-to-time whenever an user is logged in or out.
+   specifically for an user. This stage can revert back and forth with
+   *Complete* stage whenever an user logged in or out of a session. This stage
+   only uses `${HOME}/.local` directory called `Layer-4`.
 
 > [!NOTE]
 >

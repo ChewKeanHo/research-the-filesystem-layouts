@@ -1,18 +1,14 @@
-# `tmp`
+# `share/games`
 
 [![banner](/.internals/trademarks/banner_1200x100.svg)](#)
 
-This directory houses temporary files and directories workspaces. These files
+This directory houses CPU architecture independent game data files. These files
 are accessible by various programs, applications, and development project for an
 unified repository management.
 
-The lifetime of each file and directory depends on the operating system (OS)
-configurations. Some `tmp` directory (notably `/var/tmp` on UNIX-basd OSes)
-**GET PERSISTED (without deletion on reboot)** enabling post-booting forensic
-analytics use.
-
-It is always recommended to clean up the temporary files after use to avoid any
-after-use corruption and hogging unwanted storage spaces.
+Note that this directory houses the resources files (e.g. game engine manifests,
+configurations, models, etc). For transient data files (e.g. saved games,
+screenshots, etc), look for `var/games` directory instead.
 
 
 
@@ -28,17 +24,23 @@ common names.
 Here are the examples:
 
 ```
-tmp/
+/home/[USERNAME]/.local/share/games/
   trademark/
     product/
+      dict.dat
+      i18n.toml
+      data.bin
       ...
     ...
   ...
 
 OR
 
-tmp/
+/home/[USERNAME]/.local/share/games/
   product/
+    dict.dat
+    i18n.toml
+    data.bin
     ...
   ...
 ```

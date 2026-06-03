@@ -1,10 +1,10 @@
-# `lib`
+# `var/account`
 
 [![banner](/.internals/trademarks/banner_1200x100.svg)](#)
 
-This directory houses library files (e.g compiled linkable object files).
-These files are accessible by various programs, applications, and development
-project for an unified repository management.
+This directory houses all transient user accounting data files. These files are
+accessible by various programs, applications, and development project for an
+unified repository management.
 
 
 
@@ -20,25 +20,25 @@ common names.
 Here are the examples:
 
 ```
-lib/
+var/account/
   trademark/
     product/
-      lib1.so
-      lib1_freebsd-amd64.so
-      kernel8.ko
-      kernel8_freebsd-amd64.ko
+      node1
+      node2
+      file1.data
+      file2.data
       ...
     ...
   ...
 
 # OR
 
-lib/
+var/account/
   product/
-    lib1.so
-    lib1_freebsd-amd64.so
-    kernel8.ko
-    kernel8_freebsd-amd64.ko
+    node1
+    node2
+    file1.data
+    file2.data
     ...
   ...
 ```

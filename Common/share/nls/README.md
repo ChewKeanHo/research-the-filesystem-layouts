@@ -1,10 +1,10 @@
-# `lib`
+# `share/nls`
 
 [![banner](/.internals/trademarks/banner_1200x100.svg)](#)
 
-This directory houses library files (e.g compiled linkable object files).
-These files are accessible by various programs, applications, and development
-project for an unified repository management.
+This directory houses CPU architecture independent national language support
+data files. These files are accessible by various programs, applications, and
+development project for an unified repository management.
 
 
 
@@ -20,25 +20,21 @@ common names.
 Here are the examples:
 
 ```
-lib/
+share/nls/
   trademark/
     product/
-      lib1.so
-      lib1_freebsd-amd64.so
-      kernel8.ko
-      kernel8_freebsd-amd64.ko
+      template1.mk
+      template2.mk
       ...
     ...
   ...
 
-# OR
+OR
 
-lib/
+share/nls/
   product/
-    lib1.so
-    lib1_freebsd-amd64.so
-    kernel8.ko
-    kernel8_freebsd-amd64.ko
+    template1.mk
+    template2.mk
     ...
   ...
 ```
