@@ -2,9 +2,13 @@
 
 [![banner](/.internals/trademarks/banner_1200x100.svg)](#)
 
-This directory houses CPU architecture independent miscellaneous system data
-files. These files are accessible by various programs, applications, and
-development project for an unified repository management.
+This directory houses miscellaneous resource files. These files **MUST BE**
+CPU‑architecture independent. While it can contain anything, such placement is
+generally discouraged because every file's location should be identified before
+distribution.
+
+Any miscellaneous placement is a technical debt to be revisited. Ideally, this
+directory is empty.
 
 
 

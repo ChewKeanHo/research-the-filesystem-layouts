@@ -36,21 +36,36 @@ Generally, any OS (including Microsoft `Windows`) go through 4 stages:
 1. **Critical & Minimal** - focuses on booting up the OS upto the minimal
    operational level. The goal varies but usually about OS self-rescue, boot
    selections, self-auditing, low-resources environment operations (e.g.
-   embedded. This stage only uses the Root (`/`) directory called `Layer-1`.
+   embedded. This stage only uses `Layer-1` directories which are:
+   * Root (`/`) directory - for `UNIX`-based OSes like `FreeBSD`, and
+     `Linux`-based OSes.
+   * Windows (`[DRIVE]/Windows`) directory - for Microsoft Windows.
 2. **Full Catalogue** - focuses on extending the OS functionalities upto its
    distributor's designed full potentials. The goal is to extend the OS
    capabilities to the full functionalities warranted by the OS designer. This
-   stage only uses `/usr` directory called `Layer-2`.
+   stage only uses `Layer-2` directory which is:
+   * `/usr` directory - for `UNIX`-based OSes like `FreeBSD`, and `Linux`-based
+     OSes.
 3. **Complete** - focuses on extending the OS functionalities further with
    user's localized system-wide capabilities. The goal here is to extend the
    OS capabilities further to cater user's system-wide customized
-   functionalities. This stage only uses `/usr/local` directory called
-   `Layer-3`.
+   functionalities. This state only uses `Layer-3` directories which are:
+   * `/usr/local` directory - for `UNIX`-based OSes like `FreeBSD`, and
+     `Linux`-based OSes.
+   * `/Libraries` and `/Applications` - for Apple's `MacOS`.
+   * `[DRIVE]/Program Files` and `[DRIVE]/Program Files (x86)` - for Microsoft
+     `Windows`.
 4. **Personalized** - focuses on extending the OS functionalities specifically
    for a user. The goal here is to further customize the OS capabilities
    specifically for an user. This stage can revert back and forth with
    *Complete* stage whenever an user logged in or out of a session. This stage
-   only uses `${HOME}/.local` directory called `Layer-4`.
+   only uses `Layer-4` directories are:
+   * `/home/[USERNAME]/.local` directory - for `UNIX`-based OSes like `FreeBSD`,
+     and `Linux`-based OSes.
+   * `/Users/[USERNAME]/Libraries` and `/Users/[USERNAME]/Applications` - for
+     Apple's `MacOS`.
+   * `[DRIVE]/Users/[USERNAME]/AppData` and `[DRIVE]/Users/[USERNAME]/.local` -
+     for Microsoft `Windows`.
 
 > [!NOTE]
 >

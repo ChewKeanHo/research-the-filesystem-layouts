@@ -2,9 +2,13 @@
 
 [![banner](/.internals/trademarks/banner_1200x100.svg)](#)
 
-This directory houses source files (e.g C source files). These files are
-accessible by various programs, applications, and development project for an
-unified repository management.
+This directory houses source files (e.g., C source files) for software
+developers to integrate into their products. Following the conventional C model,
+source code (`.c`) is readily available for import and can be compiled into
+object files (`.o`).
+
+All modern compiled languages such as Go, Rust, Nim, Swift, and Objective‑C use
+this directory.
 
 
 

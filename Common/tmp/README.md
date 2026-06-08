@@ -2,17 +2,15 @@
 
 [![banner](/.internals/trademarks/banner_1200x100.svg)](#)
 
-This directory houses temporary files and directories workspaces. These files
-are accessible by various programs, applications, and development project for an
-unified repository management.
+This directory houses temporary files and directories for any program to use
+during an operation (e.g., unpacking a compressed archive). Due to the high
+traffic, it is **HIGHLY RECOMMENDED** to clean up (delete) before and after use
+to prevent data corruption and unwanted storage consumption.
 
-The lifetime of each file and directory depends on the operating system (OS)
-configurations. Some `tmp` directory (notably `/var/tmp` on UNIX-basd OSes)
-**GET PERSISTED (without deletion on reboot)** enabling post-booting forensic
-analytics use.
-
-It is always recommended to clean up the temporary files after use to avoid any
-after-use corruption and hogging unwanted storage spaces.
+Depending on the deployment, this directory's lifetime may be temporary or
+permanent. On most systems it is cleared on reboot. Some, like `/var/tmp` on
+`FreeBSD` and `Linux`-based OSes, have a permanent lifetime to store crash or
+reboot logs.
 
 
 

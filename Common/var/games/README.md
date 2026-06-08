@@ -2,13 +2,9 @@
 
 [![banner](/.internals/trademarks/banner_1200x100.svg)](#)
 
-This directory houses transient game data files. These files are accessible by
-various programs, applications, and development project for an unified
-repository management.
-
-Note that this directory houses the transient data files (e.g. saved games,
-screenshots, etc). For resources files (e.g. game engine manifests,
-configurations, models, etc), look for `share/games` directory instead.
+This directory houses transient user‑specific game data (saved games,
+screenshots). For game engine resource files (models, engine configurations,
+manifest files), use `share/games/` instead.
 
 
 

@@ -2,12 +2,13 @@
 
 [![banner](/.internals/trademarks/banner_1200x100.svg)](#)
 
-This directory houses commandable programs and applications. User can execute
-the programs and applications easily as terminal commands instead of using its
-full filepath calling. Any executable be it a compiled application program
-artifact or a shell script can be placed here.
+This directory houses command‑able programs and applications mapped to the
+`$PATH` environment variable. Users can execute these programs easily using a
+command (e.g., `date`) instead of the full file path (`/bin/date`).
 
-This directory **MUST NOT** have any sub-directory.
+Due to this directory's role in formulating the command list, it **MUST NOT**
+contain any sub-directory. Each program or application must be uniquely named
+exactly as the desired calling command.
 
 
 

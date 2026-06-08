@@ -2,9 +2,9 @@
 
 [![banner](/.internals/trademarks/banner_1200x100.svg)](#)
 
-This directory houses all transient log data files. These files are accessible
-by various programs, applications, and development project for an unified
-repository management.
+This directory houses transient log files for forensic analysis. While generally
+text‑based, log files tend to grow exponentially large. It is therefore best to
+use a log rotation program to split logs into smaller, meaningful fragments.
 
 
 

@@ -2,9 +2,7 @@
 
 [![banner](/.internals/trademarks/banner_1200x100.svg)](#)
 
-This directory houses all transient user accounting data files. These files are
-accessible by various programs, applications, and development project for an
-unified repository management.
+This directory houses transient user identity and access management data files.
 
 
 

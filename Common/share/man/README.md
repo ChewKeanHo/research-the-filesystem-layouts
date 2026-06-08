@@ -2,9 +2,10 @@
 
 [![banner](/.internals/trademarks/banner_1200x100.svg)](#)
 
-This directory houses CPU architecture independent manual documentation data
-files. These files are accessible by various programs, applications, and
-development project for an unified repository management.
+This directory houses manual documentation files opened by the man program on
+`FreeBSD` and `Linux`‑based OSes. These files must be
+CPU‑architecture independent. For non‑manual documentation (PDF, HTML, text),
+use `share/doc/` instead.
 
 
 

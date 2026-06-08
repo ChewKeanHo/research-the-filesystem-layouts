@@ -2,9 +2,13 @@
 
 [![banner](/.internals/trademarks/banner_1200x100.svg)](#)
 
-This directory houses CPU architecture independent national language support
-data files. These files are accessible by various programs, applications, and
-development project for an unified repository management.
+This directory houses national language support data files. These files
+**MUST BE** CPU‑architecture independent. This directory is specific to
+`UNIX`‑based OSes (`FreeBSD`, `Linux`-based OSes). On other systems it is left
+blank.
+
+This directory is specific to `UNIX`-based OSes like `FreeBSD` and `Linux`-based
+OSes. Otherwise, it is always left blank.
 
 
 

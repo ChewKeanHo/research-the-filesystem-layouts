@@ -2,10 +2,10 @@
 
 [![banner](/.internals/trademarks/banner_1200x100.svg)](#)
 
-This directory houses CPU architecture independent non-manual document
-(e.g. PDF, HTML, text) data files. These files are accessible by various
-programs, applications, and development project for an unified repository
-management.
+This directory houses non‑manual documentation files (PDF, HTML, text). These
+files must be CPU‑architecture independent. For manual‑type documentation
+(opened by the man program on `FreeBSD` or `Linux`‑based OSes), use `share/man/`
+instead, due to the program’s directory search path.
 
 
 

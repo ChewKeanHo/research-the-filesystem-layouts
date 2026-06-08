@@ -1,33 +1,32 @@
-# User Home Directory Filesystem Layout
+# User Home Directory Layout
 
 [![banner](/.internals/trademarks/banner_1200x100.svg)](#)
 
-This is the default user directory filesystems setup by various operating
-systems (OS) such as but not limited to:
+Now let us review the user home directory layout. This layout is used across
+various operating systems and was abstracted from all major OSes including
+`FreeBSD`, `Linux`‑based OSes (a consolidation of `SystemD`, `FreeDesktop.org`,
+`Red Hat Linux`, `Debian`, `Devuan`, `Void Linux`, `Fedora`), Apple’s `MacOS`,
+and Microsoft `Windows`.
 
-1. `FreeBSD` Unix-like OS; AND
-2. `Linux`-based Unix-like OS; AND
-3. `MacOS` Unix-like OS; AND
-4. `Windows` OS.
+For Microsoft `Windows`, due to its design and the absence of a formal
+filesystem hierarchy standard, this layout focuses mainly on deployment rather
+than modifying the operating system itself.
 
-This layout **ONLY CAPTURES** the directories first appearance by any of them.
+Each directory in the user home layout serves specific graphical user interface
+(GUI) purposes and functionalities. Exploring each directory helps one better
+understand the rationale behind its structural design.
+
+This layout captures only the directories that appear natively in any of the
+surveyed operating systems.
+
+Users should be allowed to perform manual installation (e.g., copy‑pasting a
+bundle into their home directory). Otherwise, they may become silently
+rebellious and attempt to crack the operating system, which is an undesirable
+outcome.
 
 > [!WARNING]
 >
-> This is not a rule. Depending on OS, each user can customize his/her home
-> directory at his/her own discretion. Some savvy users alters the structures
-> with great creativities (e.g. some users combine `Videos`, `Musics`, and
-> `Pictures` into a single, well-maintained, `Galleries`).
-
-
-
-
-## Primary Objective
-
-[![banner](/.internals/trademarks/banner_1200x100.svg)](#)
-
-The primary objective is to produce a common mapping of the user's home
-directory. This map allows an OS designer to decide and to maximize inter-OS
-compatibility purposes for better portability and user experience.
-
-You can explore each directory here in details.
+> This is **NOT** a rule. Depending on the operating system, each user may
+> customize his or her home directory at personal discretion. Some savvy users
+> alter the structures with great creativity (e.g., combining `Videos`, `Music`,
+> and `Pictures` into a single, well‑maintained `Galleries` directory).

@@ -2,9 +2,13 @@
 
 [![banner](/.internals/trademarks/banner_1200x100.svg)](#)
 
-This directory houses CPU architecture independent localization data files.
-These files are accessible by various programs, applications, and development
-project for an unified repository management.
+This directory houses internationalization resource files. These files
+**MUST BE** CPU‑architecture independent. The first sub-directory's name is the
+language ID (`[ISO639]{-[ISO15924]}{-[ISO3166]}`). The designer may structure
+the contents arbitrarily.
+
+File formats are at the supplier's discretion; common formats are machine object
+(`.mo`), TOML (`.toml`), or YAML (`.yml`), but the context remains the same.
 
 
 
@@ -26,8 +30,11 @@ share/locale/[LAND_ID]/
   trademark/
     product/
       encryption.mo
+      encryption.toml
+      encryption.yml
       sign.mo
-      auth.mo
+      sign.toml
+      sign.yml
       ...
     ...
   ...
@@ -37,8 +44,11 @@ OR
 share/locale/[LAND_ID]/
   product/
     encryption.mo
+    encryption.toml
+    encryption.yml
     sign.mo
-    auth.mo
+    sign.toml
+    sign.yml
     ...
   ...
 ```

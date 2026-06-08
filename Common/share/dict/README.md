@@ -2,9 +2,9 @@
 
 [![banner](/.internals/trademarks/banner_1200x100.svg)](#)
 
-This directory houses CPU architecture independent words list data files. These
-files are accessible by various programs, applications, and development project
-for an unified repository management.
+This directory houses dictionary word‑list data files for programs to query,
+ensuring accurate and validated output. These files must be CPU‑architecture
+independent.
 
 
 
@@ -13,9 +13,13 @@ for an unified repository management.
 
 [![banner](/.internals/trademarks/banner_1200x100.svg)](#)
 
-Refer FreeBSD's `look(1)` manual for specifications.
+Refer `FreeBSD` or `Linux`-based OSes' `look(1)` manual for specifications.
 
-Known list files are something like:
+It is a practice to house the files using `trademark` and `product`
+sub-directories pattern. This can significantly reduces the naming collision for
+common names.
+
+Here are the examples:
 
 ```
 share/dict/
@@ -25,4 +29,13 @@ share/dict/
   web2              # words from Webster's Second International
   web2a
   words
+  trademark/
+    product/
+      hello.toml
+      error.toml
+      warning.toml
+      info.toml
+      ...
+    ...
+  ...
 ```

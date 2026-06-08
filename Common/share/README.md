@@ -2,9 +2,19 @@
 
 [![banner](/.internals/trademarks/banner_1200x100.svg)](#)
 
-This directory houses CPU architecture independent data files (e.g images, text,
-PDFs, audio, manuals). These files are accessible by various programs,
-applications, and development project for an unified repository management.
+This directory houses CPU architecture independent files (e.g. PDF, images,
+text, audios, manuals) that are portable in nature and usable across various CPU
+hardware. Hence the name `share/` is provisioned. Unlike other directories, this
+directory has known functionally named first level sub-directories like
+`share/doc/` is for PDF, text, HTML documents, `share/locale` is for
+internationalization translation data files, etc.
+
+These sub-directories listed are abstracted and known to exist across all
+deployment. While it is not a rule to comply all of them, it is better to use
+them for maximizing compatibility and portability. When a functional directory
+is unavailable (e.g. `share/music`), one can defines the functional directory
+after researching all others OSes’ implementation. If any of them already
+defined one, when sensible, use that instead.
 
 
 
@@ -13,7 +23,7 @@ applications, and development project for an unified repository management.
 
 [![banner](/.internals/trademarks/banner_1200x100.svg)](#)
 
-There are 2 systems in this directory organizations:
+There are 2 known patterns in this directory organizations:
 
 * functional directories (e.g. `fonts`, `doc`, `man`).
 * non-functional directories.

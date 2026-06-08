@@ -2,13 +2,12 @@
 
 [![banner](/.internals/trademarks/banner_1200x100.svg)](#)
 
-This directory houses CPU architecture independent game data files. These files
-are accessible by various programs, applications, and development project for an
-unified repository management.
+This directory houses game engine resource files (models, engine configurations,
+manifest files) for gaming programs. These files **MUST BE** CPU‑architecture
+independent.
 
-Note that this directory houses the resources files (e.g. game engine manifests,
-configurations, models, etc). For transient data files (e.g. saved games,
-screenshots, etc), look for `var/games` directory instead.
+For user‑specific game data (saved games, screenshots), use `var/games/`
+instead.
 
 
 
@@ -24,7 +23,7 @@ common names.
 Here are the examples:
 
 ```
-/home/[USERNAME]/.local/share/games/
+share/games/
   trademark/
     product/
       dict.dat
@@ -36,7 +35,7 @@ Here are the examples:
 
 OR
 
-/home/[USERNAME]/.local/share/games/
+share/games/
   product/
     dict.dat
     i18n.toml

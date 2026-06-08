@@ -1,81 +1,92 @@
-# The Filesystem Layouts | (Holloway) Chew, Kean Ho's Knowledge Research
+# The Adaptive Filesystem | (Holloway) Chew, Kean Ho's Knowledge Research
 
 [![banner](/.internals/trademarks/banner_1200x100.svg)](#)
 
-Having trouble working with filesystem hierarchy layouts especially those that
-has standardized regulations like UNIX and Windows? Are you looking for some
-design references that are comforming and portable to as many operating as
-possible? This is the right research dataset.
+Having trouble packaging or working with various filesystem hierarchy layouts
+simultaneously, especially when dealing with `BSD`, `Linux`, `Windows`, and
+`MacOS`? Are you looking for an adaptive filesystem that fits into all of them,
+simplifying your software product with a single layout? This is the right
+research repository.
 
-At (Holloway) Chew, Kean Ho's The Filesystem Layouts Research Project, tech
-volunteers and me are continuously updating this repository for abstracting
-common filesystems and directory layouts for various purposes. The research
-goals are simple:
+At (Holloway) Chew, Kean Ho's The Adaptive Filesystem Research Project, tech
+volunteers are continuously updating the repository's datasets and abstracting
+the three vital layouts:
+
+* **[`Common`](/Common)** - the common structure used everywhere, including
+  operating systems, project repositories, and package designs.
+* **[`Root`](/Root)** - the operating system filesystem hierarchy.
+* **[`User`](/User)** - the user directory layout.
+
+The research goals are simple:
 
 1. **Maximizing Compatibilities, Minimizing Conflicts** - analyzes and abstracts
-   various standards for common patterns. Through these patterns, new projects
-   can maximize inter-compatibilities and minimizing conflicts across multiple
-   operating systems; AND
-2. **Unifying Filesystems** - With common patterns in filesystems and directory
-   organizations, packaging software for end-user can be simplified and unified
-   for easier and maintainable maintenances works, automations, documentations,
-   and communitions sakes; AND
-3. **Solid and Hygienic Design References For Project Structuring** - something
-   clean and reliable to refer (not a rule to enforce) when designing a project
-   directory layout.
+   various standards for common patterns. Through these patterns, a new layout
+   is defined, maximizing inter-compatibilities and minimizing conflicts across
+   multiple operating systems; AND
+2. **Unifying Filesystems** - with a single adaptive filesystem, packaging
+   software and distributing it to end-users is simplified and unified, making
+   maintenance, automation, documentation, and communications seamless; AND
+3. **Solid and Hygienic Design References** - with an adaptive filesystem, this
+   repository becomes a lighthouse for designing any project layout structures,
+   architecting operating system directory layouts, and defining a simplified
+   and secure packaging system.
 
-This dataset is a 100% deterministic with futuristic directive concequencies.
-It is **100% human-made and direct artificial intelligences (A.I) contributions
-(e.g. vibe coding) IS STRICTLY PROHIBITED**. Only A.I. usage is for
-non-concequential tasks like scouting for data source materials across the
-broken search engines and language corrections (e.g. grammar).
+This repository is 100% deterministic with futuristic directive consequences. It
+is **100% human-made, and generative artificial intelligence (AI) contributions
+(e.g., vibe coding) ARE STRICTLY PROHIBITED**. AI is **ONLY USED** for static
+analysis and writing grammar corrections.
 
-> [!WARNING]
->
-> **REMEMBER: THESE ARE DESIGN REFERENCES; NOT RELIGIOUS RULES**. In other
-> words, they are **opinions**.
->
-> **DO NOT ATTEMPT TO RELIGIOUSLY ENFORCE** your project layouts by pointing
-> back to this project. **IN NO WAY** this project is encourages anyone to
-> adhere opinions.
->
-> **Fanaticism destroys**. Please act responsbily and sensibly.
+Remember, **THIS REPOSITORY IS A DESIGN REFERENCE, NOT RELIGIOUS RULES**. In
+other words, they are **OPINIONS**.
 
-To use this dataset, first setup the markdown rendering `git` repository
-(e.g. its GitHub mirror:
-https://github.com/ChewKeanHo/research-the-filesystem-layouts). There
-you can read the descriptions of each directory. For dataset, you need an UNIX
-program called `tree`. Then execute the command:
+> [!CAUTION]
+>
+> **DO NOT ATTEMPT TO RELIGIOUSLY ENFORCE** your project layout based on this
+> repository. **IN NO WAY** does this project force anyone to strictly adhere to
+> these as rules.
+>
+> **Fanaticism destroys**. Please act responsibly and sensibly. Adapt and
+> reference.
+
+The adaptive filesystem currently studies the following operating systems for
+its unification:
+
+* [Apple's `iOS`](_iOS)
+* [Apple's `MacOS`](_MacOS)
+* [FreeBSD](_FreeBSD)
+* [`Linux`-based OSes](_Linux)
+* [Microsoft `Windows`](_Windows)
+* [MVC|MVP Project Architectures](_Architectures/MVC-or-MVP)
+* [MVVM Project Architectures](_Architectures/MVVM)
+* [VIPER Project Architectures](_Architectures/VIPER)
+
+> [!IMPORTANT]
+>
+> For `Linux`-based OSes, this is the consolidated version of all its major
+> distributions including but not limited to SystemD, FreeDesktop.org,
+> Red Hat Linux, Debian, Devuan, Void Linux, Fedora, etc.
+
+
+
+
+## How to Use
+
+[![banner](/.internals/trademarks/banner_1200x100.svg)](#)
+
+To use this dataset, first set up the markdown rendering git repository server,
+for example:
+
+https://github.com/ChewKeanHo/research-the-adaptive-filesystem
+
+Then, you can browse each directory and read its `README.md` documentation
+describing its roles and responsibilities.
+
+You can also use a UNIX program like tree to easily map out a directory
+hierarchy. The command is:
 
 ```
 $ tree -a -d path/to/TARGET/
 ```
-
-The final outputs are consolidated into:
-
-* **Common Directory Structure** - the [/Common](/Common). This is used for all
-  common functioning directories that can combine with other directories for
-  inter-compatible interpretations.
-* **User Home Directory Structure** - the [/User](/User). This is used to setup
-  an user's home directory especially for graphical user interface. It can
-  combine with other directories for inter-compatible interpretations.
-* **UNIX Filesystems Hierarchy** - the [/UNIX](/UNIX). The abstracted compatible
-  filesystems across ALL UNIX OSes including BSD and Linux-based.
-
-Any specific filesystem hierarchies are prefixed with an underscore (`_`). These
-are dedicated directories for consolidating their respective specific designs
-prior to `/UNIX` abstractions. Among them are:
-
-* **Architectures** - the general [_Architectures](/_Architectures) patterns.
-* **FreeBSD** - the [_FreeBSD](/_FreeBSD) UNIX-like OS.
-* **Linux** - the [_Linux](/_Linux)-based UNIX-like OS.
-* **Microsoft Windows** - the [_Windows](/_Windows) Windows OS.
-
-> [!IMPORTANT]
->
-> For Linux, it is the consolidated version of all its distributions including
-> but not limited to SystemD, FreeDesktop.org, Red Hat, Debian, Devuan,
-> Void Linux, Fedora, etc.
 
 
 
@@ -186,11 +197,11 @@ Unless otherwise specified in writing, you **MUST** attribute back to the
 creator(s) as follows:
 
 ```
-Title: The Filesystem Layouts
+Title: The Adaptive Filesystem
 Creators: (Holloway) Chew, Kean Ho
 Packaged-By: (Holloway) Chew, Kean Ho
 Contact: hello@chewkeanho.com
-SKU: chewkeanho-research-the-filesystem-layouts
+SKU: chewkeanho-research-the-adaptive-filesystem
 UUID: 3113F0A2-61BD-449C-BC0F-DE4C09997AC6
 DOI: 10.5281/zenodo.17864564
 License: Creative Commons Attribution-NoDerivatives 4.0 International License (https://creativecommons.org/licenses/by-nd/4.0)

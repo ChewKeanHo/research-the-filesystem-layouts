@@ -2,12 +2,9 @@
 
 [![banner](/.internals/trademarks/banner_1200x100.svg)](#)
 
-This directory houses all transient cache data files. These files are accessible
-by various programs, applications, and development project for an unified
-repository management.
-
-It is always recommended to clean up the cached files algorithmically to avoid
-any cache-poisoning corruption or hogging unwanted storage spaces.
+This directory houses transient cache data files for performance enhancement.
+Programs must not depend solely on these files; they **MUST HAVE** algorithms to
+create, update, and delete them.
 
 
 

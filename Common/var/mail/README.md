@@ -2,9 +2,12 @@
 
 [![banner](/.internals/trademarks/banner_1200x100.svg)](#)
 
-This directory houses all transient email data files. These files are accessible
-by various programs, applications, and development project for an unified
-repository management.
+This directory houses transient email files. They are generally `.eml` based
+(some may be custom).
+
+Due to many mailer services exist and mailboxes are typically owned by a person,
+careful directory organization is advised. Also, assume every logged‑in user is
+an email hoarder; this directory can grow very large in a short time.
 
 
 

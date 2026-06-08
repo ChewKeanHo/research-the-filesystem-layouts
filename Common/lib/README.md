@@ -2,9 +2,12 @@
 
 [![banner](/.internals/trademarks/banner_1200x100.svg)](#)
 
-This directory houses library files (e.g compiled linkable object files).
-These files are accessible by various programs, applications, and development
-project for an unified repository management.
+This directory houses library files (e.g., C object and library files) for
+software developers to integrate into their products and applications. This
+follows the conventional C programming language model.
+
+Most modern compiled languages (Go, Rust, Nim, Swift, Objective‑C) provide
+plugin‑based integration that facilitates runtime linking of library files.
 
 
 

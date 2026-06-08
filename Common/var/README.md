@@ -2,9 +2,20 @@
 
 [![banner](/.internals/trademarks/banner_1200x100.svg)](#)
 
-This directory houses transient and stateful data files. These files are
-accessible by various programs, applications, and development project for an
-unified repository management.
+This directory houses transient, varying data and state files - hence the name
+`var/`. It has well‑known functionally named first‑level sub-directories such as
+but not limited to `var/db/` for databases and `var/log/` for traceable log
+files.
+
+These sub-directories are known to exist across all deployments. While not a
+rule, using them improves compatibility and portability. If a functional
+directory is missing (e.g., `var/messages`), one can define it after researching
+other OS implementations. If any already defines such a directory, use that
+definition when sensible.
+
+On a read‑only hardware system, this directory is usually mounted on a small
+read‑writable medium (e.g., EEPROM, flash memory). It is **ALWAYS** a best
+practice to back up this directory.
 
 
 

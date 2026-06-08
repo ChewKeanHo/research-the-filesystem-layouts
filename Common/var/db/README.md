@@ -2,12 +2,9 @@
 
 [![banner](/.internals/trademarks/banner_1200x100.svg)](#)
 
-This directory houses all transient database and datastore files. These files
-are accessible by various programs, applications, and development project for an
-unified repository management.
-
-Due to its processing nature, one **MUST** carefully work here to prevent any
-data poisoning or losses.
+This directory houses transient database files critical for operations. This
+directory **MUST BE** targeted for routine backup to reduce the risk of data
+loss.
 
 
 

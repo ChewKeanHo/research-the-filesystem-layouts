@@ -2,9 +2,13 @@
 
 [![banner](/.internals/trademarks/banner_1200x100.svg)](#)
 
-This directory houses CPU architecture independent font files. These files are
-accessible by various programs, applications, and development project for an
-unified repository management.
+This directory houses font files for various programs. These files must be
+CPU‑architecture independent. Depending on the OS, different font formats may or
+may not be supported.
+
+Due to font copyright and licensing sensitivities, it is **HIGHLY RECOMMENDED**
+to organize fonts in a supplier‑directory‑driven manner and include the license
+and copyright manuals within each supplier’s directory.
 
 
 

@@ -2,8 +2,15 @@
 
 [![banner](/.internals/trademarks/banner_1200x100.svg)](#)
 
-This directory houses inclusion files (e.g. C header filers). These files are
-accessible by various development project for an unified repository management.
+This directory houses inclusion files (e.g., C header files) for software
+developers to integrate into their products and applications. This follows the
+conventional C programming language model, where each source code file (`.c`)
+comes with a corresponding header file (`.h`). The header file declares
+functions made available either from the source code or its compiled library
+file (`.o`).
+
+Modern programming languages such as Go, Rust, Nim, Swift, and Objective‑C no
+longer use header files; therefore, they do not typically use this directory.
 
 
 

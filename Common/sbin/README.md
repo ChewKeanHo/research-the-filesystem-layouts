@@ -2,16 +2,23 @@
 
 [![banner](/.internals/trademarks/banner_1200x100.svg)](#)
 
-This directory houses commandable system administrative programs and
-applications for `root` account and system administrators (e.g. user with
-`wheel` permission on UNIX-based operating system (OS)es) depending on its OS
-layer's objective. Any executable be it a compiled application program artifact
-or a shell script can be placed here.
+This directory houses command-able system administrative programs and
+applications mapped to the `$PATH` environment variable when the user is `root`
+account or an administrator (on `FreeBSD` and `Linux`-based OSes: user with
+`wheel` permission). These Users can execute the programs and applications
+easily using the command format (e.g. `restart`) instead of the default full
+filepath format (`/sbin/restart`).
 
-This differs from other executable directories (e.g. `bin`) as they have the
-tendency cause chaos to an OS (e.g. making it unbootable) in the hands of
-inexperienced folks. Only system administrators and `root` account can access
-them as commands.
+Unlike `/bin` directory counterparts, programs and applications housed here are
+typically for OS maintenance and administrations purposes like power management,
+system tools, servers, etc. When executed wrongly, these programs usually yield
+nasty consequences including damaging the hardware.
+
+Due to the role of formulating commands list, it **MUST NOT** contain any
+sub-directory. Each program or application **MUST BE** uniquely named as
+**THE SAME** desirable calling command.
+
+This directory **MUST NOT** have any sub-directory.
 
 
 

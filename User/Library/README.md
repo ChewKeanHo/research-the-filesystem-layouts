@@ -2,26 +2,13 @@
 
 [![banner](/.internals/trademarks/banner_1200x100.svg)](#)
 
-This directory houses user-specific configuration files (e.g. app libraries or
-internal system files) without needing an administrator (users with `wheel`
-permission) privilege. Applications can create the required configuration files
-here.
+This directory houses all packaged library bundles installed by the owning user
+without requiring administrator privileges (e.g. a user with `wheel` privilege
+on `UNIX`-based OSes). It was first introduced by Apple’s `MacOS`, where
+user‑specific library bundles are placed here.
 
-Users **SHOULD BE** allowed for manual modifications. Otherwise, they will start
-being sliently rebelious cracking the operating system (OS) which is an
-undesirable move.
-
-For security, an OS can implement content cryptographic signing and
-distributor's notarizations like how Apple Developer Program works.
-
-Due to its processing nature, one **MUST** carefully work here to prevent any
-data poisoning or losses.
-
-This directory is accessible by the owning user, `root`, and OS administrators
-(users with `wheel` permission).
-
-Programs **SHOULD NOT** assume any file or directory and always perform safe
-query before use.
+For security, an operating system may implement content cryptographic signing
+and distributor notarization.
 
 
 

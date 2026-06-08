@@ -2,9 +2,10 @@
 
 [![banner](/.internals/trademarks/banner_1200x100.svg)](#)
 
-This directory houses CPU architecture independent `tzfile` timezone
-configuration data files. These files are accessible by various programs,
-applications, and development project for an unified repository management.
+This directory houses timezone configuration data files for use with the
+`tzfile(5)` format. These files must be CPU‑architecture independent. This
+directory is specific to `UNIX`‑based OSes (e.g. `FreeBSD`, `Linux`-based OSes);
+otherwise it is left blank.
 
 
 
@@ -19,12 +20,6 @@ This is a specific directory structure with forming query using pathing
 strategy as such:
 
 ```
-share/zoneinfo/
-  [NAME] -> /usr/share/zoneinfo/Etc/GMT/GMT{+-ZZ}
-  ...
-
-OR
-
 share/zoneinfo/
   [NAME] -> /usr/share/zoneinfo/Etc/GMT/GMT{+-ZZ}
   ...

@@ -2,8 +2,12 @@
 
 [![banner](/.internals/trademarks/banner_1200x100.svg)](#)
 
-This directory houses configuration files. These files are accessible by
-various applications for better user experiences.
+This directory houses runtime configuration files parsed by one or more programs
+or applications. Depending on the design and deployment, this directory can
+serve as a single unified configuration directory for many programs, or it can
+serve a single program in a restricted environment (e.g., inside a sandbox).
+
+It is **ALWAYS** to back up this directory.
 
 
 

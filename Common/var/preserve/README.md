@@ -2,9 +2,9 @@
 
 [![banner](/.internals/trademarks/banner_1200x100.svg)](#)
 
-This directory houses all transient unused and presented for historical reasons
-data files. These files are accessible by various programs, applications, and
-development project for an unified repository management.
+This directory houses transient preserved data files for historical tracing.
+They are stored for historical reference and tracing. For backup files, use
+`var/backups/` instead.
 
 
 
